@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36867087128C4CCEBEF57738 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867398D943679393F750E2 /* ReadingViewController.m */; };
+		36867087128C4CCEBEF57738 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867398D943679393F750E2 /* BooksViewController.m */; };
 		3686718DFD3394A4340FF4F1 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368675835DC2EAED704F1F52 /* MainController.m */; };
+		3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672AAA2BDED70CA3EA456 /* WishViewController.m */; };
+		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
 		368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867F73378410EF47C081F5 /* NSString+ParseCategory.m */; };
 		36867C50E5C71E7036CDE4DB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686700443EAEF1C97A73988 /* WebViewController.m */; };
+		36867D713884767460320FEF /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368676D66017E79A01E1F0CF /* ReadingViewController.m */; };
 		49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1916B11A78003B5C67 /* libxml2.dylib */; };
 		49D22B1C16B11A7C003B5C67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1B16B11A7C003B5C67 /* libz.dylib */; };
 		49D22B1E16B11A88003B5C67 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1D16B11A88003B5C67 /* CFNetwork.framework */; };
@@ -193,12 +196,18 @@
 
 /* Begin PBXFileReference section */
 		3686700443EAEF1C97A73988 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		36867045B9A6AC7432C01FBB /* ReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingViewController.h; sourceTree = "<group>"; };
+		36867107FB91F14574AF9E74 /* WishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishViewController.h; sourceTree = "<group>"; };
+		368671D88644C0AE12FDD506 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		368672361E033DE447F057AB /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		368672AAA2BDED70CA3EA456 /* WishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishViewController.m; sourceTree = "<group>"; };
 		36867312A5CFA9A7B2C026F2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		368673379C2B28F3BAD5389B /* ReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingViewController.h; sourceTree = "<group>"; };
-		36867398D943679393F750E2 /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
+		368673379C2B28F3BAD5389B /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
+		36867398D943679393F750E2 /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
 		368675835DC2EAED704F1F52 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		368676D66017E79A01E1F0CF /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
 		368679608C1961C2527EB711 /* NSString+ParseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParseCategory.h"; sourceTree = "<group>"; };
+		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		36867F73378410EF47C081F5 /* NSString+ParseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ParseCategory.m"; sourceTree = "<group>"; };
 		49D22B1916B11A78003B5C67 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		49D22B1B16B11A7C003B5C67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -567,12 +576,18 @@
 		36867895723368B6077C1039 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				36867398D943679393F750E2 /* ReadingViewController.m */,
-				368673379C2B28F3BAD5389B /* ReadingViewController.h */,
+				36867398D943679393F750E2 /* BooksViewController.m */,
+				368673379C2B28F3BAD5389B /* BooksViewController.h */,
 				368675835DC2EAED704F1F52 /* MainController.m */,
 				368672361E033DE447F057AB /* MainController.h */,
 				3686700443EAEF1C97A73988 /* WebViewController.m */,
 				36867312A5CFA9A7B2C026F2 /* WebViewController.h */,
+				368672AAA2BDED70CA3EA456 /* WishViewController.m */,
+				36867107FB91F14574AF9E74 /* WishViewController.h */,
+				368676D66017E79A01E1F0CF /* ReadingViewController.m */,
+				36867045B9A6AC7432C01FBB /* ReadingViewController.h */,
+				368671D88644C0AE12FDD506 /* ReadViewController.m */,
+				36867CEE3B3A15938D814184 /* ReadViewController.h */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1381,7 +1396,7 @@
 			files = (
 				49F603B416B101680092D3BD /* main.m in Sources */,
 				49F603B816B101680092D3BD /* AppDelegate.m in Sources */,
-				36867087128C4CCEBEF57738 /* ReadingViewController.m in Sources */,
+				36867087128C4CCEBEF57738 /* BooksViewController.m in Sources */,
 				3686718DFD3394A4340FF4F1 /* MainController.m in Sources */,
 				36867C50E5C71E7036CDE4DB /* WebViewController.m in Sources */,
 				368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */,
@@ -1533,6 +1548,9 @@
 				49D26C0F16B16BED00FDA186 /* DOUService.m in Sources */,
 				49D26C1016B16BED00FDA186 /* DOUOAuthService.m in Sources */,
 				49D26C1116B16BED00FDA186 /* DOUOAuthStore.m in Sources */,
+				3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */,
+				36867D713884767460320FEF /* ReadingViewController.m in Sources */,
+				3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

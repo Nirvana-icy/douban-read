@@ -1,6 +1,9 @@
 #import "MainController.h"
-#import "ReadingViewController.h"
+#import "BooksViewController.h"
 #import "WebViewController.h"
+#import "ReadingViewController.h"
+#import "WishViewController.h"
+#import "ReadViewController.h"
 
 #define kAPIKey @"03aa678cc0ae159a0aff36a6420a40ce"
 #define kPrivateKey @"0bed26e34a5bfdec"
@@ -9,6 +12,8 @@
 @implementation MainController {
     WebViewController *webViewController;
     ReadingViewController *readingViewController;
+    WishViewController *wishViewController;
+    ReadViewController *readViewController;
     DOUService *service;
     DOUOAuthService *oAuthService;
 }
@@ -18,9 +23,18 @@
     if (self) {
         [self initDouService];
         readingViewController = [[ReadingViewController alloc] init];
+        wishViewController = [[WishViewController alloc] init];
+        readViewController = [[ReadViewController alloc] init];
         UINavigationController *readingsNavigationController = [[UINavigationController alloc] initWithRootViewController:readingViewController];
-        [readingsNavigationController.tabBarItem setTitle:@"My Readings"];
-        [self setViewControllers:@[readingsNavigationController]];
+        [readingsNavigationController.tabBarItem setTitle:@"在读"];
+
+        UINavigationController *wishNavigationController = [[UINavigationController alloc] initWithRootViewController:wishViewController];
+        [wishNavigationController.tabBarItem setTitle:@"想读"];
+
+        UINavigationController *readNavigationController = [[UINavigationController alloc] initWithRootViewController:readViewController];
+        [readNavigationController.tabBarItem setTitle:@"读过"];
+
+        [self setViewControllers:@[readingsNavigationController, wishNavigationController, readNavigationController]];
     }
     return self;
 }
@@ -36,7 +50,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     if ([service isValid]) {
         NSLog(@"already logged in");
-        [readingViewController retrieveBooks];
     } else {
         [self initOAuthService];
         webViewController = [[WebViewController alloc] initWithRequestURL:[self oAuthUrl] andOAuthService:oAuthService];

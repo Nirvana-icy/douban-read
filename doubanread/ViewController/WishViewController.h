@@ -2,5 +2,5 @@
 #import "BooksViewController.h"
 
 
-@interface ReadingViewController : BooksViewController
+@interface WishViewController : BooksViewController
 @end
