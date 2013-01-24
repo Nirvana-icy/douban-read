@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36867087128C4CCEBEF57738 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867398D943679393F750E2 /* ReadingViewController.m */; };
+		3686718DFD3394A4340FF4F1 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368675835DC2EAED704F1F52 /* MainController.m */; };
+		36867DBFA88B0A4E7755BD3E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867B44B81418164D8E4540 /* LoginViewController.m */; };
 		49F603A816B101680092D3BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603A716B101680092D3BD /* UIKit.framework */; };
 		49F603AA16B101680092D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603A916B101680092D3BD /* Foundation.framework */; };
 		49F603AC16B101680092D3BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603AB16B101680092D3BD /* CoreGraphics.framework */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		368671558CB365C60D2EFD27 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		368672361E033DE447F057AB /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		368673379C2B28F3BAD5389B /* ReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingViewController.h; sourceTree = "<group>"; };
+		36867398D943679393F750E2 /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
+		368675835DC2EAED704F1F52 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		36867B44B81418164D8E4540 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		49F603A316B101680092D3BD /* doubanread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doubanread.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F603A716B101680092D3BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F603A916B101680092D3BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36867895723368B6077C1039 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				36867B44B81418164D8E4540 /* LoginViewController.m */,
+				368671558CB365C60D2EFD27 /* LoginViewController.h */,
+				36867398D943679393F750E2 /* ReadingViewController.m */,
+				368673379C2B28F3BAD5389B /* ReadingViewController.h */,
+				368675835DC2EAED704F1F52 /* MainController.m */,
+				368672361E033DE447F057AB /* MainController.h */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		49F6039816B101680092D3BD = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +137,7 @@
 				49F603B616B101680092D3BD /* AppDelegate.h */,
 				49F603B716B101680092D3BD /* AppDelegate.m */,
 				49F603AE16B101680092D3BD /* Supporting Files */,
+				36867895723368B6077C1039 /* ViewController */,
 			);
 			path = doubanread;
 			sourceTree = "<group>";
@@ -263,6 +286,9 @@
 			files = (
 				49F603B416B101680092D3BD /* main.m in Sources */,
 				49F603B816B101680092D3BD /* AppDelegate.m in Sources */,
+				36867DBFA88B0A4E7755BD3E /* LoginViewController.m in Sources */,
+				36867087128C4CCEBEF57738 /* ReadingViewController.m in Sources */,
+				3686718DFD3394A4340FF4F1 /* MainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
