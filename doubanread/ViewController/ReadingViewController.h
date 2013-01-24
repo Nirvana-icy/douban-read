@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ReadingViewController : UIViewController
+@interface ReadingViewController : UITableViewController
+- (void)retrieveBooks;
+
 @end
