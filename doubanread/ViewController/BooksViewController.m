@@ -12,7 +12,6 @@
     self = [super init];
     if (self) {
         books = [[NSMutableArray alloc]init];
-        self.navigationItem.title = @"豆瓣读书";
     }
     return self;
 }
@@ -22,7 +21,7 @@
         return;
     }
     NSString *subPath = @"/v2/book/user/dearwolf/collections";
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status": status}];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status": status, @"count": @"100"}];
 
     DOUService *service = [DOUService sharedInstance];
     [service get:query callback:^(DOUHttpRequest *req){
