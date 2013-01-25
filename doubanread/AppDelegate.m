@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  doubanread
-//
-//  Created by jli on 1/24/13.
-//  Copyright (c) 2013 jli. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "MainController.h"
 

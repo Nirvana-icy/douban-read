@@ -10,30 +10,11 @@
 
 @interface DOUBook : DOUObject
 
-@property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *subTitle;
-@property (nonatomic, copy) NSString *rating;
-@property (nonatomic, copy) NSString *numRaters;
-@property (nonatomic, copy) NSString *average;
-@property (nonatomic, copy) NSString *ISBN10;
-@property (nonatomic, copy) NSString *ISBN13;
+@property (nonatomic, retain) UIImage *smallImage;
 
-@property (nonatomic, copy) NSString *publisher;
-@property (nonatomic, copy) NSString *publishDateStr;
-@property (nonatomic, retain) NSDate *publishDate;
+- (NSString *)title;
 
-@property (nonatomic, copy) NSString *image;
-@property (nonatomic, copy) NSString *largeImage;
-@property (nonatomic, copy) NSString *smallImageUrl;
-@property (nonatomic) UIImage *smallImage;
-
-@property (nonatomic, copy) NSString *mediumImage;
-
-@property (nonatomic, copy) NSString *authorIntro;
-@property (nonatomic, copy) NSString *summary;
-
-- (UIImage *)smallImage;
+- (NSString *)smallImageUrl;
 
 
 @end

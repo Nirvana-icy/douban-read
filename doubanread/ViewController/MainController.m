@@ -22,6 +22,7 @@
     self = [super init];
     if (self) {
         [self initDouService];
+
         readingViewController = [[ReadingViewController alloc] init];
         wishViewController = [[WishViewController alloc] init];
         readViewController = [[ReadViewController alloc] init];
@@ -46,16 +47,15 @@
     service.apiBaseUrlString = kHttpsApiBaseUrl;
 }
 
-
 - (void)viewDidAppear:(BOOL)animated {
-    if ([service isValid]) {
-        NSLog(@"already logged in");
-        [self loadBooks];
-    } else {
+    if (![service isValid]) {
         [self initOAuthService];
         webViewController = [[WebViewController alloc] initWithRequestURL:[self oAuthUrl] andOAuthService:oAuthService];
         [self presentViewController:webViewController animated:NO completion:^() {
         }];
+    }  else{
+        NSLog(@"already logged in");
+        [self loadBooks];
     }
 }
 
@@ -78,7 +78,6 @@
 - (void)OAuthClient:(DOUOAuthService *)client didAcquireSuccessDictionary:(NSDictionary *)dic {
     NSLog(@"login success!");
     [self dismissViewControllerAnimated:NO completion:^{
-        [self loadBooks];
     }];
 }
 

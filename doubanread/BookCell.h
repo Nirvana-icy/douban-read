@@ -2,5 +2,10 @@
 
 @class DOUBook;
 @interface BookCell : UITableViewCell
-- (void)setupWithBook:(DOUBook *)book;
+- (void)setupWithBook:(DOUBook *)theBook;
+
+- (void)updateBook:(DOUBook *)theBook;
+
+- (void)updateImage:(UIImage *)bookImage;
+
 @end

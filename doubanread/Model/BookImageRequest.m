@@ -14,7 +14,7 @@
     [download appendData:data];
 }
 
-- (id)initWithTweet:(DOUBook *)theBook andIndexPath:(NSIndexPath *)path andDelegate:(id <BookImageRequestDelegate>)theDelegate {
+- (id)initWithBook:(DOUBook *)theBook andIndexPath:(NSIndexPath *)path andDelegate:(id <BookImageRequestDelegate>)theDelegate {
     self = [super init];
     if (self) {
         book = theBook;
