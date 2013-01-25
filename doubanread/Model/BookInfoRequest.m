@@ -17,7 +17,7 @@
 
 - (void)retrieveBooks:(NSString *)status {
     NSString *subPath = @"/v2/book/user/dearwolf/collections";
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status, @"count" : @"100"}];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status, @"count" : @"20"}];
 
     DOUService *service = [DOUService sharedInstance];
     [service get:query callback:^(DOUHttpRequest *req) {

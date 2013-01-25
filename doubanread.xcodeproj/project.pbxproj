@@ -1360,6 +1360,8 @@
 			mainGroup = 49F6039816B101680092D3BD;
 			productRefGroup = 49F603A416B101680092D3BD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				49F603A216B101680092D3BD /* doubanread */,
@@ -1678,10 +1680,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"$(FRANK_LIBRARY_SEARCH_PATHS)",
 				);
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
+					"$(FRANK_LDFLAGS)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

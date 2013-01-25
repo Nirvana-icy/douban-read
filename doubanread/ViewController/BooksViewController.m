@@ -35,8 +35,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DOUBook *book = [books objectAtIndex:[indexPath row]];
-    return [book smallImage].size.height;
+    return 90;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,7 +57,6 @@
 - (void)bookImageDidLoad:(UIImage *)image forIndexPath:(NSIndexPath *)path {
     BookCell *cell = [[self tableView] cellForRowAtIndexPath:path];
     [cell updateImage:image];
-    [self.tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end
