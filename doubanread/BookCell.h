@@ -4,7 +4,6 @@
 #define IMAGE_MAX_HEIGHT 90
 @class DOUBook;
 @interface BookCell : UITableViewCell
-- (void)setupWithBook:(DOUBook *)theBook;
 
 - (void)updateBook:(DOUBook *)theBook;
 

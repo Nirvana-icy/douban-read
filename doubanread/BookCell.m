@@ -8,23 +8,32 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    [self setup];
     return self;
 }
 
-- (void)setupWithBook:(DOUBook *)theBook {
+- (void)setup {
     iconView = [[UIImageView alloc] init];
     [iconView setFrame:CGRectMake(0, 0, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT)];
     [self addSubview:iconView];
 
-    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(IMAGE_MAX_WIDTH + 5, 0, 320 - IMAGE_MAX_WIDTH, 30)];
-    [titleLabel setText:[theBook title]];
+    titleLabel = [[UILabel alloc] init];
+    [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 5, 5, 320 - IMAGE_MAX_WIDTH - 5, 90)];
     [self addSubview:titleLabel];
 }
 
 - (void)updateBook:(DOUBook *)theBook {
     UIImage *bookImage = [theBook smallImage];
     [self redrawImage:bookImage];
+
+    CGSize constSize = {320 - IMAGE_MAX_WIDTH - 5, 9999};
+    UIFont *systemFontOfSize = [UIFont systemFontOfSize:16.0f];
+    CGSize labelSize = [[theBook title] sizeWithFont:systemFontOfSize constrainedToSize:constSize lineBreakMode:NSLineBreakByWordWrapping];
+
+    [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 5, 5, labelSize.width, labelSize.height)];
+    titleLabel.font = systemFontOfSize;
     [titleLabel setText:[theBook title]];
+    [titleLabel setNumberOfLines:0];
     [self setNeedsLayout];
 }
 
@@ -45,9 +54,7 @@
         cropYStartPoint = (imageHeight - IMAGE_MAX_HEIGHT) / 2;
     }
     CGRect rect = CGRectMake(cropXStartPoint, cropYStartPoint, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT);
-    CGImageRef xx = [bookImage CGImage];
-    CGImageRef imageRef = CGImageCreateWithImageInRect(xx, rect);
-
+    CGImageRef imageRef = CGImageCreateWithImageInRect([bookImage CGImage], rect);
 
     UIImage *cropped = [UIImage imageWithCGImage:imageRef];
     [iconView setImage:cropped];

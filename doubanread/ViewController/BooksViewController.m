@@ -43,7 +43,6 @@
     BookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookCell"];
     if (!cell) {
         cell = [[BookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bookCell"];
-        [cell setupWithBook:book];
     }
     [cell updateBook:book];
 
