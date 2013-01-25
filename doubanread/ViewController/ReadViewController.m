@@ -13,10 +13,4 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self retrieveBooks:@"read"];
-}
-
-
 @end

@@ -3,37 +3,30 @@
 #import "DOUBookArray.h"
 #import "DOUBook.h"
 #import "BooksViewController.h"
+#import "BookCell.h"
+#import "BookInfoRequest.h"
 
 @implementation BooksViewController {
      NSMutableArray *books;
+    BookInfoRequest *bookInfoRequest;
 }
 
 - (id)init {
     self = [super init];
     if (self) {
         books = [[NSMutableArray alloc]init];
+        bookInfoRequest = [[BookInfoRequest alloc] initWithDelegate:self];
     }
     return self;
 }
 
-- (void)retrieveBooks:(NSString *)status {
-    if ([books count] != 0){
-        return;
-    }
-    NSString *subPath = @"/v2/book/user/dearwolf/collections";
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status": status, @"count": @"100"}];
+- (void)updateWithBooks:(NSArray *)theBooks{
+    [books addObjectsFromArray:theBooks];
+    [[self tableView] reloadData];
+}
 
-    DOUService *service = [DOUService sharedInstance];
-    [service get:query callback:^(DOUHttpRequest *req){
-        NSString *responseString = [req responseString];
-        NSLog(@"str:%@", responseString);
-        NSError *error = [req doubanError];
-        if (!error) {
-            DOUBookArray *array = [[DOUBookArray alloc] initWithString:responseString];
-            [books addObjectsFromArray:[array objectArray]];
-        }
-        [self.tableView reloadData];
-    }];
+- (void)retrieveBooks:(NSString *)status {
+    [bookInfoRequest retrieveBooks:status];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -42,11 +35,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DOUBook *book = [books objectAtIndex:[indexPath row]];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetCell"];
+    BookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tweetCell"];
+        cell = [[BookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bookCell"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [book title]];
+    [cell setupWithBook: book];
     return cell;
 }
 @end

@@ -25,10 +25,15 @@
 
 @property (nonatomic, copy) NSString *image;
 @property (nonatomic, copy) NSString *largeImage;
-@property (nonatomic, copy) NSString *smallImage;
+@property (nonatomic, copy) NSString *smallImageUrl;
+@property (nonatomic) UIImage *smallImage;
+
 @property (nonatomic, copy) NSString *mediumImage;
 
 @property (nonatomic, copy) NSString *authorIntro;
 @property (nonatomic, copy) NSString *summary;
+
+- (UIImage *)smallImage;
+
 
 @end

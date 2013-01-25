@@ -50,6 +50,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     if ([service isValid]) {
         NSLog(@"already logged in");
+        [self loadBooks];
     } else {
         [self initOAuthService];
         webViewController = [[WebViewController alloc] initWithRequestURL:[self oAuthUrl] andOAuthService:oAuthService];
@@ -77,12 +78,18 @@
 - (void)OAuthClient:(DOUOAuthService *)client didAcquireSuccessDictionary:(NSDictionary *)dic {
     NSLog(@"login success!");
     [self dismissViewControllerAnimated:NO completion:^{
+        [self loadBooks];
     }];
-
 }
 
 - (void)OAuthClient:(DOUOAuthService *)client didFailWithError:(NSError *)error {
     NSLog(@"login Fail!");
+}
+
+- (void)loadBooks{
+    [readingViewController retrieveBooks:@"reading"];
+    [wishViewController retrieveBooks:@"wish"];
+    [readViewController retrieveBooks:@"read"];
 }
 
 @end

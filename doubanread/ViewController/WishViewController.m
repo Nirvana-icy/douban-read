@@ -13,9 +13,4 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self retrieveBooks:@"wish"];
-}
-
 @end
