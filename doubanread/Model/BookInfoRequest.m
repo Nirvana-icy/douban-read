@@ -26,8 +26,8 @@
         NSError *error = [req doubanError];
         if (!error) {
             DOUBookArray *array = [[DOUBookArray alloc] initWithString:responseString];
-            if ([delegate respondsToSelector:@selector(updateWithBooks:)]) {
-                [delegate performSelector:@selector(updateWithBooks:) withObject:[array objectArray]];
+            if ([delegate respondsToSelector:@selector(bookRequestDidFinish:)]) {
+                [delegate performSelector:@selector(bookRequestDidFinish:) withObject:[array objectArray]];
             }
         }
     }];

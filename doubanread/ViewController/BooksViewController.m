@@ -20,7 +20,7 @@
     return self;
 }
 
-- (void)updateWithBooks:(NSArray *)theBooks{
+- (void)bookRequestDidFinish:(NSArray *)theBooks{
     [books addObjectsFromArray:theBooks];
     [[self tableView] reloadData];
 }
