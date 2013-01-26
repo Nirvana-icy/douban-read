@@ -11,6 +11,9 @@
 
     mainController = [[MainController alloc] init];
     self.window.rootViewController = mainController;
+    if ([[DOUService sharedInstance] isValid]){
+        [mainController loadBooks];
+    }
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

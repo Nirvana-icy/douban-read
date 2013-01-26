@@ -53,9 +53,6 @@
         webViewController = [[WebViewController alloc] initWithRequestURL:[self oAuthUrl] andOAuthService:oAuthService];
         [self presentViewController:webViewController animated:NO completion:^() {
         }];
-    }  else{
-        NSLog(@"already logged in");
-        [self loadBooks];
     }
 }
 
@@ -76,8 +73,8 @@
 
 
 - (void)OAuthClient:(DOUOAuthService *)client didAcquireSuccessDictionary:(NSDictionary *)dic {
-    NSLog(@"login success!");
     [self dismissViewControllerAnimated:NO completion:^{
+        [self loadBooks];
     }];
 }
 

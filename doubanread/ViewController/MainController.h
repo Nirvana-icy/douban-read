@@ -3,4 +3,6 @@
 
 
 @interface MainController : UITabBarController <DOUOAuthServiceDelegate>
+- (void)loadBooks;
+
 @end
