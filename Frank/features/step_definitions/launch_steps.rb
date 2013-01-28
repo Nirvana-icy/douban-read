@@ -18,3 +18,11 @@ end
 Given /^I launch the app using iOS (\d\.\d) and the (iphone|ipad) simulator$/ do |sdk, version|
   launch_app app_path, sdk, version
 end
+
+When /^I Login$/ do
+  sleep(2)
+  js = "node = document.getElementById('fromAmount'); node.value=1;"
+  frankly_map("view:'UIWebView' index:0", "stringByEvaluatingJavaScriptFromString:", js)
+  submit = "submit = document.getElementById('exchange'); submit.click();"
+  frankly_map("view:'UIWebView' index:0", "stringByEvaluatingJavaScriptFromString:", submit)
+end
