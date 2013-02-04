@@ -1,7 +1,6 @@
 #import "BookDetailView.h"
 #import "DOUBook.h"
-#import "DRLabel.h"
-
+#import "UILabel+Extension.h"
 
 @implementation BookDetailView {
     DOUBook *book;
@@ -18,11 +17,11 @@
 
 - (void)createSubviews {
     float height = 10;
-    UILabel *authorLabel = [[DRLabel alloc] initWithText:[NSString stringWithFormat:@"作者: %@", [book author]] andPosition:CGPointMake(110, height)];
+    UILabel *authorLabel = [[UILabel alloc] initWithText:[NSString stringWithFormat:@"作者: %@", [book author]] andPosition:CGPointMake(110, height) andMaxWidth:200];
     [self addSubview:authorLabel];
     height += authorLabel.bounds.size.height;
 
-    UILabel *publisherLabel = [[DRLabel alloc] initWithText:[NSString stringWithFormat:@"出版社: %@", [book publisher]] andPosition:CGPointMake(110, height + 10)];
+    UILabel *publisherLabel = [[UILabel alloc] initWithText:[NSString stringWithFormat:@"出版社: %@", [book publisher]] andPosition:CGPointMake(110, height + 10) andMaxWidth:200];
     [publisherLabel setText:[NSString stringWithFormat:@"出版社: %@", [book publisher]]];
     [self addSubview:publisherLabel];
 }

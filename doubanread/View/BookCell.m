@@ -1,5 +1,6 @@
 #import "BookCell.h"
 #import "DOUBook.h"
+#import "UILabel+Extension.h"
 
 @implementation BookCell {
     UIImageView *iconView;
@@ -26,14 +27,9 @@
     UIImage *bookImage = [theBook smallImage];
     [self redrawImage:bookImage];
 
-    CGSize constSize = {320 - IMAGE_MAX_WIDTH - 5, 9999};
-    UIFont *systemFontOfSize = [UIFont systemFontOfSize:16.0f];
-    CGSize labelSize = [[theBook title] sizeWithFont:systemFontOfSize constrainedToSize:constSize lineBreakMode:NSLineBreakByWordWrapping];
-
-    [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 5, 5, labelSize.width, labelSize.height)];
-    titleLabel.font = systemFontOfSize;
-    [titleLabel setText:[theBook title]];
-    [titleLabel setNumberOfLines:0];
+    [titleLabel updateWithText:[theBook title]
+                                   andPosition:CGPointMake(IMAGE_MAX_WIDTH + 5, 5)
+                                   andMaxWidth:(320 - IMAGE_MAX_WIDTH - 5)];
     [self setNeedsLayout];
 }
 

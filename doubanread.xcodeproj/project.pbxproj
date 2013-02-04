@@ -11,7 +11,7 @@
 		3686718DFD3394A4340FF4F1 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368675835DC2EAED704F1F52 /* MainController.m */; };
 		368671DB7740E95CAD608B95 /* BookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368679E92EB98D77D65A3170 /* BookDetailView.m */; };
 		3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672AAA2BDED70CA3EA456 /* WishViewController.m */; };
-		36867351AC5A60BA29711D4B /* DRLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867993466BA9F46BE0EFB2 /* DRLabel.m */; };
+		368675B34EBBC057C5779E10 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 368674C8814DB5247CA3705E /* UILabel+Extension.m */; };
 		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
 		368677AD80EDB01E9C75F26F /* BookImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368673ABD3DA971D266CDD84 /* BookImageRequest.m */; };
 		368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867F73378410EF47C081F5 /* NSString+ParseCategory.m */; };
@@ -214,13 +214,13 @@
 		36867398D943679393F750E2 /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
 		368673ABD3DA971D266CDD84 /* BookImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookImageRequest.m; sourceTree = "<group>"; };
 		368673F548211995DFEE4E10 /* BookImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageRequestDelegate.h; sourceTree = "<group>"; };
+		368674C8814DB5247CA3705E /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		368675835DC2EAED704F1F52 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		368675E2F79F63D7D02AE962 /* BookImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageRequest.h; sourceTree = "<group>"; };
-		368675EB1696F1F46B5C43B8 /* DRLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLabel.h; sourceTree = "<group>"; };
 		36867670A014FA01D37D768B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		368676D66017E79A01E1F0CF /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
+		3686795FE68775A045A348F1 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		368679608C1961C2527EB711 /* NSString+ParseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParseCategory.h"; sourceTree = "<group>"; };
-		36867993466BA9F46BE0EFB2 /* DRLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLabel.m; sourceTree = "<group>"; };
 		368679E92EB98D77D65A3170 /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
 		36867A7459170E2EBB87AF15 /* BookInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookInfoRequest.h; sourceTree = "<group>"; };
 		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
@@ -599,8 +599,8 @@
 				36867670A014FA01D37D768B /* BookCell.m */,
 				36867D72E3DF8225FA24116B /* BookDetailView.h */,
 				368679E92EB98D77D65A3170 /* BookDetailView.m */,
-				36867993466BA9F46BE0EFB2 /* DRLabel.m */,
-				368675EB1696F1F46B5C43B8 /* DRLabel.h */,
+				368674C8814DB5247CA3705E /* UILabel+Extension.m */,
+				3686795FE68775A045A348F1 /* UILabel+Extension.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1596,7 +1596,7 @@
 				3686791B14CCD4FCEF7DB1DA /* BookInfoRequest.m in Sources */,
 				368671DB7740E95CAD608B95 /* BookDetailView.m in Sources */,
 				36867F1D0B2098229ECE0BD3 /* BookDetailViewController.m in Sources */,
-				36867351AC5A60BA29711D4B /* DRLabel.m in Sources */,
+				368675B34EBBC057C5779E10 /* UILabel+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
