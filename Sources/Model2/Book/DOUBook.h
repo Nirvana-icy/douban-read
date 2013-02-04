@@ -14,6 +14,14 @@
 
 - (NSString *)title;
 
+- (NSString *)author;
+
+
+- (NSString *)authorIntro;
+
+
+- (NSString *)publisher;
+
 - (NSString *)smallImageUrl;
 
 

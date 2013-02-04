@@ -6,6 +6,7 @@
 #import "BookCell.h"
 #import "BookInfoRequest.h"
 #import "BookImageRequest.h"
+#import "BookDetailViewController.h"
 
 @implementation BooksViewController {
     NSMutableArray *books;
@@ -38,8 +39,14 @@
     return 90;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DOUBook *book = [books objectAtIndex:(NSUInteger) [indexPath row]];
+    BookDetailViewController *bookDetailViewController = [[BookDetailViewController alloc] initWithBook:book];
+    [self.navigationController pushViewController:bookDetailViewController animated:YES];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DOUBook *book = [books objectAtIndex:[indexPath row]];
+    DOUBook *book = [books objectAtIndex:(NSUInteger) [indexPath row]];
     BookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookCell"];
     if (!cell) {
         cell = [[BookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bookCell"];
@@ -54,7 +61,7 @@
 }
 
 - (void)bookImageDidLoad:(UIImage *)image forIndexPath:(NSIndexPath *)path {
-    BookCell *cell = [[self tableView] cellForRowAtIndexPath:path];
+    BookCell *cell = (BookCell *) [[self tableView] cellForRowAtIndexPath:path];
     [cell updateImage:image];
 }
 

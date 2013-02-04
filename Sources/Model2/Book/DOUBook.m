@@ -14,11 +14,23 @@
 }
 
 - (NSString *)title {
-    return [[self book] objectForKey:@"title"];
+    return [self book][@"title"];
 }
 
-- (NSDictionary *)images {
-    return [[self book] objectForKey:@"images"];
+- (NSArray *)authors {
+    return [self book][@"author"];
+}
+
+- (NSString *)author{
+    return [[self authors] componentsJoinedByString:@", "];
+}
+
+- (NSString *)authorIntro {
+    return [self book][@"author_intro"];
+}
+
+- (NSString *)publisher {
+    return [self book][@"publisher"];
 }
 
 - (NSString *)smallImageUrl {
@@ -28,6 +40,11 @@
         return [[self images] objectForKey:@"small"];
     }
 }
+
+- (NSDictionary *)images {
+    return [[self book] objectForKey:@"images"];
+}
+
 
 - (NSDictionary *)book {
     return [self.dictionary objectForKey:@"book"];
