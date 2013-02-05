@@ -21,11 +21,11 @@
     return [self book][@"author"];
 }
 
-- (NSString *)author{
+- (NSString *)author {
     return [[self authors] componentsJoinedByString:@", "];
 }
 
-- (NSString *)id{
+- (NSString *)id {
     return [self book][@"id"];
 }
 
@@ -54,4 +54,14 @@
     return [self.dictionary objectForKey:@"book"];
 }
 
+- (BookStatus)status {
+    NSString *status = self.dictionary[@"status"];
+    if ([status isEqualToString:@"wish"]) {
+        return WISH;
+    } else if ([status isEqualToString:@"reading"]) {
+        return READING;
+    } else {
+        return READ;
+    }
+}
 @end

@@ -4,17 +4,14 @@
 #import "BookStatusChangeRequest.h"
 #import "ReadingBookDetailView.h"
 #import "BooksViewController.h"
+#import "WishBookDetailView.h"
+#import "ReadBookDetailView.h"
 
 
 @implementation BookDetailViewController {
     BookDetailView *detailView;
     DOUBook *book;
     BooksViewController *booksViewController;
-}
-
-- (void)loadView {
-    detailView = [[ReadingBookDetailView alloc] initWithBook:book andTarget:self];
-    self.view = detailView;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BooksViewController *)theBooksViewController {
@@ -24,6 +21,21 @@
         booksViewController = theBooksViewController;
     }
     return self;
+}
+
+- (void)loadView {
+    switch ([book status]) {
+        case READING:
+            detailView = [[ReadingBookDetailView alloc] initWithBook:book andTarget:self];
+            break;
+        case WISH:
+            detailView = [[WishBookDetailView alloc] initWithBook:book andTarget:self];
+            break;
+        case READ:
+            detailView = [[ReadBookDetailView alloc] initWithBook:book andTarget:self];
+            break;
+    }
+    self.view = detailView;
 }
 
 - (void)finishReading {
@@ -44,6 +56,6 @@
 - (void)bookChangeRequestDidFinish {
     NSLog(@"book change request finished");
     [[self navigationController] popViewControllerAnimated:YES];
-    [booksViewController bookStatusChanged: book];
+    [booksViewController bookStatusChanged:book];
 }
 @end

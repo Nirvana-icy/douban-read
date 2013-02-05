@@ -8,6 +8,13 @@
 
 #import "DOUObject.h"
 
+typedef enum {
+    READ,
+    WISH,
+    READING
+} BookStatus;
+
+
 @interface DOUBook : DOUObject
 
 @property (nonatomic, retain) UIImage *smallImage;
@@ -25,6 +32,8 @@
 - (NSString *)publisher;
 
 - (NSString *)smallImageUrl;
+
+- (BookStatus)status;
 
 
 @end
