@@ -41,7 +41,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DOUBook *book = [books objectAtIndex:(NSUInteger) [indexPath row]];
-    BookDetailViewController *bookDetailViewController = [[BookDetailViewController alloc] initWithBook:book];
+    BookDetailViewController *bookDetailViewController = [[BookDetailViewController alloc] initWithBook:book andBooksViewController:self];
     [self.navigationController pushViewController:bookDetailViewController animated:YES];
 }
 
@@ -63,6 +63,11 @@
 - (void)bookImageDidLoad:(UIImage *)image forIndexPath:(NSIndexPath *)path {
     BookCell *cell = (BookCell *) [[self tableView] cellForRowAtIndexPath:path];
     [cell updateImage:image];
+}
+
+- (void)bookStatusChanged:(DOUBook *)book{
+    [books removeObject:book];
+    [[self tableView] reloadData];
 }
 
 @end

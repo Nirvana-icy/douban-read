@@ -1,7 +1,14 @@
 #import <Foundation/Foundation.h>
 
 @class DOUBook;
+@class BookDetailViewController;
 
-@interface BookDetailView : UIView
-- (id)initWithBook:(DOUBook *)theBook;
+@interface BookDetailView : UIView{
+    DOUBook *book;
+    BookDetailViewController *target;
+}
+- (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget;
+
+- (void)addButtonsWithPositionY:(float)positionY;
+
 @end

@@ -17,6 +17,8 @@
 - (NSString *)author;
 
 
+- (NSString *)id;
+
 - (NSString *)authorIntro;
 
 

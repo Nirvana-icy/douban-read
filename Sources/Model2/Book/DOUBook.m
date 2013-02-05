@@ -25,6 +25,10 @@
     return [[self authors] componentsJoinedByString:@", "];
 }
 
+- (NSString *)id{
+    return [self book][@"id"];
+}
+
 - (NSString *)authorIntro {
     return [self book][@"author_intro"];
 }
