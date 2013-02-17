@@ -13,10 +13,13 @@
 		368671DB7740E95CAD608B95 /* BookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368679E92EB98D77D65A3170 /* BookDetailView.m */; };
 		3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672AAA2BDED70CA3EA456 /* WishViewController.m */; };
 		3686729E5DBF1D7349DA7259 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */; };
+		368672FA34048F3F3D43276D /* ShowPullingInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A333E1E8E2F8915E849 /* ShowPullingInfoCommand.m */; };
 		368673207F9B09DD921680AC /* ReadBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A9C27D62647A55CAC85 /* ReadBookDetailView.m */; };
 		368675B34EBBC057C5779E10 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 368674C8814DB5247CA3705E /* UILabel+Extension.m */; };
 		36867639B315BA98908F0B86 /* WishBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867BDDA14D3223606281CE /* WishBookDetailView.m */; };
+		3686771C6729C1639C946DC6 /* ShowNormalInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */; };
 		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
+		368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */; };
 		36867766B45152F31FF67727 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674AD2533298D25EE5820 /* whiteArrow.png */; };
 		368677AD80EDB01E9C75F26F /* BookImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368673ABD3DA971D266CDD84 /* BookImageRequest.m */; };
 		368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867F73378410EF47C081F5 /* NSString+ParseCategory.m */; };
@@ -234,9 +237,13 @@
 		368675E2F79F63D7D02AE962 /* BookImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageRequest.h; sourceTree = "<group>"; };
 		36867670A014FA01D37D768B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		368676D66017E79A01E1F0CF /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
+		36867892F843EA9C439AA862 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		3686795FE68775A045A348F1 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		368679608C1961C2527EB711 /* NSString+ParseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParseCategory.h"; sourceTree = "<group>"; };
 		368679E92EB98D77D65A3170 /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
+		368679F62F081169297E85F2 /* ShowNormalInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowNormalInfoCommand.h; sourceTree = "<group>"; };
+		36867A1905CA986005FCEF4F /* ShowPullingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPullingInfoCommand.h; sourceTree = "<group>"; };
+		36867A333E1E8E2F8915E849 /* ShowPullingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPullingInfoCommand.m; sourceTree = "<group>"; };
 		36867A7459170E2EBB87AF15 /* BookInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookInfoRequest.h; sourceTree = "<group>"; };
 		36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderLabel.m; sourceTree = "<group>"; };
 		36867A9C27D62647A55CAC85 /* ReadBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookDetailView.m; sourceTree = "<group>"; };
@@ -246,11 +253,14 @@
 		36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		36867BDDA14D3223606281CE /* WishBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishBookDetailView.m; sourceTree = "<group>"; };
 		36867C3F18496C628223EE12 /* WishBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishBookDetailView.h; sourceTree = "<group>"; };
+		36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLoadingInfoCommand.m; sourceTree = "<group>"; };
 		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		36867D685B444BA300B0A706 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		36867D72E3DF8225FA24116B /* BookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailView.h; sourceTree = "<group>"; };
+		36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowNormalInfoCommand.m; sourceTree = "<group>"; };
 		36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		36867EC9CA2FA9524F840D4F /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
+		36867F3DE9C85C640DD20A5C /* ShowLoadingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLoadingInfoCommand.h; sourceTree = "<group>"; };
 		36867F73378410EF47C081F5 /* NSString+ParseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ParseCategory.m"; sourceTree = "<group>"; };
 		49D22B1916B11A78003B5C67 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		49D22B1B16B11A7C003B5C67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -636,6 +646,7 @@
 				36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */,
 				36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */,
 				36867AD9EDE9A7F02A859266 /* RefreshHeaderLabel.h */,
+				36867D221E2EFCDFB859E1F9 /* Command */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,6 +679,20 @@
 				36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		36867D221E2EFCDFB859E1F9 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				368679F62F081169297E85F2 /* ShowNormalInfoCommand.h */,
+				36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */,
+				36867892F843EA9C439AA862 /* Command.h */,
+				36867A333E1E8E2F8915E849 /* ShowPullingInfoCommand.m */,
+				36867A1905CA986005FCEF4F /* ShowPullingInfoCommand.h */,
+				36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */,
+				36867F3DE9C85C640DD20A5C /* ShowLoadingInfoCommand.h */,
+			);
+			path = Command;
 			sourceTree = "<group>";
 		};
 		36867F17D95789D06EE05854 /* Model */ = {
@@ -1653,6 +1678,9 @@
 				36867639B315BA98908F0B86 /* WishBookDetailView.m in Sources */,
 				36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */,
 				36867D8406FE504E3A2FDABE /* RefreshHeaderLabel.m in Sources */,
+				3686771C6729C1639C946DC6 /* ShowNormalInfoCommand.m in Sources */,
+				368672FA34048F3F3D43276D /* ShowPullingInfoCommand.m in Sources */,
+				368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
