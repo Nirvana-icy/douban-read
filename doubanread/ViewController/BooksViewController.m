@@ -13,6 +13,7 @@
     NSMutableArray *books;
     BookInfoRequest *bookInfoRequest;
     RefreshHeaderView *refreshHeaderView;
+    BOOL isloading;
 }
 
 - (id)init {
@@ -91,11 +92,17 @@
 }
 
 - (void)loadMoreBooks {
+    isloading = YES;
+    [self performSelector:@selector(doneLoadMoreBooks) withObject:nil afterDelay:2.0];
+}
 
+- (BOOL)isLoading {
+    return isloading;
 }
 
 - (void)doneLoadMoreBooks {
-
+    isloading = NO;
+    [refreshHeaderView dataDidFinishLoading:self.tableView];
 }
 
 @end

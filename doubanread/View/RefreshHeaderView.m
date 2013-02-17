@@ -3,6 +3,7 @@
 #import "ShowNormalInfoCommand.h"
 #import "ShowPullingInfoCommand.h"
 #import "ShowLoadingInfoCommand.h"
+#import "BooksViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation RefreshHeaderView
@@ -68,7 +69,17 @@
     if (scrollView.contentOffset.y < -65.0f) {
         [self createFixedInsetForLoadingInfo:scrollView];
         [self acceptCommand:[ShowLoadingInfoCommand command]];
+        [self.delegate loadMoreBooks];
     }
+}
+
+- (void)dataDidFinishLoading:(UIScrollView *)scrollView{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+    [UIView commitAnimations];
+
+    [self acceptCommand:[ShowNormalInfoCommand command]];
 }
 
 - (void)createFixedInsetForLoadingInfo:(UIScrollView *)scrollView {

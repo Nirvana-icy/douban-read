@@ -18,4 +18,7 @@ typedef enum{
 - (void)viewDidScroll:(UIScrollView *)scrollView;
 
 - (void)viewDidEndDragging:(UIScrollView *)scrollView;
+
+- (void)dataDidFinishLoading:(UIScrollView *)scrollView;
+
 @end
