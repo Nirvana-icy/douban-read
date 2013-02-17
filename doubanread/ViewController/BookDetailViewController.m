@@ -53,6 +53,11 @@
     [request changeBook:[book id] toStatus:@"reading"];
 }
 
+- (void)delete{
+    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
+    [request deleteBook:[book id]];
+}
+
 - (void)bookChangeRequestDidFinish {
     NSLog(@"book change request finished");
     [[self navigationController] popViewControllerAnimated:YES];

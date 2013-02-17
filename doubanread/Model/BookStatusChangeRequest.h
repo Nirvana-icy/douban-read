@@ -6,5 +6,7 @@
 
 - (void)changeBook:(NSString *)bookId toStatus:(NSString *)status;
 
+- (void)deleteBook:(NSString *)bookId;
+
 
 @end
