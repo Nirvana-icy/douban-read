@@ -7,10 +7,12 @@
 #import "BookInfoRequest.h"
 #import "BookImageRequest.h"
 #import "BookDetailViewController.h"
+#import "RefreshHeaderView.h"
 
 @implementation BooksViewController {
     NSMutableArray *books;
     BookInfoRequest *bookInfoRequest;
+    RefreshHeaderView *refreshHeaderView;
 }
 
 - (id)init {
@@ -20,6 +22,16 @@
         bookInfoRequest = [[BookInfoRequest alloc] initWithDelegate:self];
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if (refreshHeaderView == nil) {
+        refreshHeaderView = [[RefreshHeaderView alloc] initWithFrame:
+                CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.bounds.size.width, self.tableView.bounds.size.height)];
+        refreshHeaderView.delegate = self;
+        [[self tableView] addSubview:refreshHeaderView];
+    }
 }
 
 - (void)bookRequestDidFinish:(NSArray *)theBooks {
@@ -60,14 +72,30 @@
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [refreshHeaderView viewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [refreshHeaderView viewDidEndDragging:scrollView];
+}
+
 - (void)bookImageDidLoad:(UIImage *)image forIndexPath:(NSIndexPath *)path {
     BookCell *cell = (BookCell *) [[self tableView] cellForRowAtIndexPath:path];
     [cell updateImage:image];
 }
 
-- (void)bookStatusChanged:(DOUBook *)book{
+- (void)bookStatusChanged:(DOUBook *)book {
     [books removeObject:book];
     [[self tableView] reloadData];
+}
+
+- (void)loadMoreBooks {
+
+}
+
+- (void)doneLoadMoreBooks {
+
 }
 
 @end

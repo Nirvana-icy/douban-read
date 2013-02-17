@@ -12,10 +12,12 @@
 		3686718DFD3394A4340FF4F1 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368675835DC2EAED704F1F52 /* MainController.m */; };
 		368671DB7740E95CAD608B95 /* BookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368679E92EB98D77D65A3170 /* BookDetailView.m */; };
 		3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672AAA2BDED70CA3EA456 /* WishViewController.m */; };
+		3686729E5DBF1D7349DA7259 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */; };
 		368673207F9B09DD921680AC /* ReadBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A9C27D62647A55CAC85 /* ReadBookDetailView.m */; };
 		368675B34EBBC057C5779E10 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 368674C8814DB5247CA3705E /* UILabel+Extension.m */; };
 		36867639B315BA98908F0B86 /* WishBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867BDDA14D3223606281CE /* WishBookDetailView.m */; };
 		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
+		36867766B45152F31FF67727 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674AD2533298D25EE5820 /* whiteArrow.png */; };
 		368677AD80EDB01E9C75F26F /* BookImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368673ABD3DA971D266CDD84 /* BookImageRequest.m */; };
 		368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867F73378410EF47C081F5 /* NSString+ParseCategory.m */; };
 		3686791B14CCD4FCEF7DB1DA /* BookInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867099C0B313F5215F3B37 /* BookInfoRequest.m */; };
@@ -23,7 +25,10 @@
 		36867C50E5C71E7036CDE4DB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686700443EAEF1C97A73988 /* WebViewController.m */; };
 		36867C8F2CC2EA859457E5EA /* ReadingBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867ACB32A121E667DA5BB0 /* ReadingBookDetailView.m */; };
 		36867D713884767460320FEF /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368676D66017E79A01E1F0CF /* ReadingViewController.m */; };
+		36867D8406FE504E3A2FDABE /* RefreshHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */; };
 		36867F1D0B2098229ECE0BD3 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */; };
+		36867F79C070A403C73ACFDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36867D685B444BA300B0A706 /* QuartzCore.framework */; };
+		36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */; };
 		49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1916B11A78003B5C67 /* libxml2.dylib */; };
 		49D22B1C16B11A7C003B5C67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1B16B11A7C003B5C67 /* libz.dylib */; };
 		49D22B1E16B11A88003B5C67 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1D16B11A88003B5C67 /* CFNetwork.framework */; };
@@ -213,6 +218,7 @@
 		36867107FB91F14574AF9E74 /* WishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishViewController.h; sourceTree = "<group>"; };
 		368671D88644C0AE12FDD506 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		368671EC3D9D515FBBE58CDB /* ReadBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookDetailView.h; sourceTree = "<group>"; };
+		3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderView.m; sourceTree = "<group>"; };
 		368672361E033DE447F057AB /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3686728B5EE67A0FD06830BB /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
 		368672AAA2BDED70CA3EA456 /* WishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishViewController.m; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 		368673ABD3DA971D266CDD84 /* BookImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookImageRequest.m; sourceTree = "<group>"; };
 		368673F548211995DFEE4E10 /* BookImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageRequestDelegate.h; sourceTree = "<group>"; };
 		3686741393BADC7A27ECC0B6 /* ReadingBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingBookDetailView.h; sourceTree = "<group>"; };
+		368674AD2533298D25EE5820 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		368674C8814DB5247CA3705E /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		368675835DC2EAED704F1F52 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		368675E2F79F63D7D02AE962 /* BookImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageRequest.h; sourceTree = "<group>"; };
@@ -231,11 +238,16 @@
 		368679608C1961C2527EB711 /* NSString+ParseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParseCategory.h"; sourceTree = "<group>"; };
 		368679E92EB98D77D65A3170 /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
 		36867A7459170E2EBB87AF15 /* BookInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookInfoRequest.h; sourceTree = "<group>"; };
+		36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderLabel.m; sourceTree = "<group>"; };
 		36867A9C27D62647A55CAC85 /* ReadBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookDetailView.m; sourceTree = "<group>"; };
 		36867ACB32A121E667DA5BB0 /* ReadingBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingBookDetailView.m; sourceTree = "<group>"; };
+		36867AD9EDE9A7F02A859266 /* RefreshHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderLabel.h; sourceTree = "<group>"; };
+		36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		36867BDDA14D3223606281CE /* WishBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishBookDetailView.m; sourceTree = "<group>"; };
 		36867C3F18496C628223EE12 /* WishBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishBookDetailView.h; sourceTree = "<group>"; };
 		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
+		36867D685B444BA300B0A706 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		36867D72E3DF8225FA24116B /* BookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailView.h; sourceTree = "<group>"; };
 		36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		36867EC9CA2FA9524F840D4F /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
@@ -588,6 +600,7 @@
 				49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */,
 				49F603A816B101680092D3BD /* UIKit.framework in Frameworks */,
 				49F603AA16B101680092D3BD /* Foundation.framework in Frameworks */,
+				36867F79C070A403C73ACFDA /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +632,10 @@
 				368671EC3D9D515FBBE58CDB /* ReadBookDetailView.h */,
 				36867BDDA14D3223606281CE /* WishBookDetailView.m */,
 				36867C3F18496C628223EE12 /* WishBookDetailView.h */,
+				3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */,
+				36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */,
+				36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */,
+				36867AD9EDE9A7F02A859266 /* RefreshHeaderLabel.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +659,15 @@
 				3686728B5EE67A0FD06830BB /* BookDetailViewController.h */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		36867AF1B69E24406496A53B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				368674AD2533298D25EE5820 /* whiteArrow.png */,
+				36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		36867F17D95789D06EE05854 /* Model */ = {
@@ -1262,16 +1288,11 @@
 		49F6039816B101680092D3BD = {
 			isa = PBXGroup;
 			children = (
-				49D22B2316B11A9A003B5C67 /* MobileCoreServices.framework */,
-				49D22B2116B11A93003B5C67 /* SystemConfiguration.framework */,
-				49D22B1F16B11A8D003B5C67 /* Security.framework */,
-				49D22B1D16B11A88003B5C67 /* CFNetwork.framework */,
-				49D22B1B16B11A7C003B5C67 /* libz.dylib */,
-				49D22B1916B11A78003B5C67 /* libxml2.dylib */,
 				49F603AD16B101680092D3BD /* doubanread */,
 				49F603CB16B101680092D3BD /* doubanreadTests */,
 				49F603A616B101680092D3BD /* Frameworks */,
 				49F603A416B101680092D3BD /* Products */,
+				36867AF1B69E24406496A53B /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1287,12 +1308,19 @@
 		49F603A616B101680092D3BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49D22B2316B11A9A003B5C67 /* MobileCoreServices.framework */,
+				49D22B2116B11A93003B5C67 /* SystemConfiguration.framework */,
+				49D22B1F16B11A8D003B5C67 /* Security.framework */,
+				49D22B1D16B11A88003B5C67 /* CFNetwork.framework */,
+				49D22B1B16B11A7C003B5C67 /* libz.dylib */,
+				49D22B1916B11A78003B5C67 /* libxml2.dylib */,
 				49D26A2616B16BEC00FDA186 /* OtherSources */,
 				49D26A7D16B16BEC00FDA186 /* Sources */,
 				49F603A716B101680092D3BD /* UIKit.framework */,
 				49F603A916B101680092D3BD /* Foundation.framework */,
 				49F603AB16B101680092D3BD /* CoreGraphics.framework */,
 				49F603C516B101680092D3BD /* SenTestingKit.framework */,
+				36867D685B444BA300B0A706 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1420,6 +1448,8 @@
 				49F603BA16B101680092D3BD /* Default.png in Resources */,
 				49F603BC16B101680092D3BD /* Default@2x.png in Resources */,
 				49F603BE16B101680092D3BD /* Default-568h@2x.png in Resources */,
+				36867766B45152F31FF67727 /* whiteArrow.png in Resources */,
+				3686729E5DBF1D7349DA7259 /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1621,6 +1651,8 @@
 				36867C8F2CC2EA859457E5EA /* ReadingBookDetailView.m in Sources */,
 				368673207F9B09DD921680AC /* ReadBookDetailView.m in Sources */,
 				36867639B315BA98908F0B86 /* WishBookDetailView.m in Sources */,
+				36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */,
+				36867D8406FE504E3A2FDABE /* RefreshHeaderLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
