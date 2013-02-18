@@ -53,7 +53,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         if (error) {
             return NO;
         }
-
+        NSLog(@"%@", parsedQuery);
         NSString *code = [parsedQuery objectForKey:@"code"];
         oAuthService.authorizationCode = code;
         [oAuthService validateAuthorizationCode];

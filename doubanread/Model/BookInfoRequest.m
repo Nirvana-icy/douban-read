@@ -2,6 +2,7 @@
 #import "DOUQuery.h"
 #import "DOUService.h"
 #import "DOUBookArray.h"
+#import "DOUAPIEngine.h"
 
 
 @implementation BookInfoRequest {
@@ -24,7 +25,8 @@
 }
 
 - (void)requestBooks:(NSString *)status withDelegateSelector:(SEL)delegateSelector {
-    NSString *subPath = @"/v2/book/user/dearwolf/collections";
+    int userId = [[DOUOAuthStore sharedInstance] userId];
+    NSString *subPath = [NSString stringWithFormat:@"/v2/book/user/%d/collections", userId];
     DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status, @"count" : @"20"}];
 
     DOUService *service = [DOUService sharedInstance];
