@@ -10,8 +10,11 @@
 
 - (void)bookStatusChanged:(DOUBook *)book;
 
-- (void)loadMoreBooks;
+- (void)retrieveMoreBooks;
 
-- (void)doneLoadMoreBooks;
+- (BOOL)isLoading;
+
+- (void)moreBookRequestDidFinish:(NSArray *)theBooks;
+
 
 @end

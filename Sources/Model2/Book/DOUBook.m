@@ -64,4 +64,13 @@
         return READ;
     }
 }
+
+- (BOOL)isEqual:(id)object {
+    if (![object isMemberOfClass:[DOUBook class]]){
+         return false;
+    }
+
+    return [self.id isEqualToString:[(DOUBook *)object id]];
+}
+
 @end

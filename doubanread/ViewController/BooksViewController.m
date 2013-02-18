@@ -13,7 +13,8 @@
     NSMutableArray *books;
     BookInfoRequest *bookInfoRequest;
     RefreshHeaderView *refreshHeaderView;
-    BOOL isloading;
+    BOOL isLoading;
+    NSString *bookStatus;
 }
 
 - (id)init {
@@ -35,13 +36,36 @@
     }
 }
 
+- (void)retrieveBooks:(NSString *)status {
+    bookStatus = status;
+    [bookInfoRequest retrieveBooks:status];
+}
+
+- (void)retrieveMoreBooks {
+    isLoading = YES;
+    [bookInfoRequest retrieveMoreBooks:bookStatus];
+}
+
 - (void)bookRequestDidFinish:(NSArray *)theBooks {
     [books addObjectsFromArray:theBooks];
     [[self tableView] reloadData];
 }
 
-- (void)retrieveBooks:(NSString *)status {
-    [bookInfoRequest retrieveBooks:status];
+
+- (void)moreBookRequestDidFinish:(NSArray *)theBooks {
+    NSLog(@"retrieve more books request did finish");
+    for(DOUBook *book in theBooks){
+        if (![books containsObject:book]){
+            [books insertObject:book atIndex:0];
+        }
+    }
+    isLoading = NO;
+    [refreshHeaderView dataDidFinishLoading:self.tableView];
+    [[self tableView] reloadData];
+}
+
+- (BOOL)isLoading {
+    return isLoading;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -89,20 +113,6 @@
 - (void)bookStatusChanged:(DOUBook *)book {
     [books removeObject:book];
     [[self tableView] reloadData];
-}
-
-- (void)loadMoreBooks {
-    isloading = YES;
-    [self performSelector:@selector(doneLoadMoreBooks) withObject:nil afterDelay:2.0];
-}
-
-- (BOOL)isLoading {
-    return isloading;
-}
-
-- (void)doneLoadMoreBooks {
-    isloading = NO;
-    [refreshHeaderView dataDidFinishLoading:self.tableView];
 }
 
 @end

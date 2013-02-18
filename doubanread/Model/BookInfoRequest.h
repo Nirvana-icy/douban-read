@@ -6,4 +6,5 @@
 
 - (void)retrieveBooks:(NSString *)status;
 
+- (void)retrieveMoreBooks:(NSString *)string;
 @end

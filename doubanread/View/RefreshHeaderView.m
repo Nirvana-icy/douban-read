@@ -66,10 +66,10 @@
 }
 
 - (void)viewDidEndDragging:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y < -65.0f) {
+    if (scrollView.contentOffset.y < -65.0f && ![self.delegate isLoading]) {
         [self createFixedInsetForLoadingInfo:scrollView];
         [self acceptCommand:[ShowLoadingInfoCommand command]];
-        [self.delegate loadMoreBooks];
+        [self.delegate retrieveMoreBooks];
     }
 }
 
