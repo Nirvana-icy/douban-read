@@ -1,6 +1,7 @@
 #import "BookCell.h"
 #import "DOUBook.h"
 #import "UILabel+Extension.h"
+#import "UIImage+Extension.h"
 
 @implementation BookCell {
     UIImageView *iconView;
@@ -39,29 +40,9 @@
 }
 
 - (void)redrawImage:(UIImage *)bookImage {
-    UIImage *cropped = [self cropImage:bookImage toWidth:IMAGE_MAX_WIDTH andHeight:IMAGE_MAX_HEIGHT];
+    UIImage *cropped = [bookImage cropToWidth:IMAGE_MAX_WIDTH andHeight:IMAGE_MAX_HEIGHT];
     [iconView setImage:cropped];
     [iconView setFrame:CGRectMake(0, 0, cropped.size.width, cropped.size.height)];
 }
 
-- (UIImage *)cropImage:(UIImage *)image toWidth:(int)width andHeight:(int)height {
-    CGFloat imageWidth = image.size.width;
-    CGFloat imageHeight = image.size.height;
-    CGFloat cropXStartPoint = 0.0f;
-    CGFloat cropYStartPoint = 0.0f;
-    if (imageWidth > width) {
-        cropXStartPoint = (imageWidth - width) / 2;
-    }
-    if (imageHeight > height) {
-        cropYStartPoint = (imageHeight - height) / 2;
-    }
-    CGRect rect = CGRectMake(cropXStartPoint, cropYStartPoint, width, height);
-    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], rect);
-
-    UIImage *cropped = [UIImage imageWithCGImage:imageRef];
-    if(imageRef){
-        CFRelease(imageRef);
-    }
-    return cropped;
-}
 @end
