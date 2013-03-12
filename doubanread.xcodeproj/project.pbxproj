@@ -32,6 +32,8 @@
 		36867F1D0B2098229ECE0BD3 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */; };
 		36867F79C070A403C73ACFDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36867D685B444BA300B0A706 /* QuartzCore.framework */; };
 		36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */; };
+		49225C5A16E0879800B81CE9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49225C5816E0879800B81CE9 /* icon.png */; };
+		49225C5B16E0879800B81CE9 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49225C5916E0879800B81CE9 /* icon@2x.png */; };
 		49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1916B11A78003B5C67 /* libxml2.dylib */; };
 		49D22B1C16B11A7C003B5C67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1B16B11A7C003B5C67 /* libz.dylib */; };
 		49D22B1E16B11A88003B5C67 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1D16B11A88003B5C67 /* CFNetwork.framework */; };
@@ -262,6 +264,8 @@
 		36867EC9CA2FA9524F840D4F /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		36867F3DE9C85C640DD20A5C /* ShowLoadingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLoadingInfoCommand.h; sourceTree = "<group>"; };
 		36867F73378410EF47C081F5 /* NSString+ParseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ParseCategory.m"; sourceTree = "<group>"; };
+		49225C5816E0879800B81CE9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../doubanread/icon.png; sourceTree = "<group>"; };
+		49225C5916E0879800B81CE9 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../doubanread/icon@2x.png"; sourceTree = "<group>"; };
 		49D22B1916B11A78003B5C67 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		49D22B1B16B11A7C003B5C67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		49D22B1D16B11A88003B5C67 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -675,6 +679,8 @@
 		36867AF1B69E24406496A53B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49225C5816E0879800B81CE9 /* icon.png */,
+				49225C5916E0879800B81CE9 /* icon@2x.png */,
 				368674AD2533298D25EE5820 /* whiteArrow.png */,
 				36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */,
 			);
@@ -1475,6 +1481,8 @@
 				49F603BE16B101680092D3BD /* Default-568h@2x.png in Resources */,
 				36867766B45152F31FF67727 /* whiteArrow.png in Resources */,
 				3686729E5DBF1D7349DA7259 /* whiteArrow@2x.png in Resources */,
+				49225C5A16E0879800B81CE9 /* icon.png in Resources */,
+				49225C5B16E0879800B81CE9 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
