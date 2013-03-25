@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #define IMAGE_MAX_WIDTH 65
-#define IMAGE_MAX_HEIGHT 80
+#define IMAGE_MAX_HEIGHT 90
 @class DOUBook;
 @interface BookCell : UITableViewCell
 
