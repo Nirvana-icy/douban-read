@@ -8,7 +8,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.navigationItem.title = @"在读";
+        self.navigationItem.title = @"我在读的书";
     }
     return self;
 }
