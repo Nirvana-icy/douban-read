@@ -16,11 +16,11 @@
 
 - (void)setup {
     iconView = [[UIImageView alloc] init];
-    [iconView setFrame:CGRectMake(0, 0, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT)];
+    [iconView setFrame:CGRectMake(5, 5, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT)];
     [self addSubview:iconView];
 
     titleLabel = [[UILabel alloc] init];
-    [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 5, 5, 320 - IMAGE_MAX_WIDTH - 5, 90)];
+    [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 10, 10, 320 - IMAGE_MAX_WIDTH - 5, 90)];
     [self addSubview:titleLabel];
 }
 
@@ -29,7 +29,7 @@
     [self redrawImage:bookImage];
 
     [titleLabel updateWithText:[theBook title]
-                                   andPosition:CGPointMake(IMAGE_MAX_WIDTH + 5, 5)
+                                   andPosition:CGPointMake(IMAGE_MAX_WIDTH + 10, 10)
                                    andMaxWidth:(320 - IMAGE_MAX_WIDTH - 5)];
     [self setNeedsLayout];
 }
@@ -42,7 +42,7 @@
 - (void)redrawImage:(UIImage *)bookImage {
     UIImage *cropped = [bookImage cropToWidth:IMAGE_MAX_WIDTH andHeight:IMAGE_MAX_HEIGHT];
     [iconView setImage:cropped];
-    [iconView setFrame:CGRectMake(0, 0, cropped.size.width, cropped.size.height)];
+    [iconView setFrame:CGRectMake(5, 5, cropped.size.width, cropped.size.height)];
 }
 
 @end
