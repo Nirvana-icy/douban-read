@@ -1,5 +1,3 @@
-#import "DOUService.h"
-#import "DOUQuery.h"
 #import "DOUBookArray.h"
 #import "DOUBook.h"
 #import "BooksViewController.h"
@@ -15,6 +13,7 @@
     RefreshHeaderView *refreshHeaderView;
     BOOL isLoading;
     NSString *bookStatus;
+    UIActivityIndicatorView *spinner;
 }
 
 - (id)init {
@@ -28,12 +27,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self startLoadingAnimation];
+
     if (refreshHeaderView == nil) {
         refreshHeaderView = [[RefreshHeaderView alloc] initWithFrame:
                 CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.bounds.size.width, self.tableView.bounds.size.height)];
         refreshHeaderView.delegate = self;
         [[self tableView] addSubview:refreshHeaderView];
     }
+}
+
+- (void)startLoadingAnimation {
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(150, 200);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+}
+
+- (void)stopLoadingAnimation {
+    dispatch_async(dispatch_get_main_queue(), ^(){
+        [spinner stopAnimating];
+    });
 }
 
 - (void)retrieveBooks:(NSString *)status {
@@ -48,6 +63,7 @@
 
 - (void)bookRequestDidFinish:(NSArray *)theBooks {
     [books addObjectsFromArray:theBooks];
+    [self stopLoadingAnimation];
     [[self tableView] reloadData];
 }
 
@@ -67,6 +83,7 @@
 - (BOOL)isLoading {
     return isLoading;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [books count];
