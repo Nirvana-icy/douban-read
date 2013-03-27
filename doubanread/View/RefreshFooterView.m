@@ -6,10 +6,12 @@
 #import "BooksViewController.h"
 
 @implementation RefreshFooterView {
-
+    UIScrollView *container;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithContainer:(UIScrollView *)theContainer{
+    container = theContainer;
+    CGRect frame =  CGRectMake(0.0f, container.contentSize.height, container.bounds.size.width, 200);
     self = [super initWithFrame:frame];
     if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -19,6 +21,10 @@
         [self acceptCommand:[ShowNormalInfoCommand command]];
     }
     return self;
+}
+
+- (void)relocate{
+    [self setFrame:CGRectMake(0.0f, container.contentSize.height, container.bounds.size.width, 200)];
 }
 
 - (void)acceptCommand:(id <Command>)command {
@@ -69,7 +75,7 @@
 
 - (void)createFixedInsetForLoadingInfo:(UIScrollView *)scrollView {
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:2];
+    [UIView setAnimationDuration:0.2];
     scrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 20.0f, 0.0f);
     [UIView commitAnimations];
 }

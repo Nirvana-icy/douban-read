@@ -8,5 +8,5 @@
 
 - (void)retrieveNewBooks:(NSString *)status;
 
-- (void)retrieveMoreBooks:(NSString *)string;
+- (void)retrieveMoreBooks:(NSString *)status withStartPoint:(int)startPoint;
 @end

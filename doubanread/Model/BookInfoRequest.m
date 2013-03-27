@@ -17,17 +17,21 @@
 }
 
 - (void)retrieveBooks:(NSString *)status {
-    [self requestBooks:status withDelegateSelector:@selector(bookRequestDidFinish:)];
+    [self requestBooks:status withDelegateSelector:@selector(bookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20"}];
 }
 
 - (void)retrieveNewBooks:(NSString *)status {
-    [self requestBooks:status withDelegateSelector:@selector(newBookRequestDidFinish:)];
+    [self requestBooks:status withDelegateSelector:@selector(newBookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20"}];
 }
 
-- (void)requestBooks:(NSString *)status withDelegateSelector:(SEL)delegateSelector {
+- (void)retrieveMoreBooks:(NSString *)status withStartPoint:(int)startPoint {
+    [self requestBooks:status withDelegateSelector:@selector(moreBookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20", @"start": [NSString stringWithFormat:@"%i", startPoint]}];
+}
+
+- (void)requestBooks:(NSString *)status withDelegateSelector:(SEL)delegateSelector parameters:(NSDictionary *)parameters {
     int userId = [[DOUOAuthStore sharedInstance] userId];
     NSString *subPath = [NSString stringWithFormat:@"/v2/book/user/%d/collections", userId];
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status, @"count" : @"20"}];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:parameters];
 
     DOUService *service = [DOUService sharedInstance];
     [service get:query callback:^(DOUHttpRequest *req) {
@@ -43,8 +47,4 @@
     }];
 }
 
-- (void)retrieveMoreBooks:(NSString *)status {
-    [self requestBooks:status withDelegateSelector:@selector(moreBookRequestDidFinish:)];
-
-}
 @end

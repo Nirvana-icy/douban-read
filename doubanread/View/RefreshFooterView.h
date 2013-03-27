@@ -9,6 +9,10 @@
 @property(nonatomic, strong) UILabel *statusLabel;
 @property(nonatomic) RefreshState refreshState;
 
+- (id)initWithContainer:(UIScrollView *)theContainer;
+
+- (void)relocate;
+
 - (void)viewDidScroll:(UIScrollView *)scrollView;
 
 - (void)viewDidEndDragging:(UIScrollView *)scrollView;

@@ -65,7 +65,7 @@
 
 - (void)retrieveMoreBooks {
     isLoading = YES;
-    [bookInfoRequest retrieveMoreBooks:bookStatus];
+    [bookInfoRequest retrieveMoreBooks:bookStatus withStartPoint:[books count]];
 }
 
 - (void)bookRequestDidFinish:(NSArray *)theBooks {
@@ -89,8 +89,11 @@
 
 - (void)moreBookRequestDidFinish:(NSArray *)theBooks{
     NSLog(@"retrieve more books request did finish");
-
+    for(DOUBook *book in theBooks){
+        [books addObject:book];
+    }
     isLoading = NO;
+    [self reloadData:[theBooks count]];
     [refreshFooterView dataDidFinishLoading:self.tableView];
 }
 
@@ -98,8 +101,7 @@
     [[self tableView] reloadData];
     if (amount % 20 == 0){
         if (refreshFooterView == nil) {
-            refreshFooterView = [[RefreshFooterView alloc] initWithFrame:
-                    CGRectMake(0.0f, self.tableView.contentSize.height, self.view.bounds.size.width, 200)];
+            refreshFooterView = [[RefreshFooterView alloc] initWithContainer:self.tableView];
             refreshFooterView.delegate = self;
             [[self tableView] addSubview:refreshFooterView];
         }
