@@ -1,7 +1,8 @@
 @class RefreshHeaderView;
+@class RefreshFooterView;
 
 @protocol Command <NSObject>
 
-- (void)execute:(RefreshHeaderView *)refreshHeaderView;
-
+- (void)executeHeader:(RefreshHeaderView *)refreshHeaderView;
+- (void)executeFooter:(RefreshFooterView *)refreshFooterView;
 @end

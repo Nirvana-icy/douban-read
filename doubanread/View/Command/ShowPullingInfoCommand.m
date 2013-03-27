@@ -1,6 +1,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ShowPullingInfoCommand.h"
 #import "RefreshHeaderView.h"
+#import "RefreshFooterView.h"
 
 @implementation ShowPullingInfoCommand
 
@@ -14,13 +15,18 @@
     }
 }
 
-- (void)execute:(RefreshHeaderView *)refreshHeaderView {
+- (void)executeHeader:(RefreshHeaderView *)refreshHeaderView {
     refreshHeaderView.refreshState = RefreshPulling;
     refreshHeaderView.statusLabel.text = @"Release to refresh...";
     [CATransaction begin];
     [CATransaction setAnimationDuration:0.18f];
     refreshHeaderView.arrowImage.transform = CATransform3DMakeRotation((CGFloat) ((M_PI / 180.0) * 180.0f), 0.0f, 0.0f, 1.0f);
     [CATransaction commit];
+}
+
+- (void)executeFooter:(RefreshFooterView *)refreshFooterView {
+    refreshFooterView.refreshState = RefreshPulling;
+    refreshFooterView.statusLabel.text = @"Release to refresh...";
 }
 
 

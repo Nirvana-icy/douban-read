@@ -6,11 +6,13 @@
 #import "BookImageRequest.h"
 #import "BookDetailViewController.h"
 #import "RefreshHeaderView.h"
+#import "RefreshFooterView.h"
 
 @implementation BooksViewController {
     NSMutableArray *books;
     BookInfoRequest *bookInfoRequest;
     RefreshHeaderView *refreshHeaderView;
+    RefreshFooterView *refreshFooterView;
     BOOL isLoading;
     NSString *bookStatus;
     UIActivityIndicatorView *spinner;
@@ -56,6 +58,11 @@
     [bookInfoRequest retrieveBooks:status];
 }
 
+- (void)retrieveNewBooks {
+    isLoading = YES;
+    [bookInfoRequest retrieveNewBooks:bookStatus];
+}
+
 - (void)retrieveMoreBooks {
     isLoading = YES;
     [bookInfoRequest retrieveMoreBooks:bookStatus];
@@ -64,12 +71,12 @@
 - (void)bookRequestDidFinish:(NSArray *)theBooks {
     [books addObjectsFromArray:theBooks];
     [self stopLoadingAnimation];
-    [[self tableView] reloadData];
+    [self reloadData:[theBooks count]];
 }
 
 
-- (void)moreBookRequestDidFinish:(NSArray *)theBooks {
-    NSLog(@"retrieve more books request did finish");
+- (void)newBookRequestDidFinish:(NSArray *)theBooks {
+    NSLog(@"retrieve new books request did finish");
     for(DOUBook *book in theBooks){
         if (![books containsObject:book]){
             [books insertObject:book atIndex:0];
@@ -77,7 +84,26 @@
     }
     isLoading = NO;
     [refreshHeaderView dataDidFinishLoading:self.tableView];
+    [self reloadData:[theBooks count]];
+}
+
+- (void)moreBookRequestDidFinish:(NSArray *)theBooks{
+    NSLog(@"retrieve more books request did finish");
+
+    isLoading = NO;
+    [refreshFooterView dataDidFinishLoading:self.tableView];
+}
+
+- (void)reloadData:(int)amount {
     [[self tableView] reloadData];
+    if (amount % 20 == 0){
+        if (refreshFooterView == nil) {
+            refreshFooterView = [[RefreshFooterView alloc] initWithFrame:
+                    CGRectMake(0.0f, self.tableView.contentSize.height, self.view.bounds.size.width, 200)];
+            refreshFooterView.delegate = self;
+            [[self tableView] addSubview:refreshFooterView];
+        }
+    }
 }
 
 - (BOOL)isLoading {
@@ -115,11 +141,21 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [refreshHeaderView viewDidScroll:scrollView];
+    CGPoint pt =scrollView.contentOffset;
+    if(pt.y < 0){
+        [refreshHeaderView viewDidScroll:scrollView];
+    }else if(pt.y > (scrollView.contentSize.height - self.view.bounds.size.height)){
+        [refreshFooterView viewDidScroll:scrollView];
+    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    [refreshHeaderView viewDidEndDragging:scrollView];
+    CGPoint pt =scrollView.contentOffset;
+    if(pt.y < 0){
+        [refreshHeaderView viewDidEndDragging:scrollView];
+    }else if(pt.y > (scrollView.contentSize.height - self.view.bounds.size.height)){
+        [refreshFooterView viewDidEndDragging:scrollView];
+    }
 }
 
 - (void)bookImageDidLoad:(UIImage *)image forIndexPath:(NSIndexPath *)path {

@@ -1,6 +1,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ShowNormalInfoCommand.h"
 #import "RefreshHeaderView.h"
+#import "RefreshFooterView.h"
 
 @implementation ShowNormalInfoCommand
 
@@ -14,7 +15,7 @@
     }
 }
 
-- (void)execute:(RefreshHeaderView *)refreshHeaderView {
+- (void)executeHeader:(RefreshHeaderView *)refreshHeaderView {
     refreshHeaderView.refreshState = RefreshNormal;
 
     refreshHeaderView.statusLabel.text = @"Pull down to refresh";
@@ -32,5 +33,11 @@
     [formatter setDateFormat:@"MM/dd/yyyy hh:mm"];
     refreshHeaderView.lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
 }
+
+- (void)executeFooter:(RefreshFooterView *)refreshFooterView {
+    refreshFooterView.refreshState = RefreshNormal;
+    refreshFooterView.statusLabel.text = @"More...";
+}
+
 
 @end

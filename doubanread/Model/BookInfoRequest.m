@@ -20,8 +20,8 @@
     [self requestBooks:status withDelegateSelector:@selector(bookRequestDidFinish:)];
 }
 
-- (void)retrieveMoreBooks:(NSString *)status {
-    [self requestBooks:status withDelegateSelector:@selector(moreBookRequestDidFinish:)];
+- (void)retrieveNewBooks:(NSString *)status {
+    [self requestBooks:status withDelegateSelector:@selector(newBookRequestDidFinish:)];
 }
 
 - (void)requestBooks:(NSString *)status withDelegateSelector:(SEL)delegateSelector {
@@ -43,4 +43,8 @@
     }];
 }
 
+- (void)retrieveMoreBooks:(NSString *)status {
+    [self requestBooks:status withDelegateSelector:@selector(moreBookRequestDidFinish:)];
+
+}
 @end

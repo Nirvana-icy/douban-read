@@ -1,54 +1,39 @@
-#import "RefreshHeaderView.h"
+#import "RefreshFooterView.h"
 #import "RefreshHeaderLabel.h"
 #import "ShowNormalInfoCommand.h"
-#import "ShowPullingInfoCommand.h"
 #import "ShowLoadingInfoCommand.h"
+#import "ShowPullingInfoCommand.h"
 #import "BooksViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
-@implementation RefreshHeaderView
+@implementation RefreshFooterView {
+
+}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.backgroundColor = [UIColor colorWithRed:244 green:244 blue:244 alpha:1.0];
-        [self buildLastUpdatedLabel:frame];
         [self buildStatusLabel:frame];
-        [self buildArrayImage:frame];
-        [self buildActivityView:frame];
+        [self buildActivityView];
         [self acceptCommand:[ShowNormalInfoCommand command]];
     }
     return self;
 }
 
 - (void)acceptCommand:(id <Command>)command {
-    [command executeHeader:self];
-}
-
-- (void)buildLastUpdatedLabel:(CGRect)frame {
-    _lastUpdatedLabel = [[RefreshHeaderLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, frame.size.width, 20.0f)];
-    _lastUpdatedLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-    [self addSubview:_lastUpdatedLabel];
+    [command executeFooter:self];
 }
 
 - (void)buildStatusLabel:(CGRect)frame {
-    _statusLabel = [[RefreshHeaderLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, frame.size.width, 20.0f)];
+    _statusLabel = [[RefreshHeaderLabel alloc] initWithFrame:CGRectMake(0.0f, 10.0f, frame.size.width, 20.0f)];
     _statusLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     [self addSubview:_statusLabel];
 }
 
-- (void)buildArrayImage:(CGRect)frame {
-    _arrowImage = [[CALayer alloc] init];
-    _arrowImage.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
-    _arrowImage.contents = (id) [UIImage imageNamed:@"blueArrow.png"].CGImage;
-    _arrowImage.contentsGravity = kCAGravityResizeAspect;
-    [self.layer addSublayer:_arrowImage];
-}
-
-- (void)buildActivityView:(CGRect)frame {
+- (void)buildActivityView {
     _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    _activityView.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
+    _activityView.frame = CGRectMake(25.0f, 10.0f, 20.0f, 20.0f);
     [self addSubview:_activityView];
 }
 
@@ -58,18 +43,19 @@
     if (self.refreshState == RefreshLoading) {
         [self createFixedInsetForLoadingInfo:scrollView];
     }
-    else if (scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0) {
+    else if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height)
+            && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height + 40)) {
         [self acceptCommand:[ShowNormalInfoCommand command]];
-    } else if (scrollView.contentOffset.y < -65.0f) {
+    }else if(scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 40)){
         [self acceptCommand:[ShowPullingInfoCommand command]];
     }
 }
 
 - (void)viewDidEndDragging:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y < -65.0f && ![self.delegate isLoading]) {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 40) && ![self.delegate isLoading]) {
         [self createFixedInsetForLoadingInfo:scrollView];
         [self acceptCommand:[ShowLoadingInfoCommand command]];
-        [self.delegate retrieveNewBooks];
+        [self.delegate retrieveMoreBooks];
     }
 }
 
@@ -78,18 +64,14 @@
     [UIView setAnimationDuration:0.3];
     [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
     [UIView commitAnimations];
-
     [self acceptCommand:[ShowNormalInfoCommand command]];
 }
 
 - (void)createFixedInsetForLoadingInfo:(UIScrollView *)scrollView {
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.2];
-    CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
-    offset = MIN(offset, 60);
-    scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
+    [UIView setAnimationDuration:2];
+    scrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 20.0f, 0.0f);
     [UIView commitAnimations];
 }
-
 
 @end
