@@ -32,7 +32,7 @@
 		36867C8F2CC2EA859457E5EA /* ReadingBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867ACB32A121E667DA5BB0 /* ReadingBookDetailView.m */; };
 		36867D713884767460320FEF /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368676D66017E79A01E1F0CF /* ReadingViewController.m */; };
 		36867D7B24675D302575782E /* RefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368674CEB4A4A2FAD69096DE /* RefreshFooterView.m */; };
-		36867D8406FE504E3A2FDABE /* RefreshHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */; };
+		36867D8406FE504E3A2FDABE /* RefreshLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A8496BDFD972BC35E2C /* RefreshLabel.m */; };
 		36867F1D0B2098229ECE0BD3 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */; };
 		36867F79C070A403C73ACFDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36867D685B444BA300B0A706 /* QuartzCore.framework */; };
 		36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */; };
@@ -256,10 +256,10 @@
 		36867A1905CA986005FCEF4F /* ShowPullingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPullingInfoCommand.h; sourceTree = "<group>"; };
 		36867A333E1E8E2F8915E849 /* ShowPullingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPullingInfoCommand.m; sourceTree = "<group>"; };
 		36867A7459170E2EBB87AF15 /* BookInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookInfoRequest.h; sourceTree = "<group>"; };
-		36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderLabel.m; sourceTree = "<group>"; };
+		36867A8496BDFD972BC35E2C /* RefreshLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshLabel.m; sourceTree = "<group>"; };
 		36867A9C27D62647A55CAC85 /* ReadBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookDetailView.m; sourceTree = "<group>"; };
 		36867ACB32A121E667DA5BB0 /* ReadingBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingBookDetailView.m; sourceTree = "<group>"; };
-		36867AD9EDE9A7F02A859266 /* RefreshHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderLabel.h; sourceTree = "<group>"; };
+		36867AD9EDE9A7F02A859266 /* RefreshLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshLabel.h; sourceTree = "<group>"; };
 		36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		36867BDDA14D3223606281CE /* WishBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishBookDetailView.m; sourceTree = "<group>"; };
@@ -656,8 +656,8 @@
 				36867C3F18496C628223EE12 /* WishBookDetailView.h */,
 				3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */,
 				36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */,
-				36867A8496BDFD972BC35E2C /* RefreshHeaderLabel.m */,
-				36867AD9EDE9A7F02A859266 /* RefreshHeaderLabel.h */,
+				36867A8496BDFD972BC35E2C /* RefreshLabel.m */,
+				36867AD9EDE9A7F02A859266 /* RefreshLabel.h */,
 				36867D221E2EFCDFB859E1F9 /* Command */,
 				36867359E84FF2062A47FD2E /* Extension */,
 				368674CEB4A4A2FAD69096DE /* RefreshFooterView.m */,
@@ -1712,7 +1712,7 @@
 				368673207F9B09DD921680AC /* ReadBookDetailView.m in Sources */,
 				36867639B315BA98908F0B86 /* WishBookDetailView.m in Sources */,
 				36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */,
-				36867D8406FE504E3A2FDABE /* RefreshHeaderLabel.m in Sources */,
+				36867D8406FE504E3A2FDABE /* RefreshLabel.m in Sources */,
 				3686771C6729C1639C946DC6 /* ShowNormalInfoCommand.m in Sources */,
 				368672FA34048F3F3D43276D /* ShowPullingInfoCommand.m in Sources */,
 				368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */,

@@ -1,5 +1,5 @@
 #import "RefreshHeaderView.h"
-#import "RefreshHeaderLabel.h"
+#import "RefreshLabel.h"
 #import "ShowNormalInfoCommand.h"
 #import "ShowPullingInfoCommand.h"
 #import "ShowLoadingInfoCommand.h"
@@ -27,13 +27,13 @@
 }
 
 - (void)buildLastUpdatedLabel:(CGRect)frame {
-    _lastUpdatedLabel = [[RefreshHeaderLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, frame.size.width, 20.0f)];
+    _lastUpdatedLabel = [[RefreshLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, frame.size.width, 20.0f)];
     _lastUpdatedLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     [self addSubview:_lastUpdatedLabel];
 }
 
 - (void)buildStatusLabel:(CGRect)frame {
-    _statusLabel = [[RefreshHeaderLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, frame.size.width, 20.0f)];
+    _statusLabel = [[RefreshLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, frame.size.width, 20.0f)];
     _statusLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     [self addSubview:_statusLabel];
 }

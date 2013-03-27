@@ -1,5 +1,5 @@
 #import "RefreshFooterView.h"
-#import "RefreshHeaderLabel.h"
+#import "RefreshLabel.h"
 #import "ShowNormalInfoCommand.h"
 #import "ShowLoadingInfoCommand.h"
 #import "ShowPullingInfoCommand.h"
@@ -32,7 +32,7 @@
 }
 
 - (void)buildStatusLabel:(CGRect)frame {
-    _statusLabel = [[RefreshHeaderLabel alloc] initWithFrame:CGRectMake(0.0f, 10.0f, frame.size.width, 20.0f)];
+    _statusLabel = [[RefreshLabel alloc] initWithFrame:CGRectMake(0.0f, 10.0f, frame.size.width, 20.0f)];
     _statusLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     [self addSubview:_statusLabel];
 }
