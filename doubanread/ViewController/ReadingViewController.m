@@ -9,6 +9,7 @@
     self = [super init];
     if (self) {
         self.navigationItem.title = @"我在读的书";
+        bookStatus = @"reading";
     }
     return self;
 }

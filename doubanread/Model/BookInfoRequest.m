@@ -3,6 +3,7 @@
 #import "DOUService.h"
 #import "DOUBookArray.h"
 #import "DOUAPIEngine.h"
+#import "BooksViewController.h"
 
 
 @implementation BookInfoRequest {
@@ -17,18 +18,18 @@
 }
 
 - (void)retrieveBooks:(NSString *)status {
-    [self requestBooks:status withDelegateSelector:@selector(bookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20"}];
+    [self requestBooksWithDelegateSelector:@selector(bookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20"}];
 }
 
 - (void)retrieveNewBooks:(NSString *)status {
-    [self requestBooks:status withDelegateSelector:@selector(newBookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20"}];
+    [self requestBooksWithDelegateSelector:@selector(newBookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20"}];
 }
 
 - (void)retrieveMoreBooks:(NSString *)status withStartPoint:(int)startPoint {
-    [self requestBooks:status withDelegateSelector:@selector(moreBookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20", @"start": [NSString stringWithFormat:@"%i", startPoint]}];
+    [self requestBooksWithDelegateSelector:@selector(moreBookRequestDidFinish:) parameters:@{@"status" : status, @"count" : @"20", @"start" : [NSString stringWithFormat:@"%i", startPoint]}];
 }
 
-- (void)requestBooks:(NSString *)status withDelegateSelector:(SEL)delegateSelector parameters:(NSDictionary *)parameters {
+- (void)requestBooksWithDelegateSelector:(SEL)delegateSelector parameters:(NSDictionary *)parameters {
     int userId = [[DOUOAuthStore sharedInstance] userId];
     NSString *subPath = [NSString stringWithFormat:@"/v2/book/user/%d/collections", userId];
     DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:parameters];
@@ -36,13 +37,15 @@
     DOUService *service = [DOUService sharedInstance];
     [service get:query callback:^(DOUHttpRequest *req) {
         NSString *responseString = [req responseString];
-        NSLog(@"str:%@", responseString);
+        NSLog(@"str: %@", responseString);
         NSError *error = [req doubanError];
         if (!error) {
             DOUBookArray *array = [[DOUBookArray alloc] initWithString:responseString];
             if ([delegate respondsToSelector:delegateSelector]) {
                 [delegate performSelector:delegateSelector withObject:[array objectArray]];
             }
+        }else{
+            [delegate connectionFailed];
         }
     }];
 }

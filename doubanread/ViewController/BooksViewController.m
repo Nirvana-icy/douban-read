@@ -14,7 +14,6 @@
     RefreshHeaderView *refreshHeaderView;
     RefreshFooterView *refreshFooterView;
     BOOL isLoading;
-    NSString *bookStatus;
     UIActivityIndicatorView *spinner;
 }
 
@@ -29,7 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self startLoadingAnimation];
 
     if (refreshHeaderView == nil) {
         refreshHeaderView = [[RefreshHeaderView alloc] initWithFrame:
@@ -53,9 +51,9 @@
     });
 }
 
-- (void)retrieveBooks:(NSString *)status {
-    bookStatus = status;
-    [bookInfoRequest retrieveBooks:status];
+- (void)retrieveBooks {
+    [self startLoadingAnimation];
+    [bookInfoRequest retrieveBooks:bookStatus];
 }
 
 - (void)retrieveNewBooks {
@@ -95,6 +93,16 @@
     isLoading = NO;
     [self reloadData:[theBooks count]];
     [refreshFooterView dataDidFinishLoading:self.tableView];
+}
+
+- (void)connectionFailed {
+    NSLog(@"connection failed");
+    isLoading = NO;
+    [refreshHeaderView dataDidFinishLoading:self.tableView];
+    [refreshFooterView dataDidFinishLoading:self.tableView];
+    [self stopLoadingAnimation];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:@"Network connection failed, please try again later" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alertView show];
 }
 
 - (void)reloadData:(int)amount {

@@ -83,9 +83,7 @@
 }
 
 - (void)loadBooks{
-    [readingViewController retrieveBooks:@"reading"];
-    [wishViewController retrieveBooks:@"wish"];
-    [readViewController retrieveBooks:@"read"];
+    [readingViewController retrieveBooks];
 }
 
 @end

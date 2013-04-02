@@ -4,9 +4,11 @@
 @class DOUBook;
 
 
-@interface BooksViewController : UITableViewController<BookImageRequestDelegate>
+@interface BooksViewController : UITableViewController<BookImageRequestDelegate>{
+    NSString *bookStatus;
+}
 
-- (void)retrieveBooks:(NSString *)status;
+- (void)retrieveBooks;
 
 - (void)bookStatusChanged:(DOUBook *)book;
 
@@ -22,4 +24,5 @@
 - (void)moreBookRequestDidFinish:(NSArray *)theBooks;
 
 
+- (void)connectionFailed;
 @end
