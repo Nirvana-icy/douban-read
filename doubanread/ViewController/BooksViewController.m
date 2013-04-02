@@ -107,7 +107,7 @@
 
 - (void)reloadData:(int)amount {
     [[self tableView] reloadData];
-    if (amount % 20 == 0){
+    if (amount % 20 == 0 && amount != 0){
         if (refreshFooterView == nil) {
             refreshFooterView = [[RefreshFooterView alloc] initWithContainer:self.tableView];
             refreshFooterView.delegate = self;

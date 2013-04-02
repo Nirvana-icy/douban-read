@@ -201,7 +201,6 @@
 		49F603BA16B101680092D3BD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F603B916B101680092D3BD /* Default.png */; };
 		49F603BC16B101680092D3BD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F603BB16B101680092D3BD /* Default@2x.png */; };
 		49F603BE16B101680092D3BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F603BD16B101680092D3BD /* Default-568h@2x.png */; };
-		49F603C616B101680092D3BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603C516B101680092D3BD /* SenTestingKit.framework */; };
 		49F603C716B101680092D3BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603A716B101680092D3BD /* UIKit.framework */; };
 		49F603C816B101680092D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603A916B101680092D3BD /* Foundation.framework */; };
 		49F603D016B101680092D3BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F603CE16B101680092D3BD /* InfoPlist.strings */; };
@@ -603,7 +602,6 @@
 		49F603BB16B101680092D3BD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		49F603BD16B101680092D3BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49F603C416B101680092D3BD /* doubanreadTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = doubanreadTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49F603C516B101680092D3BD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		49F603CD16B101680092D3BD /* doubanreadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "doubanreadTests-Info.plist"; sourceTree = "<group>"; };
 		49F603CF16B101680092D3BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49F603D116B101680092D3BD /* doubanreadTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = doubanreadTests.h; sourceTree = "<group>"; };
@@ -632,7 +630,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49F603C616B101680092D3BD /* SenTestingKit.framework in Frameworks */,
 				49F603C716B101680092D3BD /* UIKit.framework in Frameworks */,
 				49F603C816B101680092D3BD /* Foundation.framework in Frameworks */,
 			);
@@ -674,7 +671,6 @@
 				3686796CDE8E81C5BACE0229 /* UIImage+Extension.m */,
 				36867F8B93D4514383DF0181 /* UIImage+Extension.h */,
 			);
-			lastKnownFileType = text;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -1375,7 +1371,6 @@
 				49F603A716B101680092D3BD /* UIKit.framework */,
 				49F603A916B101680092D3BD /* Foundation.framework */,
 				49F603AB16B101680092D3BD /* CoreGraphics.framework */,
-				49F603C516B101680092D3BD /* SenTestingKit.framework */,
 				36867D685B444BA300B0A706 /* QuartzCore.framework */,
 			);
 			name = Frameworks;

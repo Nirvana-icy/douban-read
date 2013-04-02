@@ -17,6 +17,8 @@
 - (void)retrieveMoreBooks;
 
 
+- (void)bookRequestDidFinish:(NSArray *)theBooks;
+
 - (BOOL)isLoading;
 
 - (void)newBookRequestDidFinish:(NSArray *)theBooks;
