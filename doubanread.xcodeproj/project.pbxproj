@@ -588,7 +588,7 @@
 		49D26B7B16B16BEC00FDA186 /* DOUOAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUOAuthService.m; sourceTree = "<group>"; };
 		49D26B7C16B16BEC00FDA186 /* DOUOAuthStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUOAuthStore.h; sourceTree = "<group>"; };
 		49D26B7D16B16BEC00FDA186 /* DOUOAuthStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUOAuthStore.m; sourceTree = "<group>"; };
-		49F603A316B101680092D3BD /* doubanread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doubanread.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F603A316B101680092D3BD /* 豆瓣阅历.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "豆瓣阅历.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F603A716B101680092D3BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F603A916B101680092D3BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49F603AB16B101680092D3BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1351,7 +1351,7 @@
 		49F603A416B101680092D3BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49F603A316B101680092D3BD /* doubanread.app */,
+				49F603A316B101680092D3BD /* 豆瓣阅历.app */,
 				49F603C416B101680092D3BD /* doubanreadTests.octest */,
 			);
 			name = Products;
@@ -1441,7 +1441,7 @@
 			);
 			name = doubanread;
 			productName = doubanread;
-			productReference = 49F603A316B101680092D3BD /* doubanread.app */;
+			productReference = 49F603A316B101680092D3BD /* 豆瓣阅历.app */;
 			productType = "com.apple.product-type.application";
 		};
 		49F603C316B101680092D3BD /* doubanreadTests */ = {
@@ -1828,7 +1828,7 @@
 					"-all_load",
 					"$(FRANK_LDFLAGS)",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "豆瓣阅历";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1852,7 +1852,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "豆瓣阅历";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
