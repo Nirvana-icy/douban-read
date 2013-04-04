@@ -4,6 +4,7 @@
 #import "ReadingViewController.h"
 #import "WishViewController.h"
 #import "ReadViewController.h"
+#import "SearchViewController.h"
 
 #define kAPIKey @"03aa678cc0ae159a0aff36a6420a40ce"
 #define kPrivateKey @"0bed26e34a5bfdec"
@@ -14,6 +15,7 @@
     ReadingViewController *readingViewController;
     WishViewController *wishViewController;
     ReadViewController *readViewController;
+    SearchViewController *searchViewController;
     DOUService *service;
     DOUOAuthService *oAuthService;
 }
@@ -26,6 +28,8 @@
         readingViewController = [[ReadingViewController alloc] init];
         wishViewController = [[WishViewController alloc] init];
         readViewController = [[ReadViewController alloc] init];
+        searchViewController = [[SearchViewController alloc] init];
+
         UINavigationController *readingsNavigationController = [[UINavigationController alloc] initWithRootViewController:readingViewController];
         [readingsNavigationController.tabBarItem setTitle:@"在读"];
 
@@ -35,7 +39,10 @@
         UINavigationController *readNavigationController = [[UINavigationController alloc] initWithRootViewController:readViewController];
         [readNavigationController.tabBarItem setTitle:@"读过"];
 
-        [self setViewControllers:@[readingsNavigationController, wishNavigationController, readNavigationController]];
+        UINavigationController *searchNavigationController = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+        [searchNavigationController.tabBarItem setTitle:@"搜索"];
+
+        [self setViewControllers:@[readingsNavigationController, wishNavigationController, readNavigationController, searchNavigationController]];
     }
     return self;
 }

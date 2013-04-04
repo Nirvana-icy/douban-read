@@ -38,6 +38,7 @@
 		36867FC6C64537EAB01C17EA /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */; };
 		49225C5A16E0879800B81CE9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49225C5816E0879800B81CE9 /* icon.png */; };
 		49225C5B16E0879800B81CE9 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49225C5916E0879800B81CE9 /* icon@2x.png */; };
+		496D87FD170DC1EF0065F7C9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686793FF3DC7A68FE8B1089 /* SearchViewController.m */; };
 		49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1916B11A78003B5C67 /* libxml2.dylib */; };
 		49D22B1C16B11A7C003B5C67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1B16B11A7C003B5C67 /* libz.dylib */; };
 		49D22B1E16B11A88003B5C67 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1D16B11A88003B5C67 /* CFNetwork.framework */; };
@@ -247,6 +248,7 @@
 		3686773FF579E8D9749AF2B8 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 		368677F8EF85CC0C463A0E7B /* RefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooterView.h; sourceTree = "<group>"; };
 		36867892F843EA9C439AA862 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		3686793FF3DC7A68FE8B1089 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		3686795FE68775A045A348F1 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		368679608C1961C2527EB711 /* NSString+ParseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParseCategory.h"; sourceTree = "<group>"; };
 		3686796CDE8E81C5BACE0229 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		36867A8496BDFD972BC35E2C /* RefreshLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshLabel.m; sourceTree = "<group>"; };
 		36867A9C27D62647A55CAC85 /* ReadBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookDetailView.m; sourceTree = "<group>"; };
 		36867ACB32A121E667DA5BB0 /* ReadingBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingBookDetailView.m; sourceTree = "<group>"; };
+		36867AD0AC97BE9507E105A9 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		36867AD9EDE9A7F02A859266 /* RefreshLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshLabel.h; sourceTree = "<group>"; };
 		36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
@@ -691,6 +694,8 @@
 				36867CEE3B3A15938D814184 /* ReadViewController.h */,
 				36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */,
 				3686728B5EE67A0FD06830BB /* BookDetailViewController.h */,
+				3686793FF3DC7A68FE8B1089 /* SearchViewController.m */,
+				36867AD0AC97BE9507E105A9 /* SearchViewController.h */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1713,6 +1718,7 @@
 				368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */,
 				368679CADFE374E56E9235E8 /* UIImage+Extension.m in Sources */,
 				36867D7B24675D302575782E /* RefreshFooterView.m in Sources */,
+				496D87FD170DC1EF0065F7C9 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

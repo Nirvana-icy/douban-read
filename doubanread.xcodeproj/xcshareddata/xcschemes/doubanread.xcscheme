@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "49F603A216B101680092D3BD"
-               BuildableName = "doubanread.app"
+               BuildableName = "&#35910;&#29923;&#38405;&#21382;.app"
                BlueprintName = "doubanread"
                ReferencedContainer = "container:doubanread.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49F603A216B101680092D3BD"
-            BuildableName = "doubanread.app"
+            BuildableName = "&#35910;&#29923;&#38405;&#21382;.app"
             BlueprintName = "doubanread"
             ReferencedContainer = "container:doubanread.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49F603A216B101680092D3BD"
-            BuildableName = "doubanread.app"
+            BuildableName = "&#35910;&#29923;&#38405;&#21382;.app"
             BlueprintName = "doubanread"
             ReferencedContainer = "container:doubanread.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49F603A216B101680092D3BD"
-            BuildableName = "doubanread.app"
+            BuildableName = "&#35910;&#29923;&#38405;&#21382;.app"
             BlueprintName = "doubanread"
             ReferencedContainer = "container:doubanread.xcodeproj">
          </BuildableReference>
