@@ -3,6 +3,7 @@
 @implementation SearchViewController {
     UISearchBar *searchBar;
     UITableView *theTableView;
+    UISearchDisplayController *theSearchDisplayController;
 }
 
 - (id)init{
@@ -28,6 +29,7 @@
     [theTableView addSubview:searchBar];
 
     theTableView.scrollIndicatorInsets = UIEdgeInsetsMake(CGRectGetHeight(searchBar.bounds), 0, 0, 0);
+    theSearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -37,5 +39,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
+
 
 @end
