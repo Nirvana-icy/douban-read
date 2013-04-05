@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 
 @class DOUBook;
-@class BooksViewController;
+@class BookStatusViewController;
 
 @interface BookDetailViewController : UIViewController
-- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BooksViewController *)theBooksViewController;
+- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookStatusViewController *)theBooksViewController;
 
 - (void)finishReading;
 

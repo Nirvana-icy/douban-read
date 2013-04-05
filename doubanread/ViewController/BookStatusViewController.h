@@ -4,7 +4,7 @@
 @class DOUBook;
 
 
-@interface BooksViewController : UITableViewController<BookImageRequestDelegate>{
+@interface BookStatusViewController : UITableViewController<BookImageRequestDelegate>{
     NSString *bookStatus;
 }
 

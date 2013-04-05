@@ -3,7 +3,7 @@
 #import "ShowNormalInfoCommand.h"
 #import "ShowLoadingInfoCommand.h"
 #import "ShowPullingInfoCommand.h"
-#import "BooksViewController.h"
+#import "BookStatusViewController.h"
 
 @implementation RefreshFooterView {
     UIScrollView *container;

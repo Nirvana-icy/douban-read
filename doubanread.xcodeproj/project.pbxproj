@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36867087128C4CCEBEF57738 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867398D943679393F750E2 /* BooksViewController.m */; };
+		36867087128C4CCEBEF57738 /* BookStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867398D943679393F750E2 /* BookStatusViewController.m */; };
 		368670CAFC75F0262BA66154 /* BookStatusChangeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368670E729FC8694D13CB082 /* BookStatusChangeRequest.m */; };
 		3686718DFD3394A4340FF4F1 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368675835DC2EAED704F1F52 /* MainController.m */; };
 		36867198AFE6B3B0B9AB56E1 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867517C4810D5CB858C667 /* blueArrow.png */; };
@@ -232,8 +232,8 @@
 		3686728B5EE67A0FD06830BB /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
 		368672AAA2BDED70CA3EA456 /* WishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishViewController.m; sourceTree = "<group>"; };
 		36867312A5CFA9A7B2C026F2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		368673379C2B28F3BAD5389B /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
-		36867398D943679393F750E2 /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
+		368673379C2B28F3BAD5389B /* BookStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStatusViewController.h; sourceTree = "<group>"; };
+		36867398D943679393F750E2 /* BookStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStatusViewController.m; sourceTree = "<group>"; };
 		368673ABD3DA971D266CDD84 /* BookImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookImageRequest.m; sourceTree = "<group>"; };
 		368673F548211995DFEE4E10 /* BookImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageRequestDelegate.h; sourceTree = "<group>"; };
 		3686741393BADC7A27ECC0B6 /* ReadingBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingBookDetailView.h; sourceTree = "<group>"; };
@@ -680,8 +680,8 @@
 		36867895723368B6077C1039 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				36867398D943679393F750E2 /* BooksViewController.m */,
-				368673379C2B28F3BAD5389B /* BooksViewController.h */,
+				36867398D943679393F750E2 /* BookStatusViewController.m */,
+				368673379C2B28F3BAD5389B /* BookStatusViewController.h */,
 				368675835DC2EAED704F1F52 /* MainController.m */,
 				368672361E033DE447F057AB /* MainController.h */,
 				3686700443EAEF1C97A73988 /* WebViewController.m */,
@@ -1546,7 +1546,7 @@
 			files = (
 				49F603B416B101680092D3BD /* main.m in Sources */,
 				49F603B816B101680092D3BD /* AppDelegate.m in Sources */,
-				36867087128C4CCEBEF57738 /* BooksViewController.m in Sources */,
+				36867087128C4CCEBEF57738 /* BookStatusViewController.m in Sources */,
 				3686718DFD3394A4340FF4F1 /* MainController.m in Sources */,
 				36867C50E5C71E7036CDE4DB /* WebViewController.m in Sources */,
 				368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */,

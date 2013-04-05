@@ -1,6 +1,6 @@
 #import "DOUBookArray.h"
 #import "DOUBook.h"
-#import "BooksViewController.h"
+#import "BookStatusViewController.h"
 #import "BookCell.h"
 #import "BookInfoRequest.h"
 #import "BookImageRequest.h"
@@ -8,7 +8,7 @@
 #import "RefreshHeaderView.h"
 #import "RefreshFooterView.h"
 
-@implementation BooksViewController {
+@implementation BookStatusViewController {
     NSMutableArray *books;
     BookInfoRequest *bookInfoRequest;
     RefreshHeaderView *refreshHeaderView;

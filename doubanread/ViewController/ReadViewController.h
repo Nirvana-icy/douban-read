@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "BooksViewController.h"
+#import "BookStatusViewController.h"
 
 
-@interface ReadViewController : BooksViewController
+@interface ReadViewController : BookStatusViewController
 @end

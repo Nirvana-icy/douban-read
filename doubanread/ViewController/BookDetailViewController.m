@@ -3,7 +3,7 @@
 #import "DOUBook.h"
 #import "BookStatusChangeRequest.h"
 #import "ReadingBookDetailView.h"
-#import "BooksViewController.h"
+#import "BookStatusViewController.h"
 #import "WishBookDetailView.h"
 #import "ReadBookDetailView.h"
 
@@ -11,10 +11,10 @@
 @implementation BookDetailViewController {
     BookDetailView *detailView;
     DOUBook *book;
-    BooksViewController *booksViewController;
+    BookStatusViewController *booksViewController;
 }
 
-- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BooksViewController *)theBooksViewController {
+- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookStatusViewController *)theBooksViewController {
     self = [super init];
     if (self) {
         book = theBook;

@@ -3,7 +3,7 @@
 #import "DOUService.h"
 #import "DOUBookArray.h"
 #import "DOUAPIEngine.h"
-#import "BooksViewController.h"
+#import "BookStatusViewController.h"
 
 
 @implementation BookInfoRequest {

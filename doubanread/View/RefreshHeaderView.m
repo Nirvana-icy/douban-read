@@ -3,7 +3,7 @@
 #import "ShowNormalInfoCommand.h"
 #import "ShowPullingInfoCommand.h"
 #import "ShowLoadingInfoCommand.h"
-#import "BooksViewController.h"
+#import "BookStatusViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation RefreshHeaderView
