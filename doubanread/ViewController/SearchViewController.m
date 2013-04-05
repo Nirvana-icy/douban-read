@@ -40,5 +40,8 @@
     return nil;
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar1 {
+    NSLog(@"%@", [searchBar1 text]);
+}
 
 @end
