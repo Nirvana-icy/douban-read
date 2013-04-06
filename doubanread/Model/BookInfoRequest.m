@@ -4,6 +4,7 @@
 #import "DOUBookArray.h"
 #import "DOUAPIEngine.h"
 #import "BookStatusViewController.h"
+#import "DOUBookArrayOfSearchResult.h"
 
 #define COUNT @"20"
 
@@ -34,27 +35,30 @@
 
 
 - (void)requestBooksWithSelector:(SEL)selector andParameters:(NSDictionary *)parameters {
-    DOUQuery *query= [self queryBookForUser:parameters];
-    [self queryBookWith:query andSelector:selector];
+    DOUQuery *query = [self queryBookForUser:parameters];
+    [self queryBookWith:query andSelector:selector convertResponseToArray:^NSArray *(NSString *responseString) {
+        return [[[DOUBookArray alloc] initWithString:responseString] objectArray];
+    }];
 }
 
-- (void)searchBooks:(NSString *)key{
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:@"/v2/book/search" parameters:@{@"q":key, @"count": COUNT}];
-    [self queryBookWith:query andSelector:@selector(bookRequestDidFinish:)];
+- (void)searchBooks:(NSString *)key {
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:@"/v2/book/search" parameters:@{@"q" : key, @"count" : COUNT}];
+    [self queryBookWith:query andSelector:@selector(bookRequestDidFinish:) convertResponseToArray:^NSArray *(NSString *responseString){
+        return [[[DOUBookArrayOfSearchResult alloc] initWithString:responseString] objectArray];
+    }];
 }
 
-- (void)queryBookWith:(DOUQuery *)query andSelector:(SEL)selector {
+- (void)queryBookWith:(DOUQuery *)query andSelector:(SEL)selector convertResponseToArray:(NSArray * (^)(NSString *responseString))convertBlock {
     DOUService *service = [DOUService sharedInstance];
     [service get:query callback:^(DOUHttpRequest *req) {
         NSString *responseString = [req responseString];
         NSLog(@"str: %@", responseString);
         NSError *error = [req doubanError];
         if (!error) {
-            DOUBookArray *array = [[DOUBookArray alloc] initWithString:responseString];
             if ([delegate respondsToSelector:selector]) {
-                [delegate performSelector:selector withObject:[array objectArray]];
+                [delegate performSelector:selector withObject:convertBlock(responseString)];
             }
-        }else{
+        } else {
             [delegate connectionFailed];
         }
     }];
