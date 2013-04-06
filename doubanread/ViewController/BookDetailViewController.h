@@ -2,9 +2,10 @@
 
 @class DOUBook;
 @class BookStatusViewController;
+@class BookListViewController;
 
 @interface BookDetailViewController : UIViewController
-- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookStatusViewController *)theBooksViewController;
+- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookListViewController *)theBooksViewController;
 
 - (void)finishReading;
 

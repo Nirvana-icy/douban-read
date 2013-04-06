@@ -7,14 +7,13 @@
 #import "WishBookDetailView.h"
 #import "ReadBookDetailView.h"
 
-
 @implementation BookDetailViewController {
     BookDetailView *detailView;
     DOUBook *book;
-    BookStatusViewController *booksViewController;
+    BookListViewController *booksViewController;
 }
 
-- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookStatusViewController *)theBooksViewController {
+- (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookListViewController *)theBooksViewController {
     self = [super init];
     if (self) {
         book = theBook;

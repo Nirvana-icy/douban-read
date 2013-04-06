@@ -9,15 +9,6 @@
     RefreshHeaderView *refreshHeaderView;
 }
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        books = [[NSMutableArray alloc] init];
-        bookInfoRequest = [[BookInfoRequest alloc] initWithDelegate:self];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -67,10 +58,6 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [books count];
-}
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint pt =scrollView.contentOffset;
     if(pt.y < 0){
@@ -87,11 +74,6 @@
     }else if(pt.y > (scrollView.contentSize.height - self.view.bounds.size.height)){
         [refreshFooterView viewDidEndDragging:scrollView];
     }
-}
-
-- (void)bookStatusChanged:(DOUBook *)book {
-    [books removeObject:book];
-    [[self tableView] reloadData];
 }
 
 @end

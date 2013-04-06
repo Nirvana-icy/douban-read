@@ -11,8 +11,6 @@
 
 - (void)retrieveBooks;
 
-- (void)bookStatusChanged:(DOUBook *)book;
-
 - (void)retrieveNewBooks;
 
 - (void)retrieveMoreBooks;

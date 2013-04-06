@@ -5,10 +5,12 @@
 #import "DOUAPIEngine.h"
 #import "BookStatusViewController.h"
 
+#define COUNT @"20"
 
 @implementation BookInfoRequest {
     id delegate;
 }
+
 - (id)initWithDelegate:(id)aDelegate {
     self = [super init];
     if (self) {
@@ -18,16 +20,16 @@
 }
 
 - (void)retrieveBooks:(NSString *)status {
-    [self requestBooksWithSelector:@selector(bookRequestDidFinish:) andParameters:@{@"status" : status, @"count" : @"20"}];
+    [self requestBooksWithSelector:@selector(bookRequestDidFinish:) andParameters:@{@"status" : status, @"count" : COUNT}];
 }
 
 - (void)retrieveNewBooks:(NSString *)status {
-    [self requestBooksWithSelector:@selector(newBookRequestDidFinish:) andParameters:@{@"status" : status, @"count" : @"20"}];
+    [self requestBooksWithSelector:@selector(newBookRequestDidFinish:) andParameters:@{@"status" : status, @"count" : COUNT}];
 }
 
 - (void)retrieveMoreBooks:(NSString *)status withStartPoint:(int)startPoint {
     [self requestBooksWithSelector:@selector(moreBookRequestDidFinish:)
-                     andParameters:@{@"status" : status, @"count" : @"20", @"start" : [NSString stringWithFormat:@"%i", startPoint]}];
+                     andParameters:@{@"status" : status, @"count" : COUNT, @"start" : [NSString stringWithFormat:@"%i", startPoint]}];
 }
 
 
@@ -37,8 +39,8 @@
 }
 
 - (void)searchBooks:(NSString *)key{
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:@"/v2/book/search" parameters:@{@"q":key}];
-    [self queryBookWith:query andSelector:@selector(searchBookRequestDidFinish:)];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:@"/v2/book/search" parameters:@{@"q":key, @"count": COUNT}];
+    [self queryBookWith:query andSelector:@selector(bookRequestDidFinish:)];
 }
 
 - (void)queryBookWith:(DOUQuery *)query andSelector:(SEL)selector {

@@ -3,6 +3,7 @@
 
 @class BookInfoRequest;
 @class RefreshFooterView;
+@class DOUBook;
 
 @interface BookListViewController : UITableViewController <BookImageRequestDelegate> {
     BookInfoRequest *bookInfoRequest;
@@ -10,12 +11,13 @@
     RefreshFooterView *refreshFooterView;
     BOOL isLoading;
 }
+
 - (void)startLoadingAnimation;
 - (void)stopLoadingAnimation;
 - (void)reloadData:(int)amount;
 - (BOOL)isLoading;
-
 - (void)bookRequestDidFinish:(NSArray *)theBooks;
-
 - (void)moreBookRequestDidFinish:(NSArray *)theBooks;
+- (void)bookStatusChanged:(DOUBook *)book;
+
 @end

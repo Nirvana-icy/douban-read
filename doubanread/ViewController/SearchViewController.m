@@ -1,18 +1,17 @@
 #import "SearchViewController.h"
-#import "BookInfoRequest.h"
+#import "BookListViewController.h"
+#import "SearchResultViewController.h"
 
 @implementation SearchViewController {
     UISearchBar *searchBar;
     UITableView *theTableView;
     UISearchDisplayController *theSearchDisplayController;
-    BookInfoRequest *bookInfoRequest;
 }
 
 - (id)init{
     self = [super init];
     if(self){
         self.navigationItem.title = @"搜索";
-        bookInfoRequest = [[BookInfoRequest alloc] initWithDelegate:self];
     }
     return self;
 }
@@ -44,8 +43,9 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar {
-    NSLog(@"%@", [theSearchBar text]);
-    [bookInfoRequest searchBooks:[theSearchBar text]];
+    SearchResultViewController *resultViewController = [[SearchResultViewController alloc] init];
+    [self.navigationController pushViewController:resultViewController animated:YES];
+    [resultViewController searchBooksWithKeyword:[theSearchBar text]];
 }
 
 @end

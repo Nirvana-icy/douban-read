@@ -5,11 +5,21 @@
 #import "BookCell.h"
 #import "RefreshFooterView.h"
 #import "BookStatusViewController.h"
+#import "BookInfoRequest.h"
 
 @implementation BookListViewController {
-
     UIActivityIndicatorView *spinner;
 }
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        books = [[NSMutableArray alloc] init];
+        bookInfoRequest = [[BookInfoRequest alloc] initWithDelegate:self];
+    }
+    return self;
+}
+
 - (void)startLoadingAnimation {
     spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(150, 200);
@@ -83,5 +93,14 @@
     isLoading = NO;
     [self reloadData:[theBooks count]];
     [refreshFooterView dataDidFinishLoading:self.tableView];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [books count];
+}
+
+- (void)bookStatusChanged:(DOUBook *)book {
+    [books removeObject:book];
+    [[self tableView] reloadData];
 }
 @end
