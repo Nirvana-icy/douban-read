@@ -1,20 +1,12 @@
 #import "DOUBookArray.h"
 #import "DOUBook.h"
 #import "BookStatusViewController.h"
-#import "BookCell.h"
 #import "BookInfoRequest.h"
-#import "BookImageRequest.h"
-#import "BookDetailViewController.h"
 #import "RefreshHeaderView.h"
 #import "RefreshFooterView.h"
 
 @implementation BookStatusViewController {
-    NSMutableArray *books;
-    BookInfoRequest *bookInfoRequest;
     RefreshHeaderView *refreshHeaderView;
-    RefreshFooterView *refreshFooterView;
-    BOOL isLoading;
-    UIActivityIndicatorView *spinner;
 }
 
 - (id)init {
@@ -37,20 +29,6 @@
     }
 }
 
-- (void)startLoadingAnimation {
-    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.center = CGPointMake(150, 200);
-    spinner.hidesWhenStopped = YES;
-    [self.view addSubview:spinner];
-    [spinner startAnimating];
-}
-
-- (void)stopLoadingAnimation {
-    dispatch_async(dispatch_get_main_queue(), ^(){
-        [spinner stopAnimating];
-    });
-}
-
 - (void)retrieveBooks {
     [self startLoadingAnimation];
     [bookInfoRequest retrieveBooks:bookStatus];
@@ -71,7 +49,6 @@
     [self stopLoadingAnimation];
     [self reloadData:[theBooks count]];
 }
-
 
 - (void)newBookRequestDidFinish:(NSArray *)theBooks {
     NSLog(@"retrieve new books request did finish");
@@ -105,49 +82,9 @@
     [alertView show];
 }
 
-- (void)reloadData:(int)amount {
-    [[self tableView] reloadData];
-    if (amount % 20 == 0 && amount != 0){
-        if (refreshFooterView == nil) {
-            refreshFooterView = [[RefreshFooterView alloc] initWithContainer:self.tableView];
-            refreshFooterView.delegate = self;
-            [[self tableView] addSubview:refreshFooterView];
-        }
-    }
-}
-
-- (BOOL)isLoading {
-    return isLoading;
-}
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [books count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DOUBook *book = [books objectAtIndex:(NSUInteger) [indexPath row]];
-    BookDetailViewController *bookDetailViewController = [[BookDetailViewController alloc] initWithBook:book andBooksViewController:self];
-    [self.navigationController pushViewController:bookDetailViewController animated:YES];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DOUBook *book = [books objectAtIndex:(NSUInteger) [indexPath row]];
-    BookCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookCell"];
-    if (!cell) {
-        cell = [[BookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"bookCell"];
-    }
-    [cell updateBook:book];
-
-    if (![book smallImage]) {
-        BookImageRequest *request = [[BookImageRequest alloc] initWithBook:book andIndexPath:indexPath andDelegate:self];
-        [request startDownload];
-    }
-    return cell;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -166,11 +103,6 @@
     }else if(pt.y > (scrollView.contentSize.height - self.view.bounds.size.height)){
         [refreshFooterView viewDidEndDragging:scrollView];
     }
-}
-
-- (void)bookImageDidLoad:(UIImage *)image forIndexPath:(NSIndexPath *)path {
-    BookCell *cell = (BookCell *) [[self tableView] cellForRowAtIndexPath:path];
-    [cell updateImage:image];
 }
 
 - (void)bookStatusChanged:(DOUBook *)book {

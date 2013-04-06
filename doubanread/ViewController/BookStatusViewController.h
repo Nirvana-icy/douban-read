@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
 #import "BookImageRequestDelegate.h"
+#import "BookListViewController.h"
 
 @class DOUBook;
 
 
-@interface BookStatusViewController : UITableViewController<BookImageRequestDelegate>{
+@interface BookStatusViewController : BookListViewController{
     NSString *bookStatus;
 }
 
@@ -19,12 +20,9 @@
 
 - (void)bookRequestDidFinish:(NSArray *)theBooks;
 
-- (BOOL)isLoading;
-
 - (void)newBookRequestDidFinish:(NSArray *)theBooks;
 
 - (void)moreBookRequestDidFinish:(NSArray *)theBooks;
-
 
 - (void)connectionFailed;
 @end
