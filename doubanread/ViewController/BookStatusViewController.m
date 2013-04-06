@@ -46,7 +46,7 @@
 
 - (void)newBookRequestDidFinish:(NSArray *)theBooks {
     NSLog(@"retrieve new books request did finish");
-    for(DOUBook *book in theBooks){
+    for(DOUBook *book in [theBooks reverseObjectEnumerator]){
         if (![books containsObject:book]){
             [books insertObject:book atIndex:0];
         }
