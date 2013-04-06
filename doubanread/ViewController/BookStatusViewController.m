@@ -44,12 +44,6 @@
     [bookInfoRequest retrieveMoreBooks:bookStatus withStartPoint:[books count]];
 }
 
-- (void)bookRequestDidFinish:(NSArray *)theBooks {
-    [books addObjectsFromArray:theBooks];
-    [self stopLoadingAnimation];
-    [self reloadData:[theBooks count]];
-}
-
 - (void)newBookRequestDidFinish:(NSArray *)theBooks {
     NSLog(@"retrieve new books request did finish");
     for(DOUBook *book in theBooks){
@@ -60,16 +54,6 @@
     isLoading = NO;
     [refreshHeaderView dataDidFinishLoading:self.tableView];
     [self reloadData:[theBooks count]];
-}
-
-- (void)moreBookRequestDidFinish:(NSArray *)theBooks{
-    NSLog(@"retrieve more books request did finish");
-    for(DOUBook *book in theBooks){
-        [books addObject:book];
-    }
-    isLoading = NO;
-    [self reloadData:[theBooks count]];
-    [refreshFooterView dataDidFinishLoading:self.tableView];
 }
 
 - (void)connectionFailed {

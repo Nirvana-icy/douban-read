@@ -1,3 +1,4 @@
+#import "DOUBookArray.h"
 #import "BookDetailViewController.h"
 #import "BookImageRequest.h"
 #import "DOUBook.h"
@@ -66,5 +67,21 @@
         [request startDownload];
     }
     return cell;
+}
+
+- (void)bookRequestDidFinish:(NSArray *)theBooks {
+    [books addObjectsFromArray:theBooks];
+    [self stopLoadingAnimation];
+    [self reloadData:[theBooks count]];
+}
+
+- (void)moreBookRequestDidFinish:(NSArray *)theBooks{
+    NSLog(@"retrieve more books request did finish");
+    for(DOUBook *book in theBooks){
+        [books addObject:book];
+    }
+    isLoading = NO;
+    [self reloadData:[theBooks count]];
+    [refreshFooterView dataDidFinishLoading:self.tableView];
 }
 @end

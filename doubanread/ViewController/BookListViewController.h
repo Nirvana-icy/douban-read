@@ -14,4 +14,8 @@
 - (void)stopLoadingAnimation;
 - (void)reloadData:(int)amount;
 - (BOOL)isLoading;
+
+- (void)bookRequestDidFinish:(NSArray *)theBooks;
+
+- (void)moreBookRequestDidFinish:(NSArray *)theBooks;
 @end

@@ -18,11 +18,7 @@
 - (void)retrieveMoreBooks;
 
 
-- (void)bookRequestDidFinish:(NSArray *)theBooks;
-
 - (void)newBookRequestDidFinish:(NSArray *)theBooks;
-
-- (void)moreBookRequestDidFinish:(NSArray *)theBooks;
 
 - (void)connectionFailed;
 @end
