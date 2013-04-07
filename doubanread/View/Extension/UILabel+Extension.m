@@ -5,7 +5,7 @@
 
 - (id)initWithText:(NSString *)text andPosition:(CGPoint)position andMaxWidth:(int)maxWidth {
     CGSize constSize = {maxWidth, 9999};
-    UIFont *systemFontOfSize = [UIFont systemFontOfSize:16.0f];
+    UIFont *systemFontOfSize = [UIFont systemFontOfSize:14.0f];
     CGSize labelSize = [text sizeWithFont:systemFontOfSize constrainedToSize:constSize lineBreakMode:NSLineBreakByWordWrapping];
     self = [[UILabel alloc] initWithFrame:CGRectMake(position.x, position.y, labelSize.width, labelSize.height)];
     if (self != nil) {
@@ -18,7 +18,7 @@
 
 - (void)updateWithText:(NSString *)text andPosition:(CGPoint)position andMaxWidth:(int)maxWidth{
     CGSize constSize = {maxWidth, 9999};
-    UIFont *systemFontOfSize = [UIFont systemFontOfSize:16.0f];
+    UIFont *systemFontOfSize = [UIFont systemFontOfSize:14.0f];
     CGSize labelSize = [text sizeWithFont:systemFontOfSize constrainedToSize:constSize lineBreakMode:NSLineBreakByWordWrapping];
     [self setFrame:CGRectMake(position.x, position.y, labelSize.width, labelSize.height)];
     [self setNumberOfLines:0];
