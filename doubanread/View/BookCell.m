@@ -3,6 +3,26 @@
 #import "UILabel+Extension.h"
 #import "UIImage+Extension.h"
 
+@interface BookCellBackgroundView : UIView
+- (id)initWithColor:(UIColor *)theColor;
+@end
+
+@implementation BookCellBackgroundView{
+}
+
+- (id)initWithColor:(UIColor *)theColor{
+    self = [super init];
+    if(self){
+        [self setBackgroundColor:theColor];
+    }
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+}
+@end
+
 @implementation BookCell {
     UIImageView *iconView;
     UILabel *titleLabel;
@@ -22,6 +42,10 @@
     titleLabel = [[UILabel alloc] init];
     [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 20, 10, 320 - IMAGE_MAX_WIDTH - 5, 90)];
     [self addSubview:titleLabel];
+
+    UIColor *color = [UIColor colorWithRed:231/255 green:0/255 blue:141/255 alpha:1.0];
+    UIColor *color2 = [UIColor greenColor];
+    [self setSelectedBackgroundView:[[BookCellBackgroundView alloc] initWithColor:color2]];
 }
 
 - (void)updateBook:(DOUBook *)theBook {
