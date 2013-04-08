@@ -43,9 +43,8 @@
     [titleLabel setFrame:CGRectMake(IMAGE_MAX_WIDTH + 20, 10, 320 - IMAGE_MAX_WIDTH - 5, 90)];
     [self addSubview:titleLabel];
 
-    UIColor *color = [UIColor colorWithRed:231/255 green:0/255 blue:141/255 alpha:1.0];
-    UIColor *color2 = [UIColor greenColor];
-    [self setSelectedBackgroundView:[[BookCellBackgroundView alloc] initWithColor:color2]];
+    UIColor *color = [UIColor colorWithRed:241.0/255 green:242.0/255 blue:233.0/255 alpha:1.0];
+    [self setSelectedBackgroundView:[[BookCellBackgroundView alloc] initWithColor:color]];
 }
 
 - (void)updateBook:(DOUBook *)theBook {
