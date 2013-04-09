@@ -7,8 +7,6 @@
 //
 
 #import "DOUBook.h"
-#import "DOUObject+Utils.h"
-#import "SBJson.h"
 
 @implementation DOUBook {
 }
@@ -70,6 +68,14 @@
         return nil;
     } else {
         return [[self images] objectForKey:@"small"];
+    }
+}
+
+- (NSString *)mediumImageUrl {
+    if (![self images]) {
+        return nil;
+    } else {
+        return [[self images] objectForKey:@"medium"];
     }
 }
 

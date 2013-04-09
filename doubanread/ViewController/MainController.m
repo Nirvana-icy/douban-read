@@ -32,15 +32,20 @@
 
         UINavigationController *readingsNavigationController = [[UINavigationController alloc] initWithRootViewController:readingViewController];
         [readingsNavigationController.tabBarItem setTitle:@"在读"];
+        [readingsNavigationController.tabBarItem setImage:[UIImage imageNamed:@"reading"]];
 
         UINavigationController *wishNavigationController = [[UINavigationController alloc] initWithRootViewController:wishViewController];
         [wishNavigationController.tabBarItem setTitle:@"想读"];
+        [wishNavigationController.tabBarItem setImage:[UIImage imageNamed:@"wish"]];
+
 
         UINavigationController *readNavigationController = [[UINavigationController alloc] initWithRootViewController:readViewController];
         [readNavigationController.tabBarItem setTitle:@"读过"];
+        [readNavigationController.tabBarItem setImage:[UIImage imageNamed:@"read"]];
 
         UINavigationController *searchNavigationController = [[UINavigationController alloc] initWithRootViewController:searchViewController];
         [searchNavigationController.tabBarItem setTitle:@"搜索"];
+        [searchNavigationController.tabBarItem setImage:[UIImage imageNamed:@"search"]];
 
         [self setViewControllers:@[readingsNavigationController, wishNavigationController, readNavigationController, searchNavigationController]];
     }

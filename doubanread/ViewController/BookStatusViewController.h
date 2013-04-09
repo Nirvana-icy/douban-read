@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "BookImageRequestDelegate.h"
+#import "BookSmallImageRequestDelegate.h"
 #import "BookListViewController.h"
 
 @class DOUBook;

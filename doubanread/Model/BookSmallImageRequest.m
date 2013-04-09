@@ -1,12 +1,11 @@
-#import "BookImageRequest.h"
-#import "BookImageRequestDelegate.h"
+#import "BookSmallImageRequest.h"
+#import "BookSmallImageRequestDelegate.h"
 #import "DOUBook.h"
 
-@implementation BookImageRequest {
+@implementation BookSmallImageRequest {
     NSIndexPath *indexPathInTableView;
-    id <BookImageRequestDelegate> delegate;
+    id <BookSmallImageRequestDelegate> delegate;
     NSMutableData *download;
-    NSURLConnection *theConnection;
     DOUBook *book;
 }
 
@@ -14,7 +13,7 @@
     [download appendData:data];
 }
 
-- (id)initWithBook:(DOUBook *)theBook andIndexPath:(NSIndexPath *)path andDelegate:(id <BookImageRequestDelegate>)theDelegate {
+- (id)initWithBook:(DOUBook *)theBook andIndexPath:(NSIndexPath *)path andDelegate:(id <BookSmallImageRequestDelegate>)theDelegate {
     self = [super init];
     if (self) {
         book = theBook;
@@ -26,12 +25,11 @@
 
 - (void)startDownload{
     download = [NSMutableData data];
-    theConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[book smallImageUrl]]] delegate:self];
+    [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[book smallImageUrl]]] delegate:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     download = nil;
-    theConnection = nil;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

@@ -1,6 +1,6 @@
 #import "DOUBookArray.h"
 #import "BookDetailViewController.h"
-#import "BookImageRequest.h"
+#import "BookSmallImageRequest.h"
 #import "DOUBook.h"
 #import "BookCell.h"
 #import "RefreshFooterView.h"
@@ -73,7 +73,7 @@
     [cell updateBook:book];
 
     if (![book smallImage]) {
-        BookImageRequest *request = [[BookImageRequest alloc] initWithBook:book andIndexPath:indexPath andDelegate:self];
+        BookSmallImageRequest *request = [[BookSmallImageRequest alloc] initWithBook:book andIndexPath:indexPath andDelegate:self];
         [request startDownload];
     }
     return cell;

@@ -6,11 +6,13 @@
 #import "BookStatusViewController.h"
 #import "WishBookDetailView.h"
 #import "ReadBookDetailView.h"
+#import "BookMediumImageRequest.h"
 
 @implementation BookDetailViewController {
     BookDetailView *detailView;
     DOUBook *book;
     BookListViewController *booksViewController;
+    BookMediumImageRequest *imageRequest;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookListViewController *)theBooksViewController {
@@ -18,6 +20,7 @@
     if (self) {
         book = theBook;
         booksViewController = theBooksViewController;
+        imageRequest = [[BookMediumImageRequest alloc] initWithBook:theBook andDelegate:self];
     }
     return self;
 }
@@ -35,6 +38,9 @@
             break;
     }
     self.view = detailView;
+    if(book.mediumImage == nil){
+        [imageRequest startDownload];
+    }
 }
 
 - (void)finishReading {
@@ -62,4 +68,9 @@
     [[self navigationController] popViewControllerAnimated:YES];
     [booksViewController bookStatusChanged:book];
 }
+
+- (void)bookImageDidLoad:(UIImage *)image {
+    [detailView showImage:image];
+}
+
 @end

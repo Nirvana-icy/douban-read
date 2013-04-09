@@ -11,4 +11,5 @@
 
 - (void)addButtonsWithPositionY:(float)positionY;
 
+- (void)showImage:(UIImage *)image;
 @end

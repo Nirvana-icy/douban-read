@@ -18,6 +18,7 @@ typedef enum {
 @interface DOUBook : DOUObject
 
 @property (nonatomic, retain) UIImage *smallImage;
+@property (nonatomic, retain) UIImage *mediumImage;
 
 - (NSString *)rating;
 
@@ -46,6 +47,8 @@ typedef enum {
 - (NSString *)myRating;
 
 - (NSString *)smallImageUrl;
+
+- (NSString *)mediumImageUrl;
 
 - (BookStatus)status;
 
