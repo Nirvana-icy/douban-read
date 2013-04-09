@@ -36,6 +36,14 @@
     }
 }
 
+- (NSString *)mediumImageUrl {
+    if (![self images]) {
+        return nil;
+    } else {
+        return [[self images] objectForKey:@"medium"];
+    }
+}
+
 - (NSDictionary *)images {
     return [self.dictionary objectForKey:@"images"];
 }

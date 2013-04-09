@@ -4,6 +4,7 @@
 @interface DOUBookOfSearchResult : DOUObject
 
 @property (nonatomic, retain) UIImage *smallImage;
+@property (nonatomic, retain) UIImage *mediumImage;
 
 - (NSString *)title;
 
@@ -18,6 +19,8 @@
 - (NSString *)publisher;
 
 - (NSString *)smallImageUrl;
+
+- (NSString *)mediumImageUrl;
 
 - (BookStatus)status;
 @end
