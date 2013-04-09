@@ -19,6 +19,10 @@ typedef enum {
 
 @property (nonatomic, retain) UIImage *smallImage;
 
+- (NSString *)rating;
+
+- (NSString *)numberOfRaters;
+
 - (NSString *)title;
 
 - (NSString *)author;
@@ -30,6 +34,16 @@ typedef enum {
 
 
 - (NSString *)publisher;
+
+- (NSString *)pages;
+
+- (NSString *)price;
+
+- (NSString *)publishDate;
+
+- (NSString *)myComment;
+
+- (NSString *)myRating;
 
 - (NSString *)smallImageUrl;
 

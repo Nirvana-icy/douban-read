@@ -13,6 +13,14 @@
 @implementation DOUBook {
 }
 
+- (NSString *)rating{
+    return [self book][@"rating"][@"average"];
+}
+
+- (NSString *)numberOfRaters{
+    return [self book][@"rating"][@"numRaters"];
+}
+
 - (NSString *)title {
     return [self book][@"title"];
 }
@@ -35,6 +43,26 @@
 
 - (NSString *)publisher {
     return [self book][@"publisher"];
+}
+
+- (NSString *)pages{
+    return [self book][@"pages"];
+}
+
+- (NSString *)price{
+    return [self book][@"price"];
+}
+
+- (NSString *)publishDate{
+    return [self book][@"pubdate"];
+}
+
+- (NSString *)myComment{
+    return self.dictionary[@"comment"];
+}
+
+- (NSString *)myRating{
+    return self.dictionary[@"rating"][@"value"];
 }
 
 - (NSString *)smallImageUrl {
