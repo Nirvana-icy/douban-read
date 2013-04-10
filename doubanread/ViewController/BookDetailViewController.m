@@ -7,6 +7,7 @@
 #import "WishBookDetailView.h"
 #import "ReadBookDetailView.h"
 #import "BookMediumImageRequest.h"
+#import "SearchBookDetailView.h"
 
 @implementation BookDetailViewController {
     BookDetailView *detailView;
@@ -36,6 +37,9 @@
         case READ:
             detailView = [[ReadBookDetailView alloc] initWithBook:book andTarget:self];
             break;
+        case NOTADDED:
+            detailView = [[SearchBookDetailView alloc] initWithBook:book andTarget:self];
+            break;
     }
     self.view = detailView;
     if(book.mediumImage == nil){
@@ -58,6 +62,15 @@
     [request changeBook:[book id] toStatus:@"reading"];
 }
 
+- (void)addToReading{
+    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
+    [request addBook:[book id] withStatus:@"reading"];
+}
+
+- (void)addToWish{
+    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
+    [request addBook:[book id] withStatus:@"wish"];
+}
 - (void)delete{
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
     [request deleteBook:[book id]];

@@ -39,6 +39,7 @@
 		36867A0A3383A5D799E28A56 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867670A014FA01D37D768B /* BookCell.m */; };
 		36867BCE3F8D7FC770B09D50 /* wish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686707EE9F554C1EC808559 /* wish@2x.png */; };
 		36867BFCA06D486AB479E1AD /* BookMediumImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672EA308EC216C614E672 /* BookMediumImageRequest.m */; };
+		36867C0A0E7AA8B853182823 /* SearchBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E5E9C44FB68D6D735E1 /* SearchBookDetailView.m */; };
 		36867C50E5C71E7036CDE4DB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686700443EAEF1C97A73988 /* WebViewController.m */; };
 		36867C8F2CC2EA859457E5EA /* ReadingBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867ACB32A121E667DA5BB0 /* ReadingBookDetailView.m */; };
 		36867D713884767460320FEF /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368676D66017E79A01E1F0CF /* ReadingViewController.m */; };
@@ -292,6 +293,7 @@
 		36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		36867BDDA14D3223606281CE /* WishBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishBookDetailView.m; sourceTree = "<group>"; };
+		36867C17DBF93A6DD51AB5CB /* SearchBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBookDetailView.h; sourceTree = "<group>"; };
 		36867C3F18496C628223EE12 /* WishBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishBookDetailView.h; sourceTree = "<group>"; };
 		36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLoadingInfoCommand.m; sourceTree = "<group>"; };
 		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		36867DB695042510D8D8C584 /* DOUBookOfSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookOfSearchResult.h; sourceTree = "<group>"; };
 		36867E05F13E686B82436DF6 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowNormalInfoCommand.m; sourceTree = "<group>"; };
+		36867E5E9C44FB68D6D735E1 /* SearchBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBookDetailView.m; sourceTree = "<group>"; };
 		36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		36867EC9CA2FA9524F840D4F /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		36867F3DE9C85C640DD20A5C /* ShowLoadingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLoadingInfoCommand.h; sourceTree = "<group>"; };
@@ -694,6 +697,8 @@
 				36867359E84FF2062A47FD2E /* Extension */,
 				368674CEB4A4A2FAD69096DE /* RefreshFooterView.m */,
 				368677F8EF85CC0C463A0E7B /* RefreshFooterView.h */,
+				36867E5E9C44FB68D6D735E1 /* SearchBookDetailView.m */,
+				36867C17DBF93A6DD51AB5CB /* SearchBookDetailView.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1783,6 +1788,7 @@
 				36867253DFE28534DD0186D9 /* DOUBookOfSearchResult.m in Sources */,
 				498F3BC81710799F004014C8 /* DOUBookArrayOfSearchResult.m in Sources */,
 				36867BFCA06D486AB479E1AD /* BookMediumImageRequest.m in Sources */,
+				36867C0A0E7AA8B853182823 /* SearchBookDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

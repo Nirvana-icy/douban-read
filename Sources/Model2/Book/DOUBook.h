@@ -11,7 +11,8 @@
 typedef enum {
     READ,
     WISH,
-    READING
+    READING,
+    NOTADDED
 } BookStatus;
 
 

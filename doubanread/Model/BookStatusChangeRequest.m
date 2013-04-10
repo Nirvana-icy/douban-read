@@ -28,6 +28,22 @@
     }];
 }
 
+- (void)addBook:(NSString *)bookId withStatus:(NSString *)status {
+    NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", bookId];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status}];
+
+    DOUService *service = [DOUService sharedInstance];
+    NSString *body = [NSString stringWithFormat:@"status=%@", status];
+    [service post:query postBody:body callback:^(DOUHttpRequest *req) {
+        NSError *error = [req doubanError];
+        if (!error) {
+            [delegate performSelector:@selector(bookChangeRequestDidFinish)];
+        }else{
+            NSLog(@"error: %@", error);
+        }
+    }];
+}
+
 - (void)deleteBook:(NSString *)bookId {
     NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", bookId];
     DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:nil];

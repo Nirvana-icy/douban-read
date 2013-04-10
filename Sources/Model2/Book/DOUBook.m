@@ -94,8 +94,10 @@
         return WISH;
     } else if ([status isEqualToString:@"reading"]) {
         return READING;
-    } else {
+    } else if([status isEqualToString:@"read"]){
         return READ;
+    } else{
+        return NOTADDED;
     }
 }
 
