@@ -4,7 +4,6 @@
 @implementation ReadingBookDetailView {
     UIButton *finishReadingButton;
     UIButton *wishButton;
-    UIButton *deleteButton;
 }
 - (void)addButtonsWithPositionY:(float)positionY {
     finishReadingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -18,12 +17,6 @@
     [wishButton setTitle:@"想读" forState:UIControlStateNormal];
     [wishButton addTarget:target action:@selector(wishRead) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:wishButton];
-
-    deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [deleteButton setFrame:CGRectMake(230, positionY+ 40, 70, 40)];
-    [deleteButton setTitle:@"删除" forState:UIControlStateNormal];
-    [deleteButton addTarget:target action:@selector(delete) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:deleteButton];
 }
 
 @end

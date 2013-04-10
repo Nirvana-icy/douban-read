@@ -71,10 +71,6 @@
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
     [request addBook:[book id] withStatus:@"wish"];
 }
-- (void)delete{
-    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request deleteBook:[book id]];
-}
 
 - (void)bookChangeRequestDidFinish {
     NSLog(@"book change request finished");
