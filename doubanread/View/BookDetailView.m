@@ -49,7 +49,7 @@
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
-    return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:200 fontSize:12.0f];
+    return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:200 fontSize:13.0f];
 }
 
 - (void)addButtonsWithPositionY:(float)positionY {

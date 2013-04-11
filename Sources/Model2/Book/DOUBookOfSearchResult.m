@@ -4,6 +4,14 @@
 
 }
 
+- (NSString *)rating{
+    return self.dictionary[@"rating"][@"average"];
+}
+
+- (NSString *)numberOfRaters{
+    return self.dictionary[@"rating"][@"numRaters"];
+}
+
 - (NSString *)title {
     return self.dictionary[@"title"];
 }
