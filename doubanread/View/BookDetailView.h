@@ -3,12 +3,13 @@
 @class DOUBook;
 @class BookDetailViewController;
 
-@interface BookDetailView : UIView{
+@interface BookDetailView : UIView<UIWebViewDelegate>{
     DOUBook *book;
     BookDetailViewController *target;
     UIButton *finishReadingButton;
     UIButton *readingButton;
     UIButton *wishButton;
+    UIScrollView *contentView;
 }
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget;
 

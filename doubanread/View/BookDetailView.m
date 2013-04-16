@@ -1,3 +1,4 @@
+#import <CoreGraphics/CoreGraphics.h>
 #import "BookDetailView.h"
 #import "DOUBook.h"
 #import "UILabel+Extension.h"
@@ -9,7 +10,7 @@
 
 @implementation BookDetailView {
     UIImageView *iconView;
-
+    UIWebView *summaryView;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget {
@@ -23,35 +24,38 @@
 }
 
 - (void)createSubviews {
+    contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
+
     iconView = [[UIImageView alloc] init];
     [iconView setFrame:CGRectMake(10, 10, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT)];
     [iconView setImage:book.mediumImage];
-    [self addSubview:iconView];
+    [contentView addSubview:iconView];
 
     float height = 10;
     UILabel *bookNameLabel = [self createLabelOnTheRightSizeOfImage:height text:[book title]];
-    [self addSubview:bookNameLabel];
+    [contentView addSubview:bookNameLabel];
     height += bookNameLabel.bounds.size.height + 10;
 
     UILabel *authorLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"作者: %@", [book author]]];
-    [self addSubview:authorLabel];
+    [contentView addSubview:authorLabel];
     height += authorLabel.bounds.size.height + 10;
 
     if (![[book publisher] isEqual:@""]) {
         UILabel *publisherLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"出版社: %@", [book publisher]]];
-        [self addSubview:publisherLabel];
+        [contentView addSubview:publisherLabel];
         height += publisherLabel.bounds.size.height + 10;
     }
 
     UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
-    [self addSubview:rateLabel];
-    height += rateLabel.bounds.size.height + 10;
+    [contentView addSubview:rateLabel];
 
-    [self addButtonsWithPositionY:IMAGE_MAX_HEIGHT+20];
+    [self addButtonsWithPositionY:IMAGE_MAX_HEIGHT+ 40];
+    contentView.contentSize = CGSizeMake(320, 320);
+    [self addSubview:contentView];
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
-    return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:200 fontSize:13.0f];
+    return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:13.0f];
 }
 
 - (void)addButtonsWithPositionY:(float)positionY {
@@ -73,6 +77,31 @@
 }
 
 - (void)showSummary {
+    summaryView = [self buildWebViewWith:CGRectMake(9, IMAGE_MAX_HEIGHT + 80, 300, 1)];
+    [summaryView setDelegate:self];
+    [contentView addSubview:summaryView];
+}
 
+- (UIWebView *)buildWebViewWith:(CGRect)frame {
+    NSString *htmlBegin = [NSString stringWithFormat:@"<html><header><style>body{font-family:HelveticaNeue;color:#000000;font-size:14px;}</style></header><body><div>"];
+    NSString *htmlEnd = @"</div></body></html>";
+    NSString *htmlString = [NSString stringWithFormat:@"%@%@%@", htmlBegin, [book summary], htmlEnd];
+
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
+    [webView loadHTMLString:htmlString baseURL:nil];
+    [webView setUserInteractionEnabled:NO];
+    [webView setOpaque:NO];
+    [webView setBackgroundColor:[UIColor clearColor]];
+    return webView;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView {
+    CGSize fittingSize = [aWebView sizeThatFits:CGSizeZero];
+    [aWebView setScalesPageToFit:YES];
+
+    CGRect newFrame = [summaryView frame];
+    newFrame.size.height = fittingSize.height + 12;
+    [summaryView setFrame:newFrame];
+    contentView.contentSize = CGSizeMake(320, contentView.contentSize.height + summaryView.frame.size.height);
 }
 @end

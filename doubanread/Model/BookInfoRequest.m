@@ -51,7 +51,9 @@
         NSError *error = [request doubanError];
         if(!error){
             NSMutableDictionary *dic = (NSMutableDictionary *)[responseString JSONValue];
-            [book setSummary:[dic objectForKey:@"summary"]];
+            NSString *summary = [dic objectForKey:@"summary"];
+            NSLog(@"summary: %@", summary);
+            [book setSummary:summary];
             if([delegate respondsToSelector:@selector(bookInfoRequestDidFinish)]){
                 [delegate performSelector:@selector(bookInfoRequestDidFinish)];
             }

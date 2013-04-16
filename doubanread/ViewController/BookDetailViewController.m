@@ -78,7 +78,6 @@
 }
 
 - (void)bookInfoRequestDidFinish{
-    NSLog(@"book info request finished");
     [detailView showSummary];
 }
 
