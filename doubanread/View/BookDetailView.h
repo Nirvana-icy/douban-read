@@ -16,11 +16,7 @@
 
 - (void)showImage:(UIImage *)image;
 
-- (void)createReadButtonWith:(CGFloat)positionX and:(CGFloat)positionY;
-
-- (void)createWishButtonWith:(CGFloat)positionX and:(CGFloat)positionY;
-
-- (void)createReadingButtonWith:(CGFloat)positionX and:(CGFloat)positionY;
+- (UIButton *)createButton:(CGFloat)positionX positionY:(CGFloat)positionY title:(NSString *)title action:(SEL)action;
 
 - (void)showSummary;
 @end

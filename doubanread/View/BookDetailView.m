@@ -72,21 +72,6 @@
     return button;
 }
 
-- (void)createReadButtonWith: (CGFloat)positionX and:(CGFloat)positionY  {
-    finishReadingButton = [self createButton:positionX positionY:positionY title:@"读过" action:@selector(finishReading)];
-    [self addSubview:finishReadingButton];
-}
-
-- (void)createWishButtonWith:(CGFloat) positionX and:(CGFloat)positionY {
-    wishButton = [self createButton:positionX positionY:positionY title:@"想读" action:@selector(addToWish)];
-    [self addSubview:wishButton];
-}
-
-- (void)createReadingButtonWith:(CGFloat) positionX and:(CGFloat)positionY {
-    readingButton = [self createButton:positionX positionY:positionY title:@"在读" action:@selector(reading)];
-    [self addSubview:readingButton];
-}
-
 - (void)showSummary {
 
 }
