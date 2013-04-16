@@ -50,7 +50,13 @@
     [contentView addSubview:rateLabel];
 
     [self addButtonsWithPositionY:IMAGE_MAX_HEIGHT+ 40];
-    contentView.contentSize = CGSizeMake(320, 320);
+    height = IMAGE_MAX_HEIGHT + 40 + 40;
+
+    UILabel *summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, height+ 5) andMaxWidth:200 fontSize:15.0f];
+    height += summaryLabel.bounds.size.height + 10;
+    [contentView addSubview:summaryLabel];
+
+    contentView.contentSize = CGSizeMake(320, height + 110);
     [self addSubview:contentView];
 }
 
@@ -77,7 +83,7 @@
 }
 
 - (void)showSummary {
-    summaryView = [self buildWebViewWith:CGRectMake(9, IMAGE_MAX_HEIGHT + 80, 300, 1)];
+    summaryView = [self buildWebViewWith:CGRectMake(9, IMAGE_MAX_HEIGHT + 110, 300, 1)];
     [summaryView setDelegate:self];
     [contentView addSubview:summaryView];
 }
