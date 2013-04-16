@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface BookInfoRequest : NSObject
+@interface BookListRequest : NSObject
 - (id)initWithDelegate:(id)aDelegate;
 
 - (void)retrieveBooks:(NSString *)status;

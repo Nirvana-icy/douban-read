@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "BookSmallImageRequestDelegate.h"
 
-@class BookInfoRequest;
+@class BookListRequest;
 @class RefreshFooterView;
 @class DOUBook;
 
 @interface BookListViewController : UITableViewController <BookSmallImageRequestDelegate> {
-    BookInfoRequest *bookInfoRequest;
+    BookListRequest *bookInfoRequest;
     NSMutableArray *books;
     RefreshFooterView *refreshFooterView;
     BOOL isLoading;

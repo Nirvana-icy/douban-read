@@ -5,7 +5,7 @@
 #import "BookCell.h"
 #import "RefreshFooterView.h"
 #import "BookStatusViewController.h"
-#import "BookInfoRequest.h"
+#import "BookListRequest.h"
 
 @implementation BookListViewController {
     UIActivityIndicatorView *spinner;
@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         books = [[NSMutableArray alloc] init];
-        bookInfoRequest = [[BookInfoRequest alloc] initWithDelegate:self];
+        bookInfoRequest = [[BookListRequest alloc] initWithDelegate:self];
     }
     return self;
 }

@@ -1,5 +1,5 @@
 #import "SearchResultViewController.h"
-#import "BookInfoRequest.h"
+#import "BookListRequest.h"
 
 @implementation SearchResultViewController {
 

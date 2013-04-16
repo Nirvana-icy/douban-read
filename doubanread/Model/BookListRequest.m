@@ -1,4 +1,4 @@
-#import "BookInfoRequest.h"
+#import "BookListRequest.h"
 #import "DOUQuery.h"
 #import "DOUService.h"
 #import "DOUBookArray.h"
@@ -8,7 +8,7 @@
 
 #define COUNT @"20"
 
-@implementation BookInfoRequest {
+@implementation BookListRequest {
     id delegate;
 }
 

@@ -1,7 +1,7 @@
 #import "DOUBookArray.h"
 #import "DOUBook.h"
 #import "BookStatusViewController.h"
-#import "BookInfoRequest.h"
+#import "BookListRequest.h"
 #import "RefreshHeaderView.h"
 #import "RefreshFooterView.h"
 
