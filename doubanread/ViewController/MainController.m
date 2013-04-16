@@ -69,7 +69,7 @@
 }
 
 - (NSURL *)oAuthUrl {
-    NSString *str = [NSString stringWithFormat:@"https://www.douban.com/service/auth2/auth?client_id=%@&redirect_uri=%@&response_type=code&scope=book_basic_r,book_basic_w", kAPIKey, kRedirectUrl];
+    NSString *str = [NSString stringWithFormat:@"https://www.douban.com/service/auth2/auth?client_id=%@&redirect_uri=%@&response_type=code&scope=book_basic_r,book_basic_w,book_basic_common", kAPIKey, kRedirectUrl];
     NSString *urlStr = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return [NSURL URLWithString:urlStr];
 }

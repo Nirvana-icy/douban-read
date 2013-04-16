@@ -33,4 +33,11 @@
     return [self.dictionary objectForKey:@"abstract"];
 }
 
+- (NSString *)content{
+    return [self.dictionary objectForKey:@"content"];
+}
+
+- (NSString *)pageNum{
+    return [self.dictionary objectForKey:@"page_no"];
+}
 @end

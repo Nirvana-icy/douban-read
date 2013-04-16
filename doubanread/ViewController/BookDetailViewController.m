@@ -8,12 +8,14 @@
 #import "ReadBookDetailView.h"
 #import "BookMediumImageRequest.h"
 #import "SearchBookDetailView.h"
+#import "BookInfoRequest.h"
 
 @implementation BookDetailViewController {
     BookDetailView *detailView;
     DOUBook *book;
     BookListViewController *booksViewController;
     BookMediumImageRequest *imageRequest;
+    BookInfoRequest *bookInfoRequest;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookListViewController *)theBooksViewController {
@@ -45,6 +47,7 @@
     if(book.mediumImage == nil){
         [imageRequest startDownload];
     }
+    [bookInfoRequest getReviews];
 }
 
 - (void)finishReading {

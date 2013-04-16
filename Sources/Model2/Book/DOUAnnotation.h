@@ -17,4 +17,7 @@
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, copy) NSString *abstract;
 
+- (NSString *)content;
+
+- (NSString *)pageNum;
 @end
