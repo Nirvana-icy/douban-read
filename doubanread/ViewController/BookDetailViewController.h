@@ -10,8 +10,9 @@
 
 - (void)finishReading;
 
-- (void)wishRead;
-
 - (void)reading;
 
+- (void)addToReading;
+
+- (void)addToWish;
 @end

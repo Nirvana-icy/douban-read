@@ -24,6 +24,7 @@
         book = theBook;
         booksViewController = theBooksViewController;
         imageRequest = [[BookMediumImageRequest alloc] initWithBook:theBook andDelegate:self];
+        bookInfoRequest = [[BookInfoRequest alloc] initWithBook:theBook andDelegate:self];
     }
     return self;
 }
@@ -47,17 +48,12 @@
     if(book.mediumImage == nil){
         [imageRequest startDownload];
     }
-    [bookInfoRequest getReviews];
+    [bookInfoRequest getInfo];
 }
 
 - (void)finishReading {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
     [request changeBook:[book id] toStatus:@"read"];
-}
-
-- (void)wishRead {
-    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request changeBook:[book id] toStatus:@"wish"];
 }
 
 - (void)reading {
@@ -79,6 +75,11 @@
     NSLog(@"book change request finished");
     [[self navigationController] popViewControllerAnimated:YES];
     [booksViewController bookStatusChanged:book];
+}
+
+- (void)bookInfoRequestDidFinish{
+    NSLog(@"book info request finished");
+    [detailView showSummary];
 }
 
 - (void)bookImageDidLoad:(UIImage *)image {

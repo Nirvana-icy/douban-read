@@ -6,8 +6,10 @@
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
+
 @implementation BookDetailView {
     UIImageView *iconView;
+
 }
 
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget {
@@ -40,12 +42,12 @@
         [self addSubview:publisherLabel];
         height += publisherLabel.bounds.size.height + 10;
     }
-    
-    UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating],[book numberOfRaters]]];
+
+    UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
     [self addSubview:rateLabel];
     height += rateLabel.bounds.size.height + 10;
 
-    [self addButtonsWithPositionY:IMAGE_MAX_HEIGHT + 20];
+    [self addButtonsWithPositionY:IMAGE_MAX_HEIGHT+20];
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
@@ -60,5 +62,32 @@
     UIImage *cropped = [image cropToWidth:IMAGE_MAX_WIDTH andHeight:IMAGE_MAX_HEIGHT];
     [iconView setImage:cropped];
     [iconView setFrame:CGRectMake(10, 10, cropped.size.width, cropped.size.height)];
+}
+
+- (UIButton *)createButton:(CGFloat)positionX positionY:(CGFloat)positionY title:(NSString *)title action:(SEL)action {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setFrame:CGRectMake(positionX, positionY, 70, 40)];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
+
+- (void)createReadButtonWith: (CGFloat)positionX and:(CGFloat)positionY  {
+    finishReadingButton = [self createButton:positionX positionY:positionY title:@"读过" action:@selector(finishReading)];
+    [self addSubview:finishReadingButton];
+}
+
+- (void)createWishButtonWith:(CGFloat) positionX and:(CGFloat)positionY {
+    wishButton = [self createButton:positionX positionY:positionY title:@"想读" action:@selector(addToWish)];
+    [self addSubview:wishButton];
+}
+
+- (void)createReadingButtonWith:(CGFloat) positionX and:(CGFloat)positionY {
+    readingButton = [self createButton:positionX positionY:positionY title:@"在读" action:@selector(reading)];
+    [self addSubview:readingButton];
+}
+
+- (void)showSummary {
+
 }
 @end

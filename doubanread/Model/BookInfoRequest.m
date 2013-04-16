@@ -4,6 +4,7 @@
 #import "DOUBook.h"
 #import "DOUAnnotation.h"
 #import "DOUAnnotationArray.h"
+#import "NSObject+SBJson.h"
 
 @implementation BookInfoRequest {
     id delegate;
@@ -36,6 +37,23 @@
                 NSLog(@"%@", [annotation pageNum]);
                 NSLog(@"%@", [annotation content]);
                 NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            }
+        }
+    }];
+}
+
+- (void)getInfo{
+    DOUService *service = [DOUService sharedInstance];
+    NSString *string = [NSString stringWithFormat:@"/v2/book/%@", [book id]];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:string parameters:nil];
+    [service get:query callback:^(DOUHttpRequest *request){
+        NSString *responseString = [request responseString];
+        NSError *error = [request doubanError];
+        if(!error){
+            NSMutableDictionary *dic = (NSMutableDictionary *)[responseString JSONValue];
+            [book setSummary:[dic objectForKey:@"summary"]];
+            if([delegate respondsToSelector:@selector(bookInfoRequestDidFinish)]){
+                [delegate performSelector:@selector(bookInfoRequestDidFinish)];
             }
         }
     }];

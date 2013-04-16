@@ -20,6 +20,7 @@ typedef enum {
 
 @property (nonatomic, retain) UIImage *smallImage;
 @property (nonatomic, retain) UIImage *mediumImage;
+@property (nonatomic, retain) NSString *summary;
 
 - (NSString *)rating;
 

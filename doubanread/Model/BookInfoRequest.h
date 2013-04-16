@@ -6,4 +6,6 @@
 - (id)initWithBook:(DOUBook *)aBook andDelegate:(id)aDelegate;
 
 - (void)getReviews;
+
+- (void)getInfo;
 @end
