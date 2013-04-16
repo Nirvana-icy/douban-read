@@ -1,14 +1,16 @@
 #import "WishBookDetailView.h"
+#import "UILabel+Extension.h"
 
 
 @implementation WishBookDetailView {
 }
 
 - (void)addButtonsWithPositionY:(float)positionY {
-    readingButton = [self createButton:40 positionY:positionY title:@"在读" action:@selector(reading)];
+    UILabel *wishLabel = [[UILabel alloc] initWithText:@"我想读这本书" andPosition:CGPointMake(15, positionY+10) andMaxWidth:200 fontSize:15.0f];
+    [contentView addSubview:wishLabel];
+
+    readingButton = [self createButton:200 positionY:positionY title:@"在读" action:@selector(reading)];
     [contentView addSubview:readingButton];
-    finishReadingButton = [self createButton:150 positionY:positionY title:@"读过" action:@selector(finishReading)];
-    [contentView addSubview:finishReadingButton];
 }
 
 @end

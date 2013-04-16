@@ -1,4 +1,3 @@
-#import <CoreGraphics/CoreGraphics.h>
 #import "BookDetailView.h"
 #import "DOUBook.h"
 #import "UILabel+Extension.h"
@@ -76,7 +75,7 @@
 
 - (UIButton *)createButton:(CGFloat)positionX positionY:(CGFloat)positionY title:(NSString *)title action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setFrame:CGRectMake(positionX, positionY, 70, 40)];
+    [button setFrame:CGRectMake(positionX, positionY+5, 60, 30)];
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
