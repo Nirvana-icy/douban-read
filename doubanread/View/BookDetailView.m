@@ -48,7 +48,7 @@
     UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
     [contentView addSubview:rateLabel];
 
-    [self addButtonsWithPositionY:IMAGE_MAX_HEIGHT+ 40];
+    [self addLabelWithPositionY:IMAGE_MAX_HEIGHT+ 40];
     height = IMAGE_MAX_HEIGHT + 40 + 40;
 
     UILabel *summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, height+ 5) andMaxWidth:200 fontSize:15.0f];
@@ -63,7 +63,7 @@
     return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:13.0f];
 }
 
-- (void)addButtonsWithPositionY:(float)positionY {
+- (void)addLabelWithPositionY:(float)positionY {
 
 }
 
@@ -71,14 +71,6 @@
     UIImage *cropped = [image cropToWidth:IMAGE_MAX_WIDTH andHeight:IMAGE_MAX_HEIGHT];
     [iconView setImage:cropped];
     [iconView setFrame:CGRectMake(10, 10, cropped.size.width, cropped.size.height)];
-}
-
-- (UIButton *)createButton:(CGFloat)positionX positionY:(CGFloat)positionY title:(NSString *)title action:(SEL)action {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setFrame:CGRectMake(positionX, positionY+5, 60, 30)];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    return button;
 }
 
 - (void)showSummary {

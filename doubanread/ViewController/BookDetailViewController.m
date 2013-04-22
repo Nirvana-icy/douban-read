@@ -44,8 +44,12 @@
             detailView = [[SearchBookDetailView alloc] initWithBook:book andTarget:self];
             break;
     }
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"..."
+                                                                    style:UIBarButtonItemStylePlain target:detailView action:@selector(showActionSheet)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+
     self.view = detailView;
-    if(book.mediumImage == nil){
+    if (book.mediumImage == nil) {
         [imageRequest startDownload];
     }
     [bookInfoRequest getInfo];
@@ -61,14 +65,19 @@
     [request changeBook:[book id] toStatus:@"reading"];
 }
 
-- (void)addToReading{
+- (void)addToReading {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
     [request addBook:[book id] withStatus:@"reading"];
 }
 
-- (void)addToWish{
+- (void)addToWish {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
     [request addBook:[book id] withStatus:@"wish"];
+}
+
+- (void)deleteBook {
+    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
+    [request deleteBook:[book id]];
 }
 
 - (void)bookChangeRequestDidFinish {
@@ -77,7 +86,7 @@
     [booksViewController bookStatusChanged:book];
 }
 
-- (void)bookInfoRequestDidFinish{
+- (void)bookInfoRequestDidFinish {
     [detailView showSummary];
 }
 

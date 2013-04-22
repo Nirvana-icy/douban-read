@@ -5,7 +5,7 @@
 @class BookStatusViewController;
 @class BookListViewController;
 
-@interface BookDetailViewController : UIViewController <BookMediumImageRequestDelegate>
+@interface BookDetailViewController : UIViewController <BookMediumImageRequestDelegate, UIActionSheetDelegate>
 - (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookListViewController *)theBooksViewController;
 
 - (void)finishReading;
@@ -15,4 +15,6 @@
 - (void)addToReading;
 
 - (void)addToWish;
+
+- (void)deleteBook;
 @end
