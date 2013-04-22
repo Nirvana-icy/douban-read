@@ -10,7 +10,7 @@
 }
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget;
 
-- (void)addLabelWithPositionY:(float)positionY;
+- (void)addStatusLabelWithPositionY:(float)positionY;
 
 - (void)showImage:(UIImage *)image;
 

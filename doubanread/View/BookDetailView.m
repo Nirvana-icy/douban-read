@@ -10,6 +10,7 @@
 @implementation BookDetailView {
     UIImageView *iconView;
     UIWebView *summaryView;
+    float totalHeight;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget {
@@ -30,32 +31,45 @@
     [iconView setImage:book.mediumImage];
     [contentView addSubview:iconView];
 
-    float height = 10;
-    UILabel *bookNameLabel = [self createLabelOnTheRightSizeOfImage:height text:[book title]];
+    totalHeight = 10;
+    UILabel *bookNameLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[book title]];
     [contentView addSubview:bookNameLabel];
-    height += bookNameLabel.bounds.size.height + 10;
+    totalHeight += bookNameLabel.bounds.size.height + 10;
 
-    UILabel *authorLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"作者: %@", [book author]]];
+    UILabel *authorLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"作者: %@", [book author]]];
     [contentView addSubview:authorLabel];
-    height += authorLabel.bounds.size.height + 10;
+    totalHeight += authorLabel.bounds.size.height + 10;
 
     if (![[book publisher] isEqual:@""]) {
-        UILabel *publisherLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"出版社: %@", [book publisher]]];
+        UILabel *publisherLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"出版社: %@", [book publisher]]];
         [contentView addSubview:publisherLabel];
-        height += publisherLabel.bounds.size.height + 10;
+        totalHeight += publisherLabel.bounds.size.height + 10;
     }
 
-    UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:height text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
+    UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
     [contentView addSubview:rateLabel];
 
-    [self addLabelWithPositionY:IMAGE_MAX_HEIGHT+ 40];
-    height = IMAGE_MAX_HEIGHT + 40 + 40;
+    [self addStatusLabelWithPositionY:IMAGE_MAX_HEIGHT+ 40];
+    totalHeight = IMAGE_MAX_HEIGHT + 40 + 40;
 
-    UILabel *summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, height+ 5) andMaxWidth:200 fontSize:15.0f];
-    height += summaryLabel.bounds.size.height + 10;
+    if ([book myComment] == nil) {
+        UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价：暂无" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
+        [contentView addSubview:myCommentLabel];
+        totalHeight += myCommentLabel.bounds.size.height + 15;
+    } else {
+        UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价：" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
+        [contentView addSubview:myCommentLabel];
+        totalHeight += myCommentLabel.bounds.size.height + 10;
+        UILabel *myComment = [[UILabel alloc] initWithText:[book myComment] andPosition:CGPointMake(35, totalHeight + 5) andMaxWidth:265 fontSize:15.0f];
+        [contentView addSubview:myComment];
+        totalHeight += myComment.bounds.size.height + 10;
+    }
+
+    UILabel *summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:200 fontSize:15.0f];
+    totalHeight += summaryLabel.bounds.size.height + 10;
     [contentView addSubview:summaryLabel];
 
-    contentView.contentSize = CGSizeMake(320, height + 110);
+    contentView.contentSize = CGSizeMake(320, totalHeight + 110);
     [self addSubview:contentView];
 }
 
@@ -63,7 +77,7 @@
     return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:13.0f];
 }
 
-- (void)addLabelWithPositionY:(float)positionY {
+- (void)addStatusLabelWithPositionY:(float)positionY {
 
 }
 
@@ -74,7 +88,7 @@
 }
 
 - (void)showSummary {
-    summaryView = [self buildWebViewWith:CGRectMake(9, IMAGE_MAX_HEIGHT + 110, 300, 1)];
+    summaryView = [self buildWebViewWith:CGRectMake(9, totalHeight, 300, 1)];
     [summaryView setDelegate:self];
     [contentView addSubview:summaryView];
 }

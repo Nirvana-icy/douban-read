@@ -6,7 +6,7 @@
 @implementation WishBookDetailView {
 }
 
-- (void)addLabelWithPositionY:(float)positionY {
+- (void)addStatusLabelWithPositionY:(float)positionY {
     UILabel *wishLabel = [[UILabel alloc] initWithText:@"我想读这本书" andPosition:CGPointMake(15, positionY + 10) andMaxWidth:200 fontSize:15.0f];
     [contentView addSubview:wishLabel];
 }
