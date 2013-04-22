@@ -17,6 +17,8 @@
 - (NSString *)authorIntro;
 
 
+- (NSString *)myComment;
+
 - (NSString *)publisher;
 
 - (NSString *)smallImageUrl;

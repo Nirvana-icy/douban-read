@@ -32,6 +32,10 @@
     return self.dictionary[@"author_intro"];
 }
 
+- (NSString *)myComment{
+    return self.dictionary[@"comment"];
+}
+
 - (NSString *)publisher {
     return self.dictionary[@"publisher"];
 }
