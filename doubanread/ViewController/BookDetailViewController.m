@@ -76,9 +76,24 @@
 }
 
 - (void)deleteBook {
-    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request deleteBook:[book id]];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"删除图书" message:@"确认要删除这本书么？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+    [alertView show];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            break;
+        case 1: {
+            BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
+            [request deleteBook:[book id]];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 
 - (void)bookChangeRequestDidFinish {
     NSLog(@"book change request finished");
