@@ -1,3 +1,4 @@
+#import <CoreGraphics/CoreGraphics.h>
 #import "BookDetailView.h"
 #import "DOUBook.h"
 #import "UILabel+Extension.h"
@@ -11,6 +12,8 @@
     UIImageView *iconView;
     UIWebView *summaryView;
     float totalHeight;
+    UILabel *myComment;
+    UILabel *summaryLabel;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget {
@@ -52,25 +55,21 @@
     [self addStatusLabelWithPositionY:IMAGE_MAX_HEIGHT+ 40];
     totalHeight = IMAGE_MAX_HEIGHT + 40 + 40;
 
-    if ([book myComment] == nil) {
-        UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价：暂无" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
-        [contentView addSubview:myCommentLabel];
-        totalHeight += myCommentLabel.bounds.size.height + 15;
-    } else {
-        UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价：" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
-        [contentView addSubview:myCommentLabel];
-        totalHeight += myCommentLabel.bounds.size.height + 10;
-        UILabel *myComment = [[UILabel alloc] initWithText:[book myComment] andPosition:CGPointMake(35, totalHeight + 5) andMaxWidth:265 fontSize:15.0f];
-        [contentView addSubview:myComment];
-        totalHeight += myComment.bounds.size.height + 10;
-    }
+    UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
+    [contentView addSubview:myCommentLabel];
+    totalHeight += myCommentLabel.bounds.size.height + 10;
 
-    UILabel *summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:200 fontSize:15.0f];
+    myComment = [[UILabel alloc] initWithText:@"暂无" andPosition:CGPointMake(35, totalHeight + 5) andMaxWidth:265 fontSize:15.0f];
+    [contentView addSubview:myComment];
+    totalHeight += myComment.bounds.size.height + 10;
+
+    summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:200 fontSize:15.0f];
     totalHeight += summaryLabel.bounds.size.height + 10;
     [contentView addSubview:summaryLabel];
 
     contentView.contentSize = CGSizeMake(320, totalHeight + 110);
     [self addSubview:contentView];
+    [self showComment];
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
@@ -114,5 +113,20 @@
     newFrame.size.height = fittingSize.height + 12;
     [summaryView setFrame:newFrame];
     contentView.contentSize = CGSizeMake(320, contentView.contentSize.height + summaryView.frame.size.height);
+}
+
+- (void)showComment {
+    if ([book myComment] == nil) {
+        [myComment updateWithText:@"暂无" andPosition:myComment.frame.origin andMaxWidth:250];
+    } else {
+        [myComment updateWithText:[book myComment] andPosition:myComment.frame.origin andMaxWidth:250];
+    }
+
+    [summaryLabel setFrame:CGRectMake(summaryLabel.frame.origin.x, myComment.frame.origin.y + myComment.frame.size.height + 10, summaryLabel.bounds.size.width, summaryLabel.bounds.size.height)];
+    if (summaryView == nil) {
+        totalHeight += myComment.bounds.size.height - 15;
+    } else {
+        [summaryView setFrame:CGRectMake(summaryView.frame.origin.x, summaryLabel.frame.origin.y + summaryLabel.frame.size.height + 10, summaryView.bounds.size.width, summaryView.bounds.size.height)];
+    }
 }
 @end

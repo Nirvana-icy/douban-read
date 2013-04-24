@@ -67,7 +67,7 @@
 - (void)popCommentViewWithAction:(SEL)action{
     commentViewController = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
     [commentViewController setAction:action];
-    [commentViewController setBookId:[book id]];
+    [commentViewController setBook:book];
     [commentViewController setTarget:self];
     [self.navigationController pushViewController:commentViewController animated:YES];
 }
@@ -104,6 +104,7 @@
 
 - (void)bookChangeRequestDidFinish {
     [booksViewController bookStatusChanged:book];
+    [detailView showComment];
 }
 
 - (void)bookInfoRequestDidFinish {

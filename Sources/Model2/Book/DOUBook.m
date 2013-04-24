@@ -59,6 +59,11 @@
     return self.dictionary[@"comment"];
 }
 
+- (void)setComment:(NSString *)comment {
+    self.dictionary[@"comment"] = comment;
+}
+
+
 - (NSString *)myRating{
     return self.dictionary[@"rating"][@"value"];
 }

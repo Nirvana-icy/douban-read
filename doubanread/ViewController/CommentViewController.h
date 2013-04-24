@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @class BookDetailViewController;
+@class DOUBook;
 
 @interface CommentViewController : UIViewController<UITextViewDelegate>
 
@@ -10,7 +11,7 @@
 
 - (void)setAction:(SEL)action;
 
-- (void)setBookId:(NSString *)string;
+- (void)setBook:(DOUBook *)theBook;
 
 - (void)setTarget:(BookDetailViewController *)controller;
 @end

@@ -2,12 +2,13 @@
 #import "CommentViewController.h"
 #import "BookStatusChangeRequest.h"
 #import "BookDetailViewController.h"
+#import "DOUBook.h"
 
 @implementation CommentViewController {
     UIBarButtonItem *sendCommentButton;
     SEL theAction;
-    NSString *bookId;
     BookDetailViewController *target;
+    DOUBook *book;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -40,7 +41,7 @@
 - (void)changeBookToStatus:(NSString *)status {
     [[self navigationController] popViewControllerAnimated:YES];
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:target];
-    [request changeBook:bookId toStatus:status withComment:_commentTextArea.text];
+    [request changeBook:book toStatus:status withComment:_commentTextArea.text];
 }
 
 - (void)viewDidUnload {
@@ -77,8 +78,8 @@
     theAction = action;
 }
 
-- (void)setBookId:(NSString *)theBookId {
-    bookId = theBookId;
+- (void)setBook:(DOUBook *)theBook{
+    book = theBook;
 }
 
 - (void)setTarget:(BookDetailViewController *)controller {

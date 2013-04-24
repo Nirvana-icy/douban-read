@@ -2,6 +2,7 @@
 #import "BookStatusChangeRequest.h"
 #import "DOUBookArray.h"
 #import "DOUAPIEngine.h"
+#import "DOUBook.h"
 
 
 @implementation BookStatusChangeRequest {
@@ -15,29 +16,20 @@
     return self;
 }
 
-- (void)changeBook:(NSString *)bookId toStatus:(NSString *)status {
-    [self doSomethingWithBook:bookId status:status withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
+- (void)changeBook:(DOUBook *)book toStatus:(NSString *)status withComment:(NSString *)comment{
+    [self doSomethingWithBook:[book id] status:status comment:comment withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
         [service put:query postBody:postBody callback:^(DOUHttpRequest *req) {
             NSError *error = [req doubanError];
             if (!error) {
+                [book setComment:comment];
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
             }
         }];
     }];
 }
 
-- (void)changeBook:(NSString *)bookId toStatus:(NSString *)status withComment:(NSString *)comment{
-    [self doSomethingWithBook:bookId status:status comment:comment withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
-        [service put:query postBody:postBody callback:^(DOUHttpRequest *req) {
-            NSError *error = [req doubanError];
-            if (!error) {
-                [delegate performSelector:@selector(bookChangeRequestDidFinish)];
-            }
-        }];
-    }];
-}
 - (void)addBook:(NSString *)bookId withStatus:(NSString *)status {
-    [self doSomethingWithBook:bookId status:status withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
+    [self doSomethingWithBook:bookId status:status comment:@"" withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
         [service post:query postBody:postBody callback:^(DOUHttpRequest *req) {
             NSError *error = [req doubanError];
             if (!error) {
@@ -47,16 +39,6 @@
             }
         }];
     }];
-}
-
-- (void)doSomethingWithBook:(NSString *)bookId status:(NSString *)status
-                  withBlock:(void (^)(DOUQuery *query, DOUService *service, NSString *requestBody))block {
-    NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", bookId];
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status}];
-
-    DOUService *service = [DOUService sharedInstance];
-    NSString *body = [NSString stringWithFormat:@"status=%@", status];
-    block(query, service, body);
 }
 
 - (void)doSomethingWithBook:(NSString *)bookId status:(NSString *)status comment:(NSString *)comment

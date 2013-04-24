@@ -46,6 +46,7 @@ typedef enum {
 
 - (NSString *)myComment;
 
+- (void)setComment:(NSString *)comment;
 - (NSString *)myRating;
 
 - (NSString *)smallImageUrl;

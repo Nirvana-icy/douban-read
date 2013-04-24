@@ -15,4 +15,6 @@
 - (void)showImage:(UIImage *)image;
 
 - (void)showSummary;
+
+- (void)showComment;
 @end
