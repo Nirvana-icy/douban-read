@@ -1,7 +1,5 @@
 #import "BookCell.h"
 #import "DOUBook.h"
-#import "UILabel+Extension.h"
-#import "UIImage+Extension.h"
 
 @interface BookCellBackgroundView : UIView
 - (id)initWithColor:(UIColor *)theColor;
@@ -51,9 +49,7 @@
     UIImage *bookImage = [theBook smallImage];
     [self redrawImage:bookImage];
 
-    [titleLabel updateWithText:[theBook title]
-                                   andPosition:CGPointMake(IMAGE_MAX_WIDTH + 20, 10)
-                                   andMaxWidth:(320 - IMAGE_MAX_WIDTH - 5)];
+    [titleLabel updateWithText:[theBook title] andPosition:CGPointMake(IMAGE_MAX_WIDTH + 20, 10) andMaxWidth:(320 - IMAGE_MAX_WIDTH - 5) fontSize:14.0f];
     [self setNeedsLayout];
 }
 

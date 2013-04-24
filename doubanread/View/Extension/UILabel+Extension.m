@@ -1,6 +1,3 @@
-#import "UILabel+Extension.h"
-
-
 @implementation UILabel (Extension)
 
 - (id)initWithText:(NSString *)text andPosition:(CGPoint)position andMaxWidth:(int)maxWidth fontSize:(float)fontSize {
@@ -16,9 +13,9 @@
     return self;
 }
 
-- (void)updateWithText:(NSString *)text andPosition:(CGPoint)position andMaxWidth:(int)maxWidth{
+- (void)updateWithText:(NSString *)text andPosition:(CGPoint)position andMaxWidth:(int)maxWidth fontSize:(float)fontSize {
     CGSize constSize = {maxWidth, 9999};
-    UIFont *systemFontOfSize = [UIFont systemFontOfSize:14.0f];
+    UIFont *systemFontOfSize = [UIFont systemFontOfSize:fontSize];
     CGSize labelSize = [text sizeWithFont:systemFontOfSize constrainedToSize:constSize lineBreakMode:NSLineBreakByWordWrapping];
     [self setFrame:CGRectMake(position.x, position.y, labelSize.width, labelSize.height)];
     [self setNumberOfLines:0];

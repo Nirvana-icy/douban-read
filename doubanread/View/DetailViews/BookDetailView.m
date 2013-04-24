@@ -111,9 +111,9 @@
 
 - (void)showComment {
     if ([book myComment] == nil) {
-        [myComment updateWithText:@"暂无" andPosition:myComment.origin andMaxWidth:250];
+        [myComment updateWithText:@"暂无" andPosition:myComment.origin andMaxWidth:250 fontSize:15.0f];
     } else {
-        [myComment updateWithText:[book myComment] andPosition:myComment.origin andMaxWidth:250];
+        [myComment updateWithText:[book myComment] andPosition:myComment.origin andMaxWidth:250 fontSize:15.0f];
     }
 
     [summaryLabel setTop:myComment.top + myComment.height + 10];
