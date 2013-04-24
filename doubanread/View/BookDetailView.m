@@ -1,9 +1,6 @@
-#import <CoreGraphics/CoreGraphics.h>
 #import "BookDetailView.h"
 #import "DOUBook.h"
-#import "UILabel+Extension.h"
 #import "BookDetailViewController.h"
-#import "UIImage+Extension.h"
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
@@ -37,16 +34,16 @@
     totalHeight = 10;
     UILabel *bookNameLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[book title]];
     [contentView addSubview:bookNameLabel];
-    totalHeight += bookNameLabel.bounds.size.height + 10;
+    totalHeight += bookNameLabel.height + 10;
 
     UILabel *authorLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"作者: %@", [book author]]];
     [contentView addSubview:authorLabel];
-    totalHeight += authorLabel.bounds.size.height + 10;
+    totalHeight += authorLabel.height + 10;
 
     if (![[book publisher] isEqual:@""]) {
         UILabel *publisherLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"出版社: %@", [book publisher]]];
         [contentView addSubview:publisherLabel];
-        totalHeight += publisherLabel.bounds.size.height + 10;
+        totalHeight += publisherLabel.height + 10;
     }
 
     UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
@@ -57,14 +54,14 @@
 
     UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
     [contentView addSubview:myCommentLabel];
-    totalHeight += myCommentLabel.bounds.size.height + 10;
+    totalHeight += myCommentLabel.height + 10;
 
     myComment = [[UILabel alloc] initWithText:@"暂无" andPosition:CGPointMake(35, totalHeight + 5) andMaxWidth:265 fontSize:15.0f];
     [contentView addSubview:myComment];
-    totalHeight += myComment.bounds.size.height + 10;
+    totalHeight += myComment.height + 10;
 
     summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:200 fontSize:15.0f];
-    totalHeight += summaryLabel.bounds.size.height + 10;
+    totalHeight += summaryLabel.height + 10;
     [contentView addSubview:summaryLabel];
 
     contentView.contentSize = CGSizeMake(320, totalHeight + 110);
@@ -108,25 +105,22 @@
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
     CGSize fittingSize = [aWebView sizeThatFits:CGSizeZero];
     [aWebView setScalesPageToFit:YES];
-
-    CGRect newFrame = [summaryView frame];
-    newFrame.size.height = fittingSize.height + 12;
-    [summaryView setFrame:newFrame];
-    contentView.contentSize = CGSizeMake(320, contentView.contentSize.height + summaryView.frame.size.height);
+    [summaryView setHeight:fittingSize.height + 12];
+    contentView.contentSize = CGSizeMake(320, contentView.contentSize.height + summaryView.height);
 }
 
 - (void)showComment {
     if ([book myComment] == nil) {
-        [myComment updateWithText:@"暂无" andPosition:myComment.frame.origin andMaxWidth:250];
+        [myComment updateWithText:@"暂无" andPosition:myComment.origin andMaxWidth:250];
     } else {
-        [myComment updateWithText:[book myComment] andPosition:myComment.frame.origin andMaxWidth:250];
+        [myComment updateWithText:[book myComment] andPosition:myComment.origin andMaxWidth:250];
     }
 
-    [summaryLabel setFrame:CGRectMake(summaryLabel.frame.origin.x, myComment.frame.origin.y + myComment.frame.size.height + 10, summaryLabel.bounds.size.width, summaryLabel.bounds.size.height)];
+    [summaryLabel setTop:myComment.top + myComment.height + 10];
     if (summaryView == nil) {
-        totalHeight += myComment.bounds.size.height - 15;
+        totalHeight += myComment.height - 15;
     } else {
-        [summaryView setFrame:CGRectMake(summaryView.frame.origin.x, summaryLabel.frame.origin.y + summaryLabel.frame.size.height + 10, summaryView.bounds.size.width, summaryView.bounds.size.height)];
+        [summaryView setTop:summaryLabel.top + summaryLabel.height + 10];
     }
 }
 @end

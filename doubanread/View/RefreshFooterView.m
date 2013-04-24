@@ -11,7 +11,7 @@
 
 - (id)initWithContainer:(UIScrollView *)theContainer{
     container = theContainer;
-    CGRect frame =  CGRectMake(0.0f, container.contentSize.height, container.bounds.size.width, 200);
+    CGRect frame =  CGRectMake(0.0f, container.contentSize.height, container.width, 200);
     self = [super initWithFrame:frame];
     if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -24,7 +24,7 @@
 }
 
 - (void)relocate{
-    [self setFrame:CGRectMake(0.0f, container.contentSize.height, container.bounds.size.width, 200)];
+    [self setFrame:CGRectMake(0.0f, container.contentSize.height, container.width, 200)];
 }
 
 - (void)acceptCommand:(id <Command>)command {
@@ -49,16 +49,16 @@
     if (self.refreshState == RefreshLoading) {
         [self createFixedInsetForLoadingInfo:scrollView];
     }
-    else if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height)
-            && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height + 40)) {
+    else if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.height)
+            && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.height + 40)) {
         [self acceptCommand:[ShowNormalInfoCommand command]];
-    }else if(scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 40)){
+    }else if(scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.height + 40)){
         [self acceptCommand:[ShowPullingInfoCommand command]];
     }
 }
 
 - (void)viewDidEndDragging:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 40) && ![self.delegate isLoading]) {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.height + 40) && ![self.delegate isLoading]) {
         [self createFixedInsetForLoadingInfo:scrollView];
         [self acceptCommand:[ShowLoadingInfoCommand command]];
         [self.delegate retrieveMoreBooks];

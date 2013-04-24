@@ -9,6 +9,11 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UILabel+Extension.h"
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+
 #endif

@@ -14,7 +14,7 @@
 
     if (refreshHeaderView == nil) {
         refreshHeaderView = [[RefreshHeaderView alloc] initWithFrame:
-                CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.bounds.size.width, self.tableView.bounds.size.height)];
+                CGRectMake(0.0f, 0.0f - self.tableView.height, self.view.width, self.tableView.height)];
         refreshHeaderView.delegate = self;
         [[self tableView] addSubview:refreshHeaderView];
     }
@@ -62,7 +62,7 @@
     CGPoint pt =scrollView.contentOffset;
     if(pt.y < 0){
         [refreshHeaderView viewDidScroll:scrollView];
-    }else if(pt.y > (scrollView.contentSize.height - self.view.bounds.size.height)){
+    }else if(pt.y > (scrollView.contentSize.height - self.view.height)){
         [refreshFooterView viewDidScroll:scrollView];
     }
 }
@@ -71,7 +71,7 @@
     CGPoint pt =scrollView.contentOffset;
     if(pt.y < 0){
         [refreshHeaderView viewDidEndDragging:scrollView];
-    }else if(pt.y > (scrollView.contentSize.height - self.view.bounds.size.height)){
+    }else if(pt.y > (scrollView.contentSize.height - self.view.height)){
         [refreshFooterView viewDidEndDragging:scrollView];
     }
 }

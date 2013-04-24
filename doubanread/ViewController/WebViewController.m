@@ -25,8 +25,8 @@
     self.navigationItem.title = @"登录";
     webView = [[UIWebView alloc] initWithFrame:CGRectMake(0,
             0,
-            self.view.bounds.size.width,
-            self.view.bounds.size.height - 49)];
+            self.view.width,
+            self.view.height - 49)];
     webView.scalesPageToFit = YES;
     webView.delegate = self;
     NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
