@@ -53,6 +53,8 @@
 		49225C5A16E0879800B81CE9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49225C5816E0879800B81CE9 /* icon.png */; };
 		49225C5B16E0879800B81CE9 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49225C5916E0879800B81CE9 /* icon@2x.png */; };
 		496D87FD170DC1EF0065F7C9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686793FF3DC7A68FE8B1089 /* SearchViewController.m */; };
+		497D47221726707100F7CB17 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D47201726707100F7CB17 /* CommentViewController.m */; };
+		497D47231726707100F7CB17 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D47211726707100F7CB17 /* CommentViewController.xib */; };
 		498F3BC81710799F004014C8 /* DOUBookArrayOfSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 498F3BC71710799F004014C8 /* DOUBookArrayOfSearchResult.m */; };
 		49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1916B11A78003B5C67 /* libxml2.dylib */; };
 		49D22B1C16B11A7C003B5C67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1B16B11A7C003B5C67 /* libz.dylib */; };
@@ -314,6 +316,9 @@
 		36867F8B93D4514383DF0181 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		49225C5816E0879800B81CE9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../doubanread/icon.png; sourceTree = "<group>"; };
 		49225C5916E0879800B81CE9 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../doubanread/icon@2x.png"; sourceTree = "<group>"; };
+		497D471F1726707100F7CB17 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		497D47201726707100F7CB17 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		497D47211726707100F7CB17 /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		498F3BC61710799F004014C8 /* DOUBookArrayOfSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookArrayOfSearchResult.h; sourceTree = "<group>"; };
 		498F3BC71710799F004014C8 /* DOUBookArrayOfSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookArrayOfSearchResult.m; sourceTree = "<group>"; };
 		49D22B1916B11A78003B5C67 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -720,6 +725,9 @@
 		36867895723368B6077C1039 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				497D471F1726707100F7CB17 /* CommentViewController.h */,
+				497D47201726707100F7CB17 /* CommentViewController.m */,
+				497D47211726707100F7CB17 /* CommentViewController.xib */,
 				36867398D943679393F750E2 /* BookStatusViewController.m */,
 				368673379C2B28F3BAD5389B /* BookStatusViewController.h */,
 				368675835DC2EAED704F1F52 /* MainController.m */,
@@ -1579,6 +1587,7 @@
 				368671D1F098D90301C53374 /* search@2x.png in Resources */,
 				368675B7EC6E2B6AECC97FD9 /* wish.png in Resources */,
 				3686768A5ADD3CBA4528C6C4 /* reading@2x.png in Resources */,
+				497D47231726707100F7CB17 /* CommentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1795,6 +1804,7 @@
 				36867BFCA06D486AB479E1AD /* BookMediumImageRequest.m in Sources */,
 				36867C0A0E7AA8B853182823 /* SearchBookDetailView.m in Sources */,
 				368673DD2F0C462105FAFAD6 /* BookInfoRequest.m in Sources */,
+				497D47221726707100F7CB17 /* CommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

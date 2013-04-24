@@ -9,6 +9,7 @@
 #import "BookMediumImageRequest.h"
 #import "SearchBookDetailView.h"
 #import "BookInfoRequest.h"
+#import "CommentViewController.h"
 
 @implementation BookDetailViewController {
     BookDetailView *detailView;
@@ -16,6 +17,7 @@
     BookListViewController *booksViewController;
     BookMediumImageRequest *imageRequest;
     BookInfoRequest *bookInfoRequest;
+    CommentViewController *commentViewController;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andBooksViewController:(BookListViewController *)theBooksViewController {
@@ -44,9 +46,8 @@
             detailView = [[SearchBookDetailView alloc] initWithBook:book andTarget:self];
             break;
     }
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"..."
-                                                                    style:UIBarButtonItemStylePlain target:detailView action:@selector(showActionSheet)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:detailView action:@selector(showActionSheet)];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
 
     self.view = detailView;
     if (book.mediumImage == nil) {
@@ -56,8 +57,11 @@
 }
 
 - (void)finishReading {
-    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request changeBook:[book id] toStatus:@"read"];
+    commentViewController = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
+    [commentViewController setAction:@selector(finishReading)];
+    [commentViewController setBookId:[book id]];
+    [commentViewController setTarget:self];
+    [self.navigationController pushViewController:commentViewController animated:YES];
 }
 
 - (void)reading {
@@ -96,8 +100,6 @@
 
 
 - (void)bookChangeRequestDidFinish {
-    NSLog(@"book change request finished");
-    [[self navigationController] popViewControllerAnimated:YES];
     [booksViewController bookStatusChanged:book];
 }
 
