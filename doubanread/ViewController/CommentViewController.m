@@ -20,14 +20,16 @@
 
 - (void)loadView {
     [super loadView];
-    sendCommentButton = [[UIBarButtonItem alloc]
-            initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:theAction];
-    [sendCommentButton setEnabled:NO];
-    self.navigationItem.rightBarButtonItem = sendCommentButton;
-    
+
     [_commentTextArea setDelegate:self];
+    [_commentTextArea setText:[book myComment]];
     _commentTextArea.layer.borderWidth = 1.0f;
     _commentTextArea.layer.borderColor = [[UIColor grayColor] CGColor];
+
+    sendCommentButton = [[UIBarButtonItem alloc]
+            initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:theAction];
+    self.navigationItem.rightBarButtonItem = sendCommentButton;
+    [sendCommentButton setEnabled:_commentTextArea.text.length != 0];
 }
 
 - (void)finishReading {
