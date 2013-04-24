@@ -23,17 +23,25 @@
             initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:theAction];
     [sendCommentButton setEnabled:NO];
     self.navigationItem.rightBarButtonItem = sendCommentButton;
+    
     [_commentTextArea setDelegate:self];
     _commentTextArea.layer.borderWidth = 1.0f;
     _commentTextArea.layer.borderColor = [[UIColor grayColor] CGColor];
 }
 
 - (void)finishReading {
-    [[self navigationController] popViewControllerAnimated:YES];
-    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:target];
-    [request changeBook:bookId toStatus:@"read" withComment:_commentTextArea.text];
+    [self changeBookToStatus:@"read"];
 }
 
+- (void)reading {
+    [self changeBookToStatus:@"reading"];
+}
+
+- (void)changeBookToStatus:(NSString *)status {
+    [[self navigationController] popViewControllerAnimated:YES];
+    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:target];
+    [request changeBook:bookId toStatus:status withComment:_commentTextArea.text];
+}
 
 - (void)viewDidUnload {
     [self setRatingLabel:nil];
@@ -43,7 +51,7 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    int length= [self lengthOf:textView.text];
+    int length = [self lengthOf:textView.text];
     [sendCommentButton setEnabled:length != 0];
 }
 
@@ -51,14 +59,14 @@
     [_commentTextArea resignFirstResponder];
 }
 
--(int)lengthOf:(NSString *)text{
-    int sum=0;
-    for (int i=0; i<[text length]; i++) {
-        NSString *character=[text substringWithRange:NSMakeRange(i, 1)];
-        if ([character lengthOfBytesUsingEncoding:NSUTF8StringEncoding]==3) {
-            sum+=2;
+- (int)lengthOf:(NSString *)text {
+    int sum = 0;
+    for (int i = 0; i < [text length]; i++) {
+        NSString *character = [text substringWithRange:NSMakeRange(i, 1)];
+        if ([character lengthOfBytesUsingEncoding:NSUTF8StringEncoding] == 3) {
+            sum += 2;
         }
-        else{
+        else {
             sum++;
         }
     }

@@ -57,16 +57,19 @@
 }
 
 - (void)finishReading {
-    commentViewController = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
-    [commentViewController setAction:@selector(finishReading)];
-    [commentViewController setBookId:[book id]];
-    [commentViewController setTarget:self];
-    [self.navigationController pushViewController:commentViewController animated:YES];
+    [self popCommentViewWithAction:@selector(finishReading)];
 }
 
 - (void)reading {
-    BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request changeBook:[book id] toStatus:@"reading"];
+    [self popCommentViewWithAction:@selector(reading)];
+}
+
+- (void)popCommentViewWithAction:(SEL)action{
+    commentViewController = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
+    [commentViewController setAction:action];
+    [commentViewController setBookId:[book id]];
+    [commentViewController setTarget:self];
+    [self.navigationController pushViewController:commentViewController animated:YES];
 }
 
 - (void)addToReading {
