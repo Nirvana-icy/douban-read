@@ -74,12 +74,12 @@
 
 - (void)addToReading {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request addBook:[book id] withStatus:@"reading"];
+    [request addBook:book withStatus:@"reading"];
 }
 
 - (void)addToWish {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request addBook:[book id] withStatus:@"wish"];
+    [request addBook:book withStatus:@"wish"];
 }
 
 - (void)deleteBook {
@@ -104,7 +104,7 @@
 
 - (void)bookChangeRequestDidFinish {
     [booksViewController bookStatusChanged:book];
-    [detailView showComment];
+    [detailView showCommentAndUpdateStatus];
 }
 
 - (void)bookInfoRequestDidFinish {

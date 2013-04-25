@@ -22,17 +22,19 @@
             NSError *error = [req doubanError];
             if (!error) {
                 [book setComment:comment];
+                [book setStatus:status];
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
             }
         }];
     }];
 }
 
-- (void)addBook:(NSString *)bookId withStatus:(NSString *)status {
-    [self doSomethingWithBook:bookId status:status comment:@"" withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
+- (void)addBook:(DOUBook *)book withStatus:(NSString *)status {
+    [self doSomethingWithBook:[book id] status:status comment:@"" withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
         [service post:query postBody:postBody callback:^(DOUHttpRequest *req) {
             NSError *error = [req doubanError];
             if (!error) {
+                [book setStatus:status];
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
             } else {
                 NSLog(@"error: %@", error);

@@ -106,8 +106,8 @@
     }
 }
 
-- (void) setStatus:(BookStatus)theStatus{
-    self.dictionary[@"status"] = [self statusToString:theStatus];
+- (void) setStatus:(NSString *)theStatus{
+    self.dictionary[@"status"] = theStatus;
 }
 
 - (NSString *) statusToString:(BookStatus)theStatus{

@@ -16,5 +16,5 @@
 
 - (void)showSummary;
 
-- (void)showComment;
+- (void)showCommentAndUpdateStatus;
 @end

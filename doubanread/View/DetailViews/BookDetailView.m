@@ -11,6 +11,7 @@
     float totalHeight;
     UILabel *myComment;
     UILabel *summaryLabel;
+    UILabel *statusTipLabel;
 }
 
 - (id)initWithBook:(DOUBook *)theBook andTarget:(BookDetailViewController *)theTarget {
@@ -66,7 +67,7 @@
 
     contentView.contentSize = CGSizeMake(320, totalHeight + 110);
     [self addSubview:contentView];
-    [self showComment];
+    [self showCommentAndUpdateStatus];
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
@@ -74,7 +75,8 @@
 }
 
 - (void)addStatusLabelWithPositionY:(float)positionY {
-
+    statusTipLabel= [[UILabel alloc] initWithText:[self convertStatusToTip:[book status]] andPosition:CGPointMake(15, positionY + 10) andMaxWidth:200 fontSize:15.0f];
+    [contentView addSubview:statusTipLabel];
 }
 
 - (void)showImage:(UIImage *)image {
@@ -109,7 +111,8 @@
     contentView.contentSize = CGSizeMake(320, contentView.contentSize.height + summaryView.height);
 }
 
-- (void)showComment {
+- (void)showCommentAndUpdateStatus {
+    [statusTipLabel updateWithText:[self convertStatusToTip:[book status]] andPosition:[statusTipLabel origin] andMaxWidth:200 fontSize:15.0f];
     if ([book myComment] == nil) {
         [myComment updateWithText:@"暂无" andPosition:myComment.origin andMaxWidth:250 fontSize:15.0f];
     } else {
@@ -121,6 +124,19 @@
         totalHeight += myComment.height - 15;
     } else {
         [summaryView setTop:summaryLabel.top + summaryLabel.height + 10];
+    }
+}
+
+- (NSString *)convertStatusToTip:(BookStatus)status{
+    switch(status){
+        case WISH:
+            return @"我想读这本书";
+        case READ:
+            return @"我读过这本书";
+        case READING:
+            return @"我正在读这本书";
+        default:
+            return @"我尚未添加过这本书";
     }
 }
 @end
