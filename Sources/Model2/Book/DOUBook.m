@@ -106,6 +106,22 @@
     }
 }
 
+- (void) setStatus:(BookStatus)theStatus{
+    self.dictionary[@"status"] = [self statusToString:theStatus];
+}
+
+- (NSString *) statusToString:(BookStatus)theStatus{
+    switch(theStatus){
+        case WISH:
+            return @"wish";
+        case READING:
+            return @"reading";
+        case READ:
+            return @"read";
+        default:
+            return @"";
+    }
+}
 - (BOOL)isEqual:(id)object {
     if (![object isMemberOfClass:[DOUBook class]]){
          return false;

@@ -55,5 +55,5 @@ typedef enum {
 
 - (BookStatus)status;
 
-
+- (void)setStatus:(BookStatus)theStatus;
 @end

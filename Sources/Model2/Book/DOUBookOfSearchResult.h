@@ -1,29 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "DOUBook.h"
 
-@interface DOUBookOfSearchResult : DOUObject
+@interface DOUBookOfSearchResult : DOUBook
 
-@property (nonatomic, retain) UIImage *smallImage;
-@property (nonatomic, retain) UIImage *mediumImage;
-@property (nonatomic, retain) NSString *summary;
-
-- (NSString *)title;
-
-- (NSString *)author;
-
-
-- (NSString *)id;
-
-- (NSString *)authorIntro;
-
-
-- (NSString *)myComment;
-
-- (NSString *)publisher;
-
-- (NSString *)smallImageUrl;
-
-- (NSString *)mediumImageUrl;
-
-- (BookStatus)status;
 @end
