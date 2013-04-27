@@ -58,8 +58,8 @@
         [contentView addSubview:imageView];
     }
 
-    [self addStatusLabelWithPositionY:IMAGE_MAX_HEIGHT+ 40];
-    totalHeight = IMAGE_MAX_HEIGHT + 40 + 40;
+    [self addStatusLabelWithPositionY:IMAGE_MAX_HEIGHT+ 20];
+    totalHeight = IMAGE_MAX_HEIGHT + 20 + 40;
 
     UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
     [contentView addSubview:myCommentLabel];
@@ -73,12 +73,12 @@
 
     totalHeight += myCommentLabel.height + 10;
 
-    myComment = [[UILabel alloc] initWithText:@"暂无" andPosition:CGPointMake(35, totalHeight + 5) andMaxWidth:265 fontSize:15.0f];
+    myComment = [[UILabel alloc] initWithText:@"暂无" andPosition:CGPointMake(35, totalHeight + 10) andMaxWidth:265 fontSize:15.0f];
     [contentView addSubview:myComment];
 
     totalHeight += myComment.height + 10;
 
-    summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:200 fontSize:15.0f];
+    summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 10) andMaxWidth:200 fontSize:15.0f];
     totalHeight += summaryLabel.height + 10;
     [contentView addSubview:summaryLabel];
 
@@ -114,7 +114,7 @@
 }
 
 - (void)showSummary {
-    summaryView = [self buildWebViewWith:CGRectMake(9, totalHeight, 300, 1)];
+    summaryView = [self buildWebViewWith:CGRectMake(9, totalHeight+5, 300, 1)];
     [summaryView setDelegate:self];
     [contentView addSubview:summaryView];
 }
@@ -147,7 +147,7 @@
         [myComment updateWithText:[book myComment] andPosition:myComment.origin andMaxWidth:265 fontSize:15.0f];
     }
 
-    [summaryLabel setTop:myComment.top + myComment.height + 10];
+    [summaryLabel setTop:myComment.top + myComment.height + 15];
     if (summaryView == nil) {
         totalHeight += myComment.height - 15;
     } else {
