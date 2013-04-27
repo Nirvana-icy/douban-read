@@ -24,6 +24,8 @@ typedef enum {
 
 - (NSString *)rating;
 
+- (NSMutableArray *)ratingStars;
+
 - (NSString *)numberOfRaters;
 
 - (NSString *)title;

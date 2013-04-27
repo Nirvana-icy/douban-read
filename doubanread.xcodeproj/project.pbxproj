@@ -60,6 +60,8 @@
 		497D47221726707100F7CB17 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D47201726707100F7CB17 /* CommentViewController.m */; };
 		497D47231726707100F7CB17 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497D47211726707100F7CB17 /* CommentViewController.xib */; };
 		498F3BC81710799F004014C8 /* DOUBookArrayOfSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 498F3BC71710799F004014C8 /* DOUBookArrayOfSearchResult.m */; };
+		499AF830172BB843005471E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499AF82F172BB843005471E3 /* SenTestingKit.framework */; };
+		499AF833172BC9EF005471E3 /* DouBookTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 499AF832172BC9EF005471E3 /* DouBookTest.m */; };
 		49D22B1A16B11A78003B5C67 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1916B11A78003B5C67 /* libxml2.dylib */; };
 		49D22B1C16B11A7C003B5C67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1B16B11A7C003B5C67 /* libz.dylib */; };
 		49D22B1E16B11A88003B5C67 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D22B1D16B11A88003B5C67 /* CFNetwork.framework */; };
@@ -226,7 +228,6 @@
 		49F603C716B101680092D3BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603A716B101680092D3BD /* UIKit.framework */; };
 		49F603C816B101680092D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F603A916B101680092D3BD /* Foundation.framework */; };
 		49F603D016B101680092D3BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F603CE16B101680092D3BD /* InfoPlist.strings */; };
-		49F603D316B101680092D3BD /* doubanreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F603D216B101680092D3BD /* doubanreadTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -330,6 +331,9 @@
 		497D47211726707100F7CB17 /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		498F3BC61710799F004014C8 /* DOUBookArrayOfSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookArrayOfSearchResult.h; sourceTree = "<group>"; };
 		498F3BC71710799F004014C8 /* DOUBookArrayOfSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookArrayOfSearchResult.m; sourceTree = "<group>"; };
+		499AF82F172BB843005471E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		499AF831172BC9EF005471E3 /* DouBookTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBookTest.h; sourceTree = "<group>"; };
+		499AF832172BC9EF005471E3 /* DouBookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBookTest.m; sourceTree = "<group>"; };
 		49D22B1916B11A78003B5C67 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		49D22B1B16B11A7C003B5C67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		49D22B1D16B11A88003B5C67 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -659,8 +663,6 @@
 		49F603C416B101680092D3BD /* doubanreadTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = doubanreadTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F603CD16B101680092D3BD /* doubanreadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "doubanreadTests-Info.plist"; sourceTree = "<group>"; };
 		49F603CF16B101680092D3BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49F603D116B101680092D3BD /* doubanreadTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = doubanreadTests.h; sourceTree = "<group>"; };
-		49F603D216B101680092D3BD /* doubanreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doubanreadTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -685,6 +687,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499AF830172BB843005471E3 /* SenTestingKit.framework in Frameworks */,
 				49F603C716B101680092D3BD /* UIKit.framework in Frameworks */,
 				49F603C816B101680092D3BD /* Foundation.framework in Frameworks */,
 			);
@@ -1456,6 +1459,7 @@
 		49F603A616B101680092D3BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				499AF82F172BB843005471E3 /* SenTestingKit.framework */,
 				49D22B2316B11A9A003B5C67 /* MobileCoreServices.framework */,
 				49D22B2116B11A93003B5C67 /* SystemConfiguration.framework */,
 				49D22B1F16B11A8D003B5C67 /* Security.framework */,
@@ -1504,9 +1508,9 @@
 		49F603CB16B101680092D3BD /* doubanreadTests */ = {
 			isa = PBXGroup;
 			children = (
-				49F603D116B101680092D3BD /* doubanreadTests.h */,
-				49F603D216B101680092D3BD /* doubanreadTests.m */,
 				49F603CC16B101680092D3BD /* Supporting Files */,
+				499AF831172BC9EF005471E3 /* DouBookTest.h */,
+				499AF832172BC9EF005471E3 /* DouBookTest.m */,
 			);
 			path = doubanreadTests;
 			sourceTree = "<group>";
@@ -1838,7 +1842,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49F603D316B101680092D3BD /* doubanreadTests.m in Sources */,
+				499AF833172BC9EF005471E3 /* DouBookTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1981,7 +1985,8 @@
 		49F603DA16B101680092D3BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/doubanread.app/doubanread";
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/豆瓣阅历.app/豆瓣阅历";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1989,6 +1994,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "doubanread/doubanread-Prefix.pch";
 				INFOPLIST_FILE = "doubanreadTests/doubanreadTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1998,7 +2005,8 @@
 		49F603DB16B101680092D3BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/doubanread.app/doubanread";
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/豆瓣阅历.app/豆瓣阅历";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -2006,6 +2014,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "doubanread/doubanread-Prefix.pch";
 				INFOPLIST_FILE = "doubanreadTests/doubanreadTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

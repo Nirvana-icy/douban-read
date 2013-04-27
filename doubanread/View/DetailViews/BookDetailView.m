@@ -52,9 +52,9 @@
 
     float ratingStartX = 130 + rateLabel.width + 2;
 
-    NSMutableArray *ratingStarArray= [self createRatingsWithStartingPoint:ratingStartX startY:totalHeight - 2];
+    NSMutableArray *ratingStarArray = [self createRatingsWithStartingPoint:ratingStartX startY:totalHeight - 2];
 
-    for(UIImageView *imageView in ratingStarArray){
+    for (UIImageView *imageView in ratingStarArray) {
         [contentView addSubview:imageView];
     }
 
@@ -65,9 +65,9 @@
     [contentView addSubview:myCommentLabel];
 
     float myRatingStartX = myCommentLabel.left + myCommentLabel.width + 2;
-    NSMutableArray *myRatingStarArray= [self createRatingsWithStartingPoint:myRatingStartX startY:totalHeight + 5];
+    NSMutableArray *myRatingStarArray = [self createRatingsWithStartingPoint:myRatingStartX startY:totalHeight + 5];
 
-    for(UIImageView *imageView in myRatingStarArray){
+    for (UIImageView *imageView in myRatingStarArray) {
         [contentView addSubview:imageView];
     }
 
@@ -89,8 +89,8 @@
 
 - (NSMutableArray *)createRatingsWithStartingPoint:(float)startX startY:(float)startY {
     NSMutableArray *ratingStarArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 5; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star.png"]];
+    for (NSUInteger i = 0; i < 5; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self getStarName:i]]];
         [imageView setFrame:CGRectMake(startX, startY, 18, 18)];
         startX += imageView.width + 3;
         [ratingStarArray addObject:imageView];
@@ -98,12 +98,27 @@
     return ratingStarArray;
 }
 
+- (NSString *)getStarName:(NSUInteger)starPosition {
+    NSArray *stars = [book ratingStars];
+    NSLog(@"stars: %@", stars);
+    switch ([stars[starPosition] integerValue]) {
+        case 0:
+            return @"star_none.png";
+        case 1:
+            return @"star_half.png";
+        case 2:
+            return @"star.png";
+        default:
+            return @"star.png";
+    }
+}
+
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
     return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:13.0f];
 }
 
 - (void)addStatusLabelWithPositionY:(float)positionY {
-    statusTipLabel= [[UILabel alloc] initWithText:[book statusTip] andPosition:CGPointMake(15, positionY + 10) andMaxWidth:200 fontSize:15.0f];
+    statusTipLabel = [[UILabel alloc] initWithText:[book statusTip] andPosition:CGPointMake(15, positionY + 10) andMaxWidth:200 fontSize:15.0f];
     [contentView addSubview:statusTipLabel];
 }
 
@@ -114,7 +129,7 @@
 }
 
 - (void)showSummary {
-    summaryView = [self buildWebViewWith:CGRectMake(9, totalHeight+5, 300, 1)];
+    summaryView = [self buildWebViewWith:CGRectMake(9, totalHeight + 5, 300, 1)];
     [summaryView setDelegate:self];
     [contentView addSubview:summaryView];
 }
