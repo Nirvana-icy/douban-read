@@ -11,11 +11,11 @@
 @implementation DOUBook {
 }
 
-- (NSString *)rating{
+- (NSString *)rating {
     return [self book][@"rating"][@"average"];
 }
 
-- (NSString *)numberOfRaters{
+- (NSString *)numberOfRaters {
     return [self book][@"rating"][@"numRaters"];
 }
 
@@ -43,19 +43,19 @@
     return [self book][@"publisher"];
 }
 
-- (NSString *)pages{
+- (NSString *)pages {
     return [self book][@"pages"];
 }
 
-- (NSString *)price{
+- (NSString *)price {
     return [self book][@"price"];
 }
 
-- (NSString *)publishDate{
+- (NSString *)publishDate {
     return [self book][@"pubdate"];
 }
 
-- (NSString *)myComment{
+- (NSString *)myComment {
     return self.dictionary[@"comment"];
 }
 
@@ -64,7 +64,7 @@
 }
 
 
-- (NSString *)myRating{
+- (NSString *)myRating {
     return self.dictionary[@"rating"][@"value"];
 }
 
@@ -99,35 +99,36 @@
         return WISH;
     } else if ([status isEqualToString:@"reading"]) {
         return READING;
-    } else if([status isEqualToString:@"read"]){
+    } else if ([status isEqualToString:@"read"]) {
         return READ;
-    } else{
+    } else {
         return NOTADDED;
     }
 }
 
-- (void) setStatus:(NSString *)theStatus{
+- (void)setStatus:(NSString *)theStatus {
     self.dictionary[@"status"] = theStatus;
 }
 
-- (NSString *) statusToString:(BookStatus)theStatus{
-    switch(theStatus){
+- (NSString *)statusTip {
+    switch ([self status]) {
         case WISH:
-            return @"wish";
-        case READING:
-            return @"reading";
+            return @"我想读这本书";
         case READ:
-            return @"read";
+            return @"我读过这本书";
+        case READING:
+            return @"我正在读这本书";
         default:
-            return @"";
+            return @"我尚未添加过这本书";
     }
 }
+
 - (BOOL)isEqual:(id)object {
-    if (![object isMemberOfClass:[DOUBook class]]){
-         return false;
+    if (![object isMemberOfClass:[DOUBook class]]) {
+        return false;
     }
 
-    return [self.id isEqualToString:[(DOUBook *)object id]];
+    return [self.id isEqualToString:[(DOUBook *) object id]];
 }
 
 @end

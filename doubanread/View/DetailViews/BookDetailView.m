@@ -47,18 +47,35 @@
         totalHeight += publisherLabel.height + 10;
     }
 
-    UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"评分: %@ / %@人评价", [book rating], [book numberOfRaters]]];
+    UILabel *rateLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[NSString stringWithFormat:@"评分: "]];
     [contentView addSubview:rateLabel];
+
+    float ratingStartX = 130 + rateLabel.width + 2;
+
+    NSMutableArray *ratingStarArray= [self createRatingsWithStartingPoint:ratingStartX startY:totalHeight - 2];
+
+    for(UIImageView *imageView in ratingStarArray){
+        [contentView addSubview:imageView];
+    }
 
     [self addStatusLabelWithPositionY:IMAGE_MAX_HEIGHT+ 40];
     totalHeight = IMAGE_MAX_HEIGHT + 40 + 40;
 
-    UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价" andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
+    UILabel *myCommentLabel = [[UILabel alloc] initWithText:@"我的评价: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:250 fontSize:15.0f];
     [contentView addSubview:myCommentLabel];
+
+    float myRatingStartX = myCommentLabel.left + myCommentLabel.width + 2;
+    NSMutableArray *myRatingStarArray= [self createRatingsWithStartingPoint:myRatingStartX startY:totalHeight + 5];
+
+    for(UIImageView *imageView in myRatingStarArray){
+        [contentView addSubview:imageView];
+    }
+
     totalHeight += myCommentLabel.height + 10;
 
     myComment = [[UILabel alloc] initWithText:@"暂无" andPosition:CGPointMake(35, totalHeight + 5) andMaxWidth:265 fontSize:15.0f];
     [contentView addSubview:myComment];
+
     totalHeight += myComment.height + 10;
 
     summaryLabel = [[UILabel alloc] initWithText:@"内容简介: " andPosition:CGPointMake(15, totalHeight + 5) andMaxWidth:200 fontSize:15.0f];
@@ -70,12 +87,23 @@
     [self showCommentAndUpdateStatus];
 }
 
+- (NSMutableArray *)createRatingsWithStartingPoint:(float)startX startY:(float)startY {
+    NSMutableArray *ratingStarArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 5; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"star.png"]];
+        [imageView setFrame:CGRectMake(startX, startY, 18, 18)];
+        startX += imageView.width + 3;
+        [ratingStarArray addObject:imageView];
+    }
+    return ratingStarArray;
+}
+
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
     return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:13.0f];
 }
 
 - (void)addStatusLabelWithPositionY:(float)positionY {
-    statusTipLabel= [[UILabel alloc] initWithText:[self convertStatusToTip:[book status]] andPosition:CGPointMake(15, positionY + 10) andMaxWidth:200 fontSize:15.0f];
+    statusTipLabel= [[UILabel alloc] initWithText:[book statusTip] andPosition:CGPointMake(15, positionY + 10) andMaxWidth:200 fontSize:15.0f];
     [contentView addSubview:statusTipLabel];
 }
 
@@ -112,11 +140,11 @@
 }
 
 - (void)showCommentAndUpdateStatus {
-    [statusTipLabel updateWithText:[self convertStatusToTip:[book status]] andPosition:[statusTipLabel origin] andMaxWidth:200 fontSize:15.0f];
+    [statusTipLabel updateWithText:[book statusTip] andPosition:[statusTipLabel origin] andMaxWidth:200 fontSize:15.0f];
     if ([book myComment] == nil) {
-        [myComment updateWithText:@"暂无" andPosition:myComment.origin andMaxWidth:250 fontSize:15.0f];
+        [myComment updateWithText:@"暂无" andPosition:myComment.origin andMaxWidth:265 fontSize:15.0f];
     } else {
-        [myComment updateWithText:[book myComment] andPosition:myComment.origin andMaxWidth:250 fontSize:15.0f];
+        [myComment updateWithText:[book myComment] andPosition:myComment.origin andMaxWidth:265 fontSize:15.0f];
     }
 
     [summaryLabel setTop:myComment.top + myComment.height + 10];
@@ -127,16 +155,4 @@
     }
 }
 
-- (NSString *)convertStatusToTip:(BookStatus)status{
-    switch(status){
-        case WISH:
-            return @"我想读这本书";
-        case READ:
-            return @"我读过这本书";
-        case READING:
-            return @"我正在读这本书";
-        default:
-            return @"我尚未添加过这本书";
-    }
-}
 @end

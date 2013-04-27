@@ -56,4 +56,6 @@ typedef enum {
 - (BookStatus)status;
 
 - (void)setStatus:(NSString *)theStatus;
+
+- (NSString *)statusTip;
 @end
