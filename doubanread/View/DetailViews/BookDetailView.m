@@ -33,7 +33,7 @@
     [contentView addSubview:iconView];
 
     totalHeight = 10;
-    UILabel *bookNameLabel = [self createLabelOnTheRightSizeOfImage:totalHeight text:[book title]];
+    UILabel *bookNameLabel = [self createLabelOnTheRightSizeOfImage:totalHeight textWithLargeFont:[book title]];
     [contentView addSubview:bookNameLabel];
     totalHeight += bookNameLabel.height + 10;
 
@@ -110,6 +110,10 @@
         default:
             return @"star.png";
     }
+}
+
+- (UILabel *)createLabelOnTheRightSizeOfImage:(float)height textWithLargeFont:(NSString *)text{
+    return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:15.0f];
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height text:(NSString *)text {
