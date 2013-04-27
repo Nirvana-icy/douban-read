@@ -29,16 +29,19 @@
 		36867692C22172E1DA0B4B01 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686773FF579E8D9749AF2B8 /* blueArrow@2x.png */; };
 		3686769715C3B054750C9037 /* ReadingBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368679835174781F3300F551 /* ReadingBookDetailView.m */; };
 		368676ADCE286E69749A5A29 /* read.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686787DFB9AE41A91037A15 /* read.png */; };
+		368676AEFBFF9E532B57409F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 368678992A8794DF1D51E9E8 /* star.png */; };
 		368676B2173D63309645D197 /* WishBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A6884D9346FCA80B76E /* WishBookDetailView.m */; };
 		3686771C6729C1639C946DC6 /* ShowNormalInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */; };
 		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
 		368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */; };
 		36867766B45152F31FF67727 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674AD2533298D25EE5820 /* whiteArrow.png */; };
 		368677AD80EDB01E9C75F26F /* BookSmallImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368673ABD3DA971D266CDD84 /* BookSmallImageRequest.m */; };
+		368678EAB29E79193B1BDDB1 /* star_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686758439BA5791B280AF2B /* star_half.png */; };
 		368678EEC322E79B7C3ED2E4 /* NSString+ParseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867F73378410EF47C081F5 /* NSString+ParseCategory.m */; };
 		3686791B14CCD4FCEF7DB1DA /* BookListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867099C0B313F5215F3B37 /* BookListRequest.m */; };
 		368679CADFE374E56E9235E8 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686796CDE8E81C5BACE0229 /* UIImage+Extension.m */; };
 		36867A0A3383A5D799E28A56 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867670A014FA01D37D768B /* BookCell.m */; };
+		36867B5172BC12C98B963055 /* star_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 368671170BABB427B01F237D /* star_none.png */; };
 		36867BCE3F8D7FC770B09D50 /* wish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686707EE9F554C1EC808559 /* wish@2x.png */; };
 		36867BFCA06D486AB479E1AD /* BookMediumImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672EA308EC216C614E672 /* BookMediumImageRequest.m */; };
 		36867BFCEA144A3909B31B1F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867636DBAB05D8133FCC9E /* UIView+Extension.m */; };
@@ -245,6 +248,7 @@
 		36867099C0B313F5215F3B37 /* BookListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListRequest.m; sourceTree = "<group>"; };
 		368670E729FC8694D13CB082 /* BookStatusChangeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStatusChangeRequest.m; sourceTree = "<group>"; };
 		36867107FB91F14574AF9E74 /* WishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishViewController.h; sourceTree = "<group>"; };
+		368671170BABB427B01F237D /* star_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none.png; sourceTree = "<group>"; };
 		36867165331FBBEA5740EEEA /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		368671D88644C0AE12FDD506 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		3686720D1B6020D59C786011 /* BookMediumImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequest.h; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 		36867517C4810D5CB858C667 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
 		3686753864A9364FA2F457C1 /* wish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wish.png; sourceTree = "<group>"; };
 		368675835DC2EAED704F1F52 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		3686758439BA5791B280AF2B /* star_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_half.png; sourceTree = "<group>"; };
 		368675E2F79F63D7D02AE962 /* BookSmallImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSmallImageRequest.h; sourceTree = "<group>"; };
 		36867636DBAB05D8133FCC9E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		36867670A014FA01D37D768B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
@@ -282,6 +287,7 @@
 		3686787DFB9AE41A91037A15 /* read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = read.png; sourceTree = "<group>"; };
 		3686787EB3B7A2D1EDF1D10E /* BookMediumImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequestDelegate.h; sourceTree = "<group>"; };
 		36867892F843EA9C439AA862 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		368678992A8794DF1D51E9E8 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		3686793FF3DC7A68FE8B1089 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		3686795FE68775A045A348F1 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		368679608C1961C2527EB711 /* NSString+ParseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ParseCategory.h"; sourceTree = "<group>"; };
@@ -782,6 +788,9 @@
 				368674B7146F11EDA4DF5BBA /* search@2x.png */,
 				3686753864A9364FA2F457C1 /* wish.png */,
 				36867783D5934605DD3BE870 /* reading@2x.png */,
+				3686758439BA5791B280AF2B /* star_half.png */,
+				368678992A8794DF1D51E9E8 /* star.png */,
+				368671170BABB427B01F237D /* star_none.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1601,6 +1610,9 @@
 				368675B7EC6E2B6AECC97FD9 /* wish.png in Resources */,
 				3686768A5ADD3CBA4528C6C4 /* reading@2x.png in Resources */,
 				497D47231726707100F7CB17 /* CommentViewController.xib in Resources */,
+				368678EAB29E79193B1BDDB1 /* star_half.png in Resources */,
+				368676AEFBFF9E532B57409F /* star.png in Resources */,
+				36867B5172BC12C98B963055 /* star_none.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
