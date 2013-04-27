@@ -48,6 +48,8 @@ typedef enum {
 
 - (NSString *)myComment;
 
+- (NSMutableArray *)myRatingStars;
+
 - (void)setComment:(NSString *)comment;
 - (NSString *)myRating;
 

@@ -52,7 +52,7 @@
 
     float ratingStartX = 130 + rateLabel.width + 2;
 
-    NSMutableArray *ratingStarArray = [self createRatingsWithStartingPoint:ratingStartX startY:totalHeight - 2];
+    NSMutableArray *ratingStarArray = [self createStarsWithPosition:ratingStartX y:totalHeight - 2 ratingStars:[book ratingStars]];
 
     for (UIImageView *imageView in ratingStarArray) {
         [contentView addSubview:imageView];
@@ -65,7 +65,7 @@
     [contentView addSubview:myCommentLabel];
 
     float myRatingStartX = myCommentLabel.left + myCommentLabel.width + 2;
-    NSMutableArray *myRatingStarArray = [self createRatingsWithStartingPoint:myRatingStartX startY:totalHeight + 5];
+    NSMutableArray *myRatingStarArray = [self createStarsWithPosition:myRatingStartX y:totalHeight + 5 ratingStars:[book myRatingStars]];
 
     for (UIImageView *imageView in myRatingStarArray) {
         [contentView addSubview:imageView];
@@ -87,20 +87,19 @@
     [self showCommentAndUpdateStatus];
 }
 
-- (NSMutableArray *)createRatingsWithStartingPoint:(float)startX startY:(float)startY {
+- (NSMutableArray *)createStarsWithPosition:(float)x y:(float)y ratingStars:(NSMutableArray *)ratingStars {
     NSMutableArray *ratingStarArray = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < 5; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self getStarName:i]]];
-        [imageView setFrame:CGRectMake(startX, startY, 18, 18)];
-        startX += imageView.width + 3;
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self getStarName:i ratingStars:ratingStars]]];
+        [imageView setFrame:CGRectMake(x, y, 18, 18)];
+        x += imageView.width + 3;
         [ratingStarArray addObject:imageView];
     }
     return ratingStarArray;
 }
 
-- (NSString *)getStarName:(NSUInteger)starPosition {
-    NSArray *stars = [book ratingStars];
-    NSLog(@"stars: %@", stars);
+- (NSString *)getStarName:(NSUInteger)starPosition ratingStars:(NSMutableArray *)ratingStars {
+    NSArray *stars = ratingStars;
     switch ([stars[starPosition] integerValue]) {
         case 0:
             return @"star_none.png";

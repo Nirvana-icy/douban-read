@@ -21,9 +21,13 @@
 
 - (NSMutableArray *)getStarsForRating:(NSString *)rating {
     NSMutableArray *result = [[@[@0, @0, @0, @0, @0] mutableCopy] autorelease];
-    NSInteger ratingValue = [rating integerValue];
+    float ratingValue = [rating floatValue];
     for (NSUInteger i = 0; i < 5; i++) {
-        if (0 <= ratingValue && ratingValue <= 1) {
+        if (0 == ratingValue) {
+            result[i] = @0;
+            break;
+        }
+        else if (0 < ratingValue && ratingValue <= 1) {
             result[i] = @1;
             break;
         }
@@ -81,7 +85,7 @@
     return self.dictionary[@"comment"];
 }
 
-- (NSMutableArray *)myRatingStar{
+- (NSMutableArray *)myRatingStars {
     return [self getStarsForRating:[self myRating]];
 }
 

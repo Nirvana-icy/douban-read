@@ -3,6 +3,12 @@
 
 @implementation DouBookTest
 
+- (void)test_should_get_stars_when_rating_is_0 {
+    DOUBook *book = [[DOUBook alloc] initWithDictionary:@{@"book" : @{@"rating" : @{@"average" : @"0"}}}];
+    NSArray *rating = @[@0, @0, @0, @0, @0];
+    STAssertEqualObjects([book ratingStars], rating, nil, nil);
+}
+
 - (void)test_should_get_stars_when_rating_below_1 {
     DOUBook *book = [[DOUBook alloc] initWithDictionary:@{@"book" : @{@"rating" : @{@"average" : @"0.9"}}}];
     NSArray *rating = @[@1, @0, @0, @0, @0];
