@@ -1,6 +1,7 @@
 #import "BookDetailView.h"
 #import "DOUBook.h"
 #import "BookDetailViewController.h"
+#import "ReadBookActionSheet.h"
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
@@ -112,7 +113,7 @@
     }
 }
 
-- (UILabel *)createLabelOnTheRightSizeOfImage:(float)height textWithLargeFont:(NSString *)text{
+- (UILabel *)createLabelOnTheRightSizeOfImage:(float)height textWithLargeFont:(NSString *)text {
     return [[UILabel alloc] initWithText:text andPosition:CGPointMake(130, height) andMaxWidth:180 fontSize:15.0f];
 }
 
@@ -170,6 +171,24 @@
         totalHeight += myComment.height - 15;
     } else {
         [summaryView setTop:summaryLabel.top + summaryLabel.height + 10];
+    }
+}
+
+
+- (void)showActionSheet {
+    switch ([book status]) {
+        case READING:
+            [[ReadBookActionSheet alloc] initWithController:target];
+            break;
+        case WISH:
+            [[ReadBookActionSheet alloc] initWithController:target];
+            break;
+        case READ:
+             [[ReadBookActionSheet alloc] initWithController:target];
+            break;
+        case NOTADDED:
+             [[ReadBookActionSheet alloc] initWithController:target];
+            break;
     }
 }
 

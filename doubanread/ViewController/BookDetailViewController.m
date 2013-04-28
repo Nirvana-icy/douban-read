@@ -5,7 +5,6 @@
 #import "ReadingBookDetailView.h"
 #import "BookStatusViewController.h"
 #import "WishBookDetailView.h"
-#import "ReadBookDetailView.h"
 #import "BookMediumImageRequest.h"
 #import "SearchBookDetailView.h"
 #import "BookInfoRequest.h"
@@ -40,7 +39,7 @@
             detailView = [[WishBookDetailView alloc] initWithBook:book andTarget:self];
             break;
         case READ:
-            detailView = [[ReadBookDetailView alloc] initWithBook:book andTarget:self];
+            detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
             break;
         case NOTADDED:
             detailView = [[SearchBookDetailView alloc] initWithBook:book andTarget:self];
