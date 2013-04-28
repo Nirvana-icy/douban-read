@@ -1,12 +1,12 @@
-#import "ReadBookActionSheet.h"
+#import "NotAddedBookActionSheet.h"
 #import "BookDetailViewController.h"
 
-@implementation ReadBookActionSheet {
+@implementation NotAddedBookActionSheet {
     BookDetailViewController *controller;
 }
 
 - (id)initWithController:(BookDetailViewController *)theController {
-    self = [super initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"在读", @"删除", nil];
+    self = [super initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"想读", @"在读", nil];
     if (self) {
         controller = theController;
         [self setActionSheetStyle:UIActionSheetStyleBlackOpaque];
@@ -18,14 +18,13 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [controller reading];
+            [controller addToWish];
             break;
         case 1:
-            [controller deleteBook];
+            [controller addToReading];
             break;
         default:
             break;
     }
 }
-
 @end

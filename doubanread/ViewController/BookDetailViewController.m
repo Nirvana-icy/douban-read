@@ -4,7 +4,6 @@
 #import "BookStatusChangeRequest.h"
 #import "BookStatusViewController.h"
 #import "BookMediumImageRequest.h"
-#import "SearchBookDetailView.h"
 #import "BookInfoRequest.h"
 #import "CommentViewController.h"
 
@@ -29,20 +28,8 @@
 }
 
 - (void)loadView {
-    switch ([book status]) {
-        case READING:
-            detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
-            break;
-        case WISH:
-            detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
-            break;
-        case READ:
-            detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
-            break;
-        case NOTADDED:
-            detailView = [[SearchBookDetailView alloc] initWithBook:book andTarget:self];
-            break;
-    }
+    detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
+
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:detailView action:@selector(showActionSheet)];
     self.navigationItem.rightBarButtonItem = barButtonItem;
 
@@ -61,7 +48,7 @@
     [self popCommentViewWithAction:@selector(reading)];
 }
 
-- (void)popCommentViewWithAction:(SEL)action{
+- (void)popCommentViewWithAction:(SEL)action {
     commentViewController = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
     [commentViewController setAction:action];
     [commentViewController setBook:book];

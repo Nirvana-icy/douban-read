@@ -4,6 +4,7 @@
 #import "ReadBookActionSheet.h"
 #import "ReadingBookActionSheet.h"
 #import "WishBookActionSheet.h"
+#import "NotAddedBookActionSheet.h"
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
@@ -189,7 +190,7 @@
              [[ReadBookActionSheet alloc] initWithController:target];
             break;
         case NOTADDED:
-             [[ReadBookActionSheet alloc] initWithController:target];
+             [[NotAddedBookActionSheet alloc] initWithController:target];
             break;
     }
 }
