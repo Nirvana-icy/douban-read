@@ -3,6 +3,7 @@
 #import "BookDetailViewController.h"
 #import "ReadBookActionSheet.h"
 #import "ReadingBookActionSheet.h"
+#import "WishBookActionSheet.h"
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
@@ -182,7 +183,7 @@
             [[ReadingBookActionSheet alloc] initWithController:target];
             break;
         case WISH:
-            [[ReadBookActionSheet alloc] initWithController:target];
+            [[WishBookActionSheet alloc] initWithController:target];
             break;
         case READ:
              [[ReadBookActionSheet alloc] initWithController:target];

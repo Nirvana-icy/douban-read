@@ -3,7 +3,6 @@
 #import "DOUBook.h"
 #import "BookStatusChangeRequest.h"
 #import "BookStatusViewController.h"
-#import "WishBookDetailView.h"
 #import "BookMediumImageRequest.h"
 #import "SearchBookDetailView.h"
 #import "BookInfoRequest.h"
@@ -35,7 +34,7 @@
             detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
             break;
         case WISH:
-            detailView = [[WishBookDetailView alloc] initWithBook:book andTarget:self];
+            detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
             break;
         case READ:
             detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];

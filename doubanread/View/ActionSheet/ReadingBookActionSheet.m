@@ -18,7 +18,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [controller reading];
+            [controller finishReading];
             break;
         case 1:
             [controller deleteBook];
