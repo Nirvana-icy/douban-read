@@ -2,7 +2,6 @@
 #import "BookDetailView.h"
 #import "DOUBook.h"
 #import "BookStatusChangeRequest.h"
-#import "ReadingBookDetailView.h"
 #import "BookStatusViewController.h"
 #import "WishBookDetailView.h"
 #import "BookMediumImageRequest.h"
@@ -33,7 +32,7 @@
 - (void)loadView {
     switch ([book status]) {
         case READING:
-            detailView = [[ReadingBookDetailView alloc] initWithBook:book andTarget:self];
+            detailView = [[BookDetailView alloc] initWithBook:book andTarget:self];
             break;
         case WISH:
             detailView = [[WishBookDetailView alloc] initWithBook:book andTarget:self];

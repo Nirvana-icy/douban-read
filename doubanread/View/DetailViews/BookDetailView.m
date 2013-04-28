@@ -2,6 +2,7 @@
 #import "DOUBook.h"
 #import "BookDetailViewController.h"
 #import "ReadBookActionSheet.h"
+#import "ReadingBookActionSheet.h"
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
@@ -178,7 +179,7 @@
 - (void)showActionSheet {
     switch ([book status]) {
         case READING:
-            [[ReadBookActionSheet alloc] initWithController:target];
+            [[ReadingBookActionSheet alloc] initWithController:target];
             break;
         case WISH:
             [[ReadBookActionSheet alloc] initWithController:target];
