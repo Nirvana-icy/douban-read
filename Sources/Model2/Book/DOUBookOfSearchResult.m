@@ -28,8 +28,12 @@
     return self.dictionary[@"author_intro"];
 }
 
+- (NSString *)myRating {
+    return self.dictionary[@"current_user_collection"][@"rating"][@"value"];
+}
+
 - (NSString *)myComment{
-    return self.dictionary[@"comment"];
+    return self.dictionary[@"current_user_collection"][@"comment"];
 }
 
 - (NSString *)publisher {
@@ -46,5 +50,10 @@
     }
 
     return [self.id isEqualToString:[(DOUBookOfSearchResult *)object id]];
+}
+
+- (BookStatus)status {
+    NSString *status = self.dictionary[@"current_user_collection"][@"status"];
+    return [self convertStringToStatus:status];
 }
 @end

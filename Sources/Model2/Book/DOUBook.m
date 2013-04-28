@@ -93,7 +93,6 @@
     self.dictionary[@"comment"] = comment;
 }
 
-
 - (NSString *)myRating {
     return self.dictionary[@"rating"][@"value"];
 }
@@ -125,11 +124,15 @@
 
 - (BookStatus)status {
     NSString *status = self.dictionary[@"status"];
-    if ([status isEqualToString:@"wish"]) {
+    return [self convertStringToStatus:status];
+}
+
+- (BookStatus)convertStringToStatus:(NSString *)statusString {
+    if ([statusString isEqualToString:@"wish"]) {
         return WISH;
-    } else if ([status isEqualToString:@"reading"]) {
+    } else if ([statusString isEqualToString:@"reading"]) {
         return READING;
-    } else if ([status isEqualToString:@"read"]) {
+    } else if ([statusString isEqualToString:@"read"]) {
         return READ;
     } else {
         return NOTADDED;
