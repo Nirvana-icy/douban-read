@@ -47,7 +47,6 @@
 }
 
 - (void)viewDidUnload {
-    [self setRatingLabel:nil];
     [self setCommentLabel:nil];
     [self setCommentTextArea:nil];
     [super viewDidUnload];

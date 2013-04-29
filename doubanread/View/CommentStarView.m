@@ -1,10 +1,3 @@
-//
-//  CommentStarView.m
-//  doubanread
-//
-//  Created by jli on 4/28/13.
-//  Copyright (c) 2013 jli. All rights reserved.
-//
 
 #import "CommentStarView.h"
 
@@ -12,9 +5,8 @@
     NSMutableArray *starButtons;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
     if (self) {
         [self createStarButtons];
     }
@@ -22,7 +14,10 @@
 }
 
 - (void)createStarButtons{
-    UIButton *button1 = [[UIButton alloc]init];
+    [self setFrame:CGRectMake(140, 10, 100, 40)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 18, 18)];
+    [button setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+    [self addSubview:button];
 }
 
 @end

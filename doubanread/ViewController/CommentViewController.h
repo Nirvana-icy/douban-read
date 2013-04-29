@@ -2,10 +2,10 @@
 
 @class BookDetailViewController;
 @class DOUBook;
+@class CommentStarView;
 
 @interface CommentViewController : UIViewController<UITextViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *commentLabel;
 @property (strong, nonatomic) IBOutlet UITextView *commentTextArea;
 
