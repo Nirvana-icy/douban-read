@@ -17,7 +17,7 @@
 
 - (void)executeHeader:(RefreshHeaderView *)refreshHeaderView {
     refreshHeaderView.refreshState = RefreshPulling;
-    refreshHeaderView.statusLabel.text = @"Release to refresh...";
+    refreshHeaderView.statusLabel.text = @"松开即可刷新...";
     [CATransaction begin];
     [CATransaction setAnimationDuration:0.18f];
     refreshHeaderView.arrowImage.transform = CATransform3DMakeRotation((CGFloat) ((M_PI / 180.0) * 180.0f), 0.0f, 0.0f, 1.0f);
@@ -26,7 +26,7 @@
 
 - (void)executeFooter:(RefreshFooterView *)refreshFooterView {
     refreshFooterView.refreshState = RefreshPulling;
-    refreshFooterView.statusLabel.text = @"Release to refresh...";
+    refreshFooterView.statusLabel.text = @"松开即可刷新...";
 }
 
 

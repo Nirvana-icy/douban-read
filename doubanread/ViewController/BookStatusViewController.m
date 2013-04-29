@@ -53,7 +53,7 @@
     [refreshHeaderView dataDidFinishLoading:self.tableView];
     [refreshFooterView dataDidFinishLoading:self.tableView];
     [self stopLoadingAnimation];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:@"Network connection failed, please try again later" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"网络连接失败" message:@"无法建立网络连接，请稍后再试" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alertView show];
 }
 

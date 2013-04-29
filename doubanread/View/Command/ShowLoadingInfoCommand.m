@@ -18,7 +18,7 @@
 
 - (void)executeHeader:(RefreshHeaderView *)refreshHeaderView {
     refreshHeaderView.refreshState = RefreshLoading;
-    refreshHeaderView.statusLabel.text = @"Loading...";
+    refreshHeaderView.statusLabel.text = @"正在载入...";
     [refreshHeaderView.activityView startAnimating];
     [CATransaction begin];
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
@@ -28,7 +28,7 @@
 
 - (void)executeFooter:(RefreshFooterView *)refreshFooterView {
     refreshFooterView.refreshState = RefreshLoading;
-    refreshFooterView.statusLabel.text = @"Loading...";
+    refreshFooterView.statusLabel.text = @"正在载入...";
     [refreshFooterView.activityView startAnimating];
 }
 

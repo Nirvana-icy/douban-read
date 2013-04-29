@@ -17,7 +17,7 @@
 
 - (void)executeHeader:(RefreshHeaderView *)refreshHeaderView {
     refreshHeaderView.refreshState = RefreshNormal;
-    refreshHeaderView.statusLabel.text = @"Pull down to refresh";
+    refreshHeaderView.statusLabel.text = @"下拉刷新";
     [refreshHeaderView.activityView stopAnimating];
 
     [self hideArrow:refreshHeaderView];
@@ -31,7 +31,7 @@
     [formatter setAMSymbol:@"AM"];
     [formatter setPMSymbol:@"PM"];
     [formatter setDateFormat:@"MM/dd/yyyy hh:mm"];
-    refreshHeaderView.lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
+    refreshHeaderView.lastUpdatedLabel.text = [NSString stringWithFormat:@"上次更新于: %@", [formatter stringFromDate:date]];
 }
 
 - (void)hideArrow:(RefreshHeaderView *)refreshHeaderView {
@@ -44,7 +44,7 @@
 
 - (void)executeFooter:(RefreshFooterView *)refreshFooterView {
     refreshFooterView.refreshState = RefreshNormal;
-    refreshFooterView.statusLabel.text = @"More...";
+    refreshFooterView.statusLabel.text = @"载入更多...";
     [refreshFooterView.activityView stopAnimating];
     [refreshFooterView relocate];
 }
