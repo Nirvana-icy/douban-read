@@ -31,6 +31,7 @@
 		3686771C6729C1639C946DC6 /* ShowNormalInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */; };
 		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
 		368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */; };
+		36867757D106844C6341D3A7 /* StarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686778D854DAB84AA83EEB6 /* StarUtil.m */; };
 		36867766B45152F31FF67727 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674AD2533298D25EE5820 /* whiteArrow.png */; };
 		368677AD80EDB01E9C75F26F /* BookSmallImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368673ABD3DA971D266CDD84 /* BookSmallImageRequest.m */; };
 		3686783D873EFE1BA8B88A6B /* NotAddedBookActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 368678C18EDE1E7BDFAA83C2 /* NotAddedBookActionSheet.m */; };
@@ -284,6 +285,7 @@
 		3686773FF579E8D9749AF2B8 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 		368677567F96E9C005F149A3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		36867783D5934605DD3BE870 /* reading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reading@2x.png"; sourceTree = "<group>"; };
+		3686778D854DAB84AA83EEB6 /* StarUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarUtil.m; sourceTree = "<group>"; };
 		368677F8EF85CC0C463A0E7B /* RefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooterView.h; sourceTree = "<group>"; };
 		3686787DFB9AE41A91037A15 /* read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = read.png; sourceTree = "<group>"; };
 		3686787EB3B7A2D1EDF1D10E /* BookMediumImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequestDelegate.h; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 		36867F3DE9C85C640DD20A5C /* ShowLoadingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLoadingInfoCommand.h; sourceTree = "<group>"; };
 		36867F73378410EF47C081F5 /* NSString+ParseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ParseCategory.m"; sourceTree = "<group>"; };
 		36867F8B93D4514383DF0181 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		36867FB6DCCD4D8D90842B27 /* StarUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarUtil.h; sourceTree = "<group>"; };
 		49225C5816E0879800B81CE9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../doubanread/icon.png; sourceTree = "<group>"; };
 		49225C5916E0879800B81CE9 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../doubanread/icon@2x.png"; sourceTree = "<group>"; };
 		4956CA87172CC6DF002B5412 /* CommentStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentStarView.h; sourceTree = "<group>"; };
@@ -717,6 +720,8 @@
 				368676530690B035549999E5 /* ActionSheet */,
 				36867997B52FDF6AF0605A5E /* BookDetailView.h */,
 				368671E8227FFAC87599EAB3 /* BookDetailView.m */,
+				3686778D854DAB84AA83EEB6 /* StarUtil.m */,
+				36867FB6DCCD4D8D90842B27 /* StarUtil.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1841,6 +1846,7 @@
 				3686757BE3C238DE8BB5B2CA /* WishBookActionSheet.m in Sources */,
 				3686783D873EFE1BA8B88A6B /* NotAddedBookActionSheet.m in Sources */,
 				36867A88F8B5799B76E841C7 /* BookDetailView.m in Sources */,
+				36867757D106844C6341D3A7 /* StarUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

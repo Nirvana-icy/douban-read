@@ -5,6 +5,7 @@
 #import "ReadingBookActionSheet.h"
 #import "WishBookActionSheet.h"
 #import "NotAddedBookActionSheet.h"
+#import "StarUtil.h"
 
 #define IMAGE_MAX_WIDTH 100
 #define IMAGE_MAX_HEIGHT 130
@@ -94,26 +95,12 @@
 - (NSMutableArray *)createStarsWithPosition:(float)x y:(float)y ratingStars:(NSMutableArray *)ratingStars {
     NSMutableArray *ratingStarArray = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < 5; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[self getStarName:i ratingStars:ratingStars]]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[StarUtil getStarName:i ratingStars:ratingStars]]];
         [imageView setFrame:CGRectMake(x, y, 18, 18)];
         x += imageView.width + 3;
         [ratingStarArray addObject:imageView];
     }
     return ratingStarArray;
-}
-
-- (NSString *)getStarName:(NSUInteger)starPosition ratingStars:(NSMutableArray *)ratingStars {
-    NSArray *stars = ratingStars;
-    switch ([stars[starPosition] integerValue]) {
-        case 0:
-            return @"star_none.png";
-        case 1:
-            return @"star_half.png";
-        case 2:
-            return @"star.png";
-        default:
-            return @"star.png";
-    }
 }
 
 - (UILabel *)createLabelOnTheRightSizeOfImage:(float)height textWithLargeFont:(NSString *)text {
