@@ -1,7 +1,6 @@
-
 #import "CommentStarView.h"
 
-@implementation CommentStarView{
+@implementation CommentStarView {
     NSMutableArray *starButtons;
 }
 
@@ -13,11 +12,13 @@
     return self;
 }
 
-- (void)createStarButtons{
-    [self setFrame:CGRectMake(140, 10, 100, 40)];
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 18, 18)];
-    [button setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
-    [self addSubview:button];
+- (void)createStarButtons {
+    [self setFrame:CGRectMake(110, 10, 100, 40)];
+    for (int i = 0; i < 5; i++) {
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * 18 + 10, 11, 18, 18)];
+        [button setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+        [self addSubview:button];
+    }
 }
 
 @end
