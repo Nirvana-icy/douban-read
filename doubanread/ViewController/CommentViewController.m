@@ -3,6 +3,7 @@
 #import "BookStatusChangeRequest.h"
 #import "BookDetailViewController.h"
 #import "DOUBook.h"
+#import "CommentStarView.h"
 
 @implementation CommentViewController {
     UIBarButtonItem *sendCommentButton;
@@ -30,6 +31,7 @@
             initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:theAction];
     self.navigationItem.rightBarButtonItem = sendCommentButton;
     [sendCommentButton setEnabled:_commentTextArea.text.length != 0];
+    [_starView setBook:book];
 }
 
 - (void)finishReading {
@@ -49,6 +51,7 @@
 - (void)viewDidUnload {
     [self setCommentLabel:nil];
     [self setCommentTextArea:nil];
+    [self setStarView:nil];
     [super viewDidUnload];
 }
 
