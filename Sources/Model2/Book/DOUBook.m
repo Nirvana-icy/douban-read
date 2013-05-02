@@ -16,12 +16,8 @@
 }
 
 - (NSMutableArray *)ratingStars {
-    return [self getStarsForRating:[self rating]];
-}
-
-- (NSMutableArray *)getStarsForRating:(NSString *)rating {
     NSMutableArray *result = [[@[@0, @0, @0, @0, @0] mutableCopy] autorelease];
-    float ratingValue = [rating floatValue];
+    float ratingValue = [[self rating] floatValue];
     for (NSUInteger i = 0; i < 5; i++) {
         if (0 == ratingValue) {
             result[i] = @0;
@@ -40,6 +36,25 @@
     }
     return result;
 }
+
+- (NSMutableArray *)myRatingStars {
+    NSMutableArray *result = [[@[@0, @0, @0, @0, @0] mutableCopy] autorelease];
+    float ratingValue = [[self myRating] floatValue];
+    for (NSUInteger i = 0; i < 5; i++) {
+        if (0 == ratingValue) {
+            result[i] = @0;
+            break;
+        }
+        else if (ratingValue == 1) {
+            result[i] = @2;
+            break;
+        }
+        ratingValue = ratingValue - 1;
+        result[i] = @2;
+    }
+    return result;
+}
+
 
 - (NSString *)numberOfRaters {
     return [self book][@"rating"][@"numRaters"];
@@ -83,10 +98,6 @@
 
 - (NSString *)myComment {
     return self.dictionary[@"comment"];
-}
-
-- (NSMutableArray *)myRatingStars {
-    return [self getStarsForRating:[self myRating]];
 }
 
 - (void)setComment:(NSString *)comment {
