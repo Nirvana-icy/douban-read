@@ -134,8 +134,7 @@
 }
 
 - (BookStatus)status {
-    NSString *status = self.dictionary[@"status"];
-    return [self convertStringToStatus:status];
+    return [self convertStringToStatus:[self statusString]];
 }
 
 - (BookStatus)convertStringToStatus:(NSString *)statusString {
@@ -165,6 +164,10 @@
         default:
             return @"我尚未添加过这本书";
     }
+}
+
+- (NSString *)statusString{
+    return self.dictionary[@"status"];
 }
 
 - (BOOL)isEqual:(id)object {

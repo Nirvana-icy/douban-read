@@ -16,13 +16,11 @@
     return self;
 }
 
-- (void)changeBook:(DOUBook *)book toStatus:(NSString *)status withComment:(NSString *)comment{
-    [self doSomethingWithBook:[book id] status:status comment:comment withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
+- (void)updateBook:(DOUBook *)book{
+    [self doSomethingWithBook:book withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
         [service put:query postBody:postBody callback:^(DOUHttpRequest *req) {
             NSError *error = [req doubanError];
             if (!error) {
-                [book setComment:comment];
-                [book setStatus:status];
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
             }
         }];
@@ -50,6 +48,16 @@
 
     DOUService *service = [DOUService sharedInstance];
     NSString *body = [NSString stringWithFormat:@"status=%@", status];
+    block(query, service, body);
+}
+
+- (void)doSomethingWithBook:(DOUBook *)book
+                  withBlock:(void (^)(DOUQuery *query, DOUService *service, NSString *requestBody))block {
+    NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", [book id]];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : [book statusString], @"comment": [book myComment], @"rating":@""}];
+
+    DOUService *service = [DOUService sharedInstance];
+    NSString *body = [NSString stringWithFormat:@"status=%@", [book statusString]];
     block(query, service, body);
 }
 

@@ -45,7 +45,9 @@
 - (void)changeBookToStatus:(NSString *)status {
     [[self navigationController] popViewControllerAnimated:YES];
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:target];
-    [request changeBook:book toStatus:status withComment:_commentTextArea.text];
+    [book setStatus:status];
+    [book setComment:_commentTextArea.text];
+    [request updateBook:book];
 }
 
 - (void)viewDidUnload {

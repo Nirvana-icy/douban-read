@@ -6,7 +6,7 @@
 @interface BookStatusChangeRequest : NSObject
 - (id)initWithDelegate:(id)aDelegate;
 
-- (void)changeBook:(DOUBook *)bookId toStatus:(NSString *)status withComment:(NSString *)comment1;
+- (void)updateBook:(DOUBook *)book;
 
 - (void)addBook:(DOUBook *)book withStatus:(NSString *)status;
 

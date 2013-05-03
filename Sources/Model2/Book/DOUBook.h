@@ -64,4 +64,6 @@ typedef enum {
 - (void)setStatus:(NSString *)theStatus;
 
 - (NSString *)statusTip;
+
+- (NSString *)statusString;
 @end
