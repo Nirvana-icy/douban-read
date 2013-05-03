@@ -1,4 +1,3 @@
-#import <libxml/SAX.h>
 #import "BookStatusChangeRequest.h"
 #import "DOUBookArray.h"
 #import "DOUAPIEngine.h"
@@ -17,8 +16,8 @@
 }
 
 - (void)updateBook:(DOUBook *)book{
-    [self doSomethingWithBook:book withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
-        [service put:query postBody:postBody callback:^(DOUHttpRequest *req) {
+    [self doSomethingWithBook:book withBlock:^(DOUQuery *query, DOUService *service) {
+        [service put:query postBody:@"" callback:^(DOUHttpRequest *req) {
             NSError *error = [req doubanError];
             if (!error) {
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
@@ -30,8 +29,8 @@
 }
 
 - (void)addBook:(DOUBook *)book {
-    [self doSomethingWithBook:book withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
-        [service post:query postBody:postBody callback:^(DOUHttpRequest *req) {
+    [self doSomethingWithBook:book withBlock:^(DOUQuery *query, DOUService *service) {
+        [service post:query postBody:@"" callback:^(DOUHttpRequest *req) {
             NSError *error = [req doubanError];
             if (!error) {
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
@@ -43,13 +42,11 @@
 }
 
 - (void)doSomethingWithBook:(DOUBook *)book
-                  withBlock:(void (^)(DOUQuery *query, DOUService *service, NSString *requestBody))block {
+                  withBlock:(void (^)(DOUQuery *query, DOUService *service))block {
     NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", [book id]];
     DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : [book statusString], @"comment": [book myComment], @"rating":@""}];
-
     DOUService *service = [DOUService sharedInstance];
-    NSString *body = [NSString stringWithFormat:@"status=%@", [book statusString]];
-    block(query, service, body);
+    block(query, service);
 }
 
 - (void)deleteBook:(NSString *)bookId {
