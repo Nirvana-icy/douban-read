@@ -11,8 +11,6 @@
 @property (strong, nonatomic) IBOutlet CommentStarView *starView;
 
 - (void)setAction:(SEL)action;
-
 - (void)setBook:(DOUBook *)theBook;
-
 - (void)setTarget:(BookDetailViewController *)controller;
 @end

@@ -33,11 +33,12 @@
         [button setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateHighlighted];
     }
-    for(NSUInteger i = indexOfObject+1; i < [starButtons count]; i ++){
+    for (NSUInteger i = indexOfObject + 1; i < [starButtons count]; i++) {
         UIButton *button = starButtons[i];
         [button setBackgroundImage:[UIImage imageNamed:@"star_none.png"] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"star_none.png"] forState:UIControlStateHighlighted];
     }
+    _rating = indexOfObject + 1;
 }
 
 @end
