@@ -58,12 +58,14 @@
 
 - (void)addToReading {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request addBook:book withStatus:@"reading"];
+    [book setStatus:@"reading"];
+    [request addBook:book];
 }
 
 - (void)addToWish {
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:self];
-    [request addBook:book withStatus:@"wish"];
+    [book setStatus:@"wish"];
+    [request addBook:book];
 }
 
 - (void)deleteBook {

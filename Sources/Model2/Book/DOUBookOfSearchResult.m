@@ -4,11 +4,11 @@
 
 }
 
-- (NSString *)rating{
+- (NSString *)rating {
     return self.dictionary[@"rating"][@"average"];
 }
 
-- (NSString *)numberOfRaters{
+- (NSString *)numberOfRaters {
     return self.dictionary[@"rating"][@"numRaters"];
 }
 
@@ -32,8 +32,12 @@
     return self.dictionary[@"current_user_collection"][@"rating"][@"value"];
 }
 
-- (NSString *)myComment{
-    return self.dictionary[@"current_user_collection"][@"comment"];
+- (NSString *)myComment {
+    NSString *myComment = self.dictionary[@"current_user_collection"][@"comment"];
+    if (myComment == nil) {
+        return @"";
+    }
+    return myComment;
 }
 
 - (NSString *)publisher {
@@ -45,15 +49,21 @@
 }
 
 - (BOOL)isEqual:(id)object {
-    if (![object isMemberOfClass:[DOUBookOfSearchResult class]]){
+    if (![object isMemberOfClass:[DOUBookOfSearchResult class]]) {
         return false;
     }
 
-    return [self.id isEqualToString:[(DOUBookOfSearchResult *)object id]];
+    return [self.id isEqualToString:[(DOUBookOfSearchResult *) object id]];
 }
 
-- (BookStatus)status {
-    NSString *status = self.dictionary[@"current_user_collection"][@"status"];
-    return [self convertStringToStatus:status];
+- (NSString *)statusString{
+    return self.dictionary[@"current_user_collection"][@"status"];
+}
+
+- (void)setStatus:(NSString *)theStatus {
+    if (self.dictionary[@"current_user_collection"] == nil) {
+        [self.dictionary setObject:[[NSMutableDictionary alloc]init] forKey:@"current_user_collection"];
+    }
+    self.dictionary[@"current_user_collection"][@"status"] = theStatus;
 }
 @end

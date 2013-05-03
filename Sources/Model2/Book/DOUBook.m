@@ -97,7 +97,11 @@
 }
 
 - (NSString *)myComment {
-    return self.dictionary[@"comment"];
+    NSString *comment = self.dictionary[@"comment"];
+    if(comment == nil){
+        return @"";
+    }
+    return comment;
 }
 
 - (void)setComment:(NSString *)comment {
@@ -161,6 +165,8 @@
             return @"我读过这本书";
         case READING:
             return @"我正在读这本书";
+        case NOTADDED:
+            return @"我尚未添加过这本书";
         default:
             return @"我尚未添加过这本书";
     }

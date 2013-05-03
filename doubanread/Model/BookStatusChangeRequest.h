@@ -8,7 +8,7 @@
 
 - (void)updateBook:(DOUBook *)book;
 
-- (void)addBook:(DOUBook *)book withStatus:(NSString *)status;
+- (void)addBook:(DOUBook *)book;
 
 - (void)deleteBook:(NSString *)bookId;
 

@@ -22,18 +22,6 @@
             NSError *error = [req doubanError];
             if (!error) {
                 [delegate performSelector:@selector(bookChangeRequestDidFinish)];
-            }
-        }];
-    }];
-}
-
-- (void)addBook:(DOUBook *)book withStatus:(NSString *)status {
-    [self doSomethingWithBook:[book id] status:status comment:@"" withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
-        [service post:query postBody:postBody callback:^(DOUHttpRequest *req) {
-            NSError *error = [req doubanError];
-            if (!error) {
-                [book setStatus:status];
-                [delegate performSelector:@selector(bookChangeRequestDidFinish)];
             } else {
                 NSLog(@"error: %@", error);
             }
@@ -41,14 +29,17 @@
     }];
 }
 
-- (void)doSomethingWithBook:(NSString *)bookId status:(NSString *)status comment:(NSString *)comment
-                  withBlock:(void (^)(DOUQuery *query, DOUService *service, NSString *requestBody))block {
-    NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", bookId];
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : status, @"comment": comment}];
-
-    DOUService *service = [DOUService sharedInstance];
-    NSString *body = [NSString stringWithFormat:@"status=%@", status];
-    block(query, service, body);
+- (void)addBook:(DOUBook *)book {
+    [self doSomethingWithBook:book withBlock:^(DOUQuery *query, DOUService *service, NSString *postBody) {
+        [service post:query postBody:postBody callback:^(DOUHttpRequest *req) {
+            NSError *error = [req doubanError];
+            if (!error) {
+                [delegate performSelector:@selector(bookChangeRequestDidFinish)];
+            } else {
+                NSLog(@"error: %@", error);
+            }
+        }];
+    }];
 }
 
 - (void)doSomethingWithBook:(DOUBook *)book
@@ -60,7 +51,6 @@
     NSString *body = [NSString stringWithFormat:@"status=%@", [book statusString]];
     block(query, service, body);
 }
-
 
 - (void)deleteBook:(NSString *)bookId {
     NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", bookId];
