@@ -37,4 +37,9 @@
     assertThat([book statusString], is(@"reading"));
     assertThat([book myComment], is(@"theComment"));
 }
+
+- (void)test_should_get_0_when_my_rating_is_nil{
+    DOUBookOfSearchResult *book = [[DOUBookOfSearchResult alloc] initWithDictionary:@{@"current_user_collection" : @{}}];
+    assertThat([book myRating], is(@"0"));
+}
 @end

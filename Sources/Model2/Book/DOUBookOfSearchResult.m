@@ -29,7 +29,11 @@
 }
 
 - (NSString *)myRating {
-    return self.dictionary[@"current_user_collection"][@"rating"][@"value"];
+    NSString *myRating = self.dictionary[@"current_user_collection"][@"rating"][@"value"];
+    if(myRating == nil){
+        return @"0";
+    }
+    return myRating;
 }
 
 - (NSString *)myComment {
