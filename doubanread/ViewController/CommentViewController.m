@@ -47,6 +47,7 @@
     BookStatusChangeRequest *request = [[BookStatusChangeRequest alloc] initWithDelegate:target];
     [book setStatus:status];
     [book setComment:_commentTextArea.text];
+    [book setMyRating:_starView.rating];
     [request updateBook:book];
 }
 

@@ -44,7 +44,7 @@
 - (void)doSomethingWithBook:(DOUBook *)book
                   withBlock:(void (^)(DOUQuery *query, DOUService *service))block {
     NSString *subPath = [NSString stringWithFormat:@"/v2/book/%@/collection", [book id]];
-    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : [book statusString], @"comment" : [book myComment], @"rating" : @""}];
+    DOUQuery *query = [[DOUQuery alloc] initWithSubPath:subPath parameters:@{@"status" : [book statusString], @"comment" : [book myComment], @"rating" : [book myRating]}];
     DOUService *service = [DOUService sharedInstance];
     block(query, service);
 }

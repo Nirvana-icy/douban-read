@@ -98,7 +98,7 @@
 
 - (NSString *)myComment {
     NSString *comment = self.dictionary[@"comment"];
-    if(comment == nil){
+    if (comment == nil) {
         return @"";
     }
     return comment;
@@ -109,7 +109,23 @@
 }
 
 - (NSString *)myRating {
-    return self.dictionary[@"rating"][@"value"];
+    NSString *rating = self.dictionary[@"rating"][@"value"];
+    if (rating == nil) {
+        return @"0";
+    }
+    return rating;
+}
+
+- (void)setMyRating:(int)myRating {
+    if (self.dictionary[@"rating"] == nil) {
+        [self.dictionary setObject:[[[NSMutableDictionary alloc] init] autorelease] forKey:@"rating"];
+    } else {
+        NSMutableDictionary *currentUserCollection = [[NSMutableDictionary alloc]
+                initWithDictionary:self.dictionary[@"rating"]];
+        self.dictionary[@"rating"] = currentUserCollection;
+        [currentUserCollection release];
+    }
+    self.dictionary[@"rating"][@"value"] = [[NSNumber numberWithInt:myRating] stringValue];
 }
 
 - (NSString *)smallImageUrl {
@@ -172,7 +188,7 @@
     }
 }
 
-- (NSString *)statusString{
+- (NSString *)statusString {
     return self.dictionary[@"status"];
 }
 
