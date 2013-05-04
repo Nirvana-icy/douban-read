@@ -56,13 +56,16 @@
     return [self.id isEqualToString:[(DOUBookOfSearchResult *) object id]];
 }
 
-- (NSString *)statusString{
+- (NSString *)statusString {
     return self.dictionary[@"current_user_collection"][@"status"];
 }
 
 - (void)setStatus:(NSString *)theStatus {
     if (self.dictionary[@"current_user_collection"] == nil) {
-        [self.dictionary setObject:[[NSMutableDictionary alloc]init] forKey:@"current_user_collection"];
+        [self.dictionary setObject:[[NSMutableDictionary alloc] init] forKey:@"current_user_collection"];
+    } else {
+        NSMutableDictionary *currentUserCollection = [[NSMutableDictionary alloc] initWithDictionary:self.dictionary[@"current_user_collection"]];
+        self.dictionary[@"current_user_collection"] = currentUserCollection;
     }
     self.dictionary[@"current_user_collection"][@"status"] = theStatus;
 }
