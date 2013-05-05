@@ -13,6 +13,7 @@
 		3686718DFD3394A4340FF4F1 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368675835DC2EAED704F1F52 /* MainController.m */; };
 		36867198AFE6B3B0B9AB56E1 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867517C4810D5CB858C667 /* blueArrow.png */; };
 		368671D1F098D90301C53374 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674B7146F11EDA4DF5BBA /* search@2x.png */; };
+		3686723C9FFD0EC9CE829435 /* DOUBookMyRatingStarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867D61A453A3C65F0681D8 /* DOUBookMyRatingStarTest.m */; };
 		36867253DFE28534DD0186D9 /* DOUBookOfSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672F628DE414EF03F00E0 /* DOUBookOfSearchResult.m */; };
 		3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672AAA2BDED70CA3EA456 /* WishViewController.m */; };
 		3686729E5DBF1D7349DA7259 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */; };
@@ -310,6 +311,7 @@
 		36867A0161ED644D1B1A01F1 /* ReadBookActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookActionSheet.m; sourceTree = "<group>"; };
 		36867A1905CA986005FCEF4F /* ShowPullingInfoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPullingInfoCommand.h; sourceTree = "<group>"; };
 		36867A333E1E8E2F8915E849 /* ShowPullingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPullingInfoCommand.m; sourceTree = "<group>"; };
+		36867A49F6BD4398E3C879C0 /* DOUBookMyRatingStarTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookMyRatingStarTest.h; sourceTree = "<group>"; };
 		36867A529BA24C7DDA03D1BB /* DOUBookOfSearchResultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookOfSearchResultTest.h; sourceTree = "<group>"; };
 		36867A631BD6D33F62CEB082 /* BookInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookInfoRequest.h; sourceTree = "<group>"; };
 		36867A7459170E2EBB87AF15 /* BookListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListRequest.h; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLoadingInfoCommand.m; sourceTree = "<group>"; };
 		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		36867D080076CBD58E00EDBD /* WishBookActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishBookActionSheet.m; sourceTree = "<group>"; };
+		36867D61A453A3C65F0681D8 /* DOUBookMyRatingStarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookMyRatingStarTest.m; sourceTree = "<group>"; };
 		36867D685B444BA300B0A706 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		36867D7043418C13551F3049 /* read@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "read@2x.png"; sourceTree = "<group>"; };
 		36867DB695042510D8D8C584 /* DOUBookOfSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookOfSearchResult.h; sourceTree = "<group>"; };
@@ -1535,6 +1538,8 @@
 				36867A529BA24C7DDA03D1BB /* DOUBookOfSearchResultTest.h */,
 				368671B3AB1C35EDD8D0929F /* DOUBookRatingStarTest.m */,
 				3686788F3F0240263AB9E133 /* DOUBookRatingStarTest.h */,
+				36867D61A453A3C65F0681D8 /* DOUBookMyRatingStarTest.m */,
+				36867A49F6BD4398E3C879C0 /* DOUBookMyRatingStarTest.h */,
 			);
 			path = doubanreadTests;
 			sourceTree = "<group>";
@@ -1871,6 +1876,7 @@
 				499AF833172BC9EF005471E3 /* DOUBookTest.m in Sources */,
 				368674BC31FEDA6C6D91FA40 /* DOUBookOfSearchResultTest.m in Sources */,
 				368675B6F7E1BC0776F13EC3 /* DOUBookRatingStarTest.m in Sources */,
+				3686723C9FFD0EC9CE829435 /* DOUBookMyRatingStarTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
