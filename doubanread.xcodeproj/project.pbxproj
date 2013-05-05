@@ -23,6 +23,7 @@
 		368674BC31FEDA6C6D91FA40 /* DOUBookOfSearchResultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368676451043FD378CAE34FB /* DOUBookOfSearchResultTest.m */; };
 		3686757BE3C238DE8BB5B2CA /* WishBookActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867D080076CBD58E00EDBD /* WishBookActionSheet.m */; };
 		368675B34EBBC057C5779E10 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 368674C8814DB5247CA3705E /* UILabel+Extension.m */; };
+		368675B6F7E1BC0776F13EC3 /* DOUBookRatingStarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671B3AB1C35EDD8D0929F /* DOUBookRatingStarTest.m */; };
 		368675B7EC6E2B6AECC97FD9 /* wish.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686753864A9364FA2F457C1 /* wish.png */; };
 		368675B82FFC02E42DB03088 /* BookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368679A01F2B4EC3EA6E4B6A /* BookListViewController.m */; };
 		3686768A5ADD3CBA4528C6C4 /* reading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867783D5934605DD3BE870 /* reading@2x.png */; };
@@ -255,6 +256,7 @@
 		36867107FB91F14574AF9E74 /* WishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishViewController.h; sourceTree = "<group>"; };
 		368671170BABB427B01F237D /* star_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none.png; sourceTree = "<group>"; };
 		36867165331FBBEA5740EEEA /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		368671B3AB1C35EDD8D0929F /* DOUBookRatingStarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookRatingStarTest.m; sourceTree = "<group>"; };
 		368671D88644C0AE12FDD506 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		368671E8227FFAC87599EAB3 /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
 		3686720D1B6020D59C786011 /* BookMediumImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequest.h; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 		368677F8EF85CC0C463A0E7B /* RefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooterView.h; sourceTree = "<group>"; };
 		3686787DFB9AE41A91037A15 /* read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = read.png; sourceTree = "<group>"; };
 		3686787EB3B7A2D1EDF1D10E /* BookMediumImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequestDelegate.h; sourceTree = "<group>"; };
+		3686788F3F0240263AB9E133 /* DOUBookRatingStarTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOUBookRatingStarTest.h; sourceTree = "<group>"; };
 		36867892F843EA9C439AA862 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		368678992A8794DF1D51E9E8 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		368678C18EDE1E7BDFAA83C2 /* NotAddedBookActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotAddedBookActionSheet.m; sourceTree = "<group>"; };
@@ -1530,6 +1533,8 @@
 				499AF832172BC9EF005471E3 /* DOUBookTest.m */,
 				368676451043FD378CAE34FB /* DOUBookOfSearchResultTest.m */,
 				36867A529BA24C7DDA03D1BB /* DOUBookOfSearchResultTest.h */,
+				368671B3AB1C35EDD8D0929F /* DOUBookRatingStarTest.m */,
+				3686788F3F0240263AB9E133 /* DOUBookRatingStarTest.h */,
 			);
 			path = doubanreadTests;
 			sourceTree = "<group>";
@@ -1865,6 +1870,7 @@
 			files = (
 				499AF833172BC9EF005471E3 /* DOUBookTest.m in Sources */,
 				368674BC31FEDA6C6D91FA40 /* DOUBookOfSearchResultTest.m in Sources */,
+				368675B6F7E1BC0776F13EC3 /* DOUBookRatingStarTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
