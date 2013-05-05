@@ -1,10 +1,8 @@
 #import "MainController.h"
 #import "BookStatusViewController.h"
 #import "WebViewController.h"
-#import "ReadingViewController.h"
-#import "WishViewController.h"
-#import "ReadViewController.h"
 #import "SearchViewController.h"
+#import "StatusUtil.h"
 
 #define kAPIKey @"03aa678cc0ae159a0aff36a6420a40ce"
 #define kPrivateKey @"0bed26e34a5bfdec"
@@ -12,9 +10,6 @@
 
 @implementation MainController {
     WebViewController *webViewController;
-    ReadingViewController *readingViewController;
-    WishViewController *wishViewController;
-    ReadViewController *readViewController;
     SearchViewController *searchViewController;
     DOUService *service;
     DOUOAuthService *oAuthService;
@@ -25,31 +20,23 @@
     if (self) {
         [self initDouService];
 
-        readingViewController = [[ReadingViewController alloc] init];
-        wishViewController = [[WishViewController alloc] init];
-        readViewController = [[ReadViewController alloc] init];
         searchViewController = [[SearchViewController alloc] init];
-
-        UINavigationController *readingsNavigationController = [[UINavigationController alloc] initWithRootViewController:readingViewController];
-        [readingsNavigationController.tabBarItem setTitle:@"在读"];
-        [readingsNavigationController.tabBarItem setImage:[UIImage imageNamed:@"reading"]];
-
-        UINavigationController *wishNavigationController = [[UINavigationController alloc] initWithRootViewController:wishViewController];
-        [wishNavigationController.tabBarItem setTitle:@"想读"];
-        [wishNavigationController.tabBarItem setImage:[UIImage imageNamed:@"wish"]];
-
-
-        UINavigationController *readNavigationController = [[UINavigationController alloc] initWithRootViewController:readViewController];
-        [readNavigationController.tabBarItem setTitle:@"读过"];
-        [readNavigationController.tabBarItem setImage:[UIImage imageNamed:@"read"]];
 
         UINavigationController *searchNavigationController = [[UINavigationController alloc] initWithRootViewController:searchViewController];
         [searchNavigationController.tabBarItem setTitle:@"搜索"];
         [searchNavigationController.tabBarItem setImage:[UIImage imageNamed:@"search"]];
 
-        [self setViewControllers:@[readingsNavigationController, wishNavigationController, readNavigationController, searchNavigationController]];
+        [self setViewControllers:@[[self getControllerWithStatus:READING], [self getControllerWithStatus:WISH], [self getControllerWithStatus:READ], searchNavigationController]];
     }
     return self;
+}
+
+- (UINavigationController *)getControllerWithStatus:(BookStatus)bookStatus {
+    UINavigationController *readingsNavigationController =
+            [[UINavigationController alloc] initWithRootViewController:[[BookStatusViewController alloc] initWithBookStatus:bookStatus]];
+    [readingsNavigationController.tabBarItem setTitle:[StatusUtil statusToTitle:bookStatus]];
+    [readingsNavigationController.tabBarItem setImage:[UIImage imageNamed:[StatusUtil statusToString:bookStatus]]];
+    return readingsNavigationController;
 }
 
 - (void)initDouService {
@@ -94,8 +81,10 @@
     NSLog(@"login Fail!");
 }
 
-- (void)loadBooks{
-    [readingViewController retrieveBooks];
+- (void)loadBooks {
+    UINavigationController *uiNavigationController = [self viewControllers][0];
+    UIViewController *viewController = [uiNavigationController viewControllers][0];
+    [(BookStatusViewController *) viewController retrieveBooks];
 }
 
 @end

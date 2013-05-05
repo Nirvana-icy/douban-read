@@ -15,7 +15,6 @@
 		368671D1F098D90301C53374 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674B7146F11EDA4DF5BBA /* search@2x.png */; };
 		3686723C9FFD0EC9CE829435 /* DOUBookMyRatingStarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867D61A453A3C65F0681D8 /* DOUBookMyRatingStarTest.m */; };
 		36867253DFE28534DD0186D9 /* DOUBookOfSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672F628DE414EF03F00E0 /* DOUBookOfSearchResult.m */; };
-		3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672AAA2BDED70CA3EA456 /* WishViewController.m */; };
 		3686729E5DBF1D7349DA7259 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */; };
 		368672FA34048F3F3D43276D /* ShowPullingInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A333E1E8E2F8915E849 /* ShowPullingInfoCommand.m */; };
 		368673DD2F0C462105FAFAD6 /* BookInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686704ED36FD320EBF3D805 /* BookInfoRequest.m */; };
@@ -32,7 +31,6 @@
 		368676ADCE286E69749A5A29 /* read.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686787DFB9AE41A91037A15 /* read.png */; };
 		368676AEFBFF9E532B57409F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 368678992A8794DF1D51E9E8 /* star.png */; };
 		3686771C6729C1639C946DC6 /* ShowNormalInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */; };
-		3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671D88644C0AE12FDD506 /* ReadViewController.m */; };
 		368677436D11AE3227ABAA17 /* ShowLoadingInfoCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */; };
 		36867757D106844C6341D3A7 /* StarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686778D854DAB84AA83EEB6 /* StarUtil.m */; };
 		36867766B45152F31FF67727 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 368674AD2533298D25EE5820 /* whiteArrow.png */; };
@@ -46,11 +44,11 @@
 		36867A0A3383A5D799E28A56 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867670A014FA01D37D768B /* BookCell.m */; };
 		36867A88F8B5799B76E841C7 /* BookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368671E8227FFAC87599EAB3 /* BookDetailView.m */; };
 		36867B5172BC12C98B963055 /* star_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 368671170BABB427B01F237D /* star_none.png */; };
+		36867B7C9F71A69B5F77E3C0 /* StatusUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867792DB16EC3A21466A8B /* StatusUtil.m */; };
 		36867BCE3F8D7FC770B09D50 /* wish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3686707EE9F554C1EC808559 /* wish@2x.png */; };
 		36867BFCA06D486AB479E1AD /* BookMediumImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368672EA308EC216C614E672 /* BookMediumImageRequest.m */; };
 		36867BFCEA144A3909B31B1F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867636DBAB05D8133FCC9E /* UIView+Extension.m */; };
 		36867C50E5C71E7036CDE4DB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686700443EAEF1C97A73988 /* WebViewController.m */; };
-		36867D713884767460320FEF /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368676D66017E79A01E1F0CF /* ReadingViewController.m */; };
 		36867D7B24675D302575782E /* RefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 368674CEB4A4A2FAD69096DE /* RefreshFooterView.m */; };
 		36867D8406FE504E3A2FDABE /* RefreshLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A8496BDFD972BC35E2C /* RefreshLabel.m */; };
 		36867EC2F7EE761BBF437007 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36867A9E2D623867B4774275 /* SearchResultViewController.m */; };
@@ -248,24 +246,20 @@
 
 /* Begin PBXFileReference section */
 		3686700443EAEF1C97A73988 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		36867045B9A6AC7432C01FBB /* ReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingViewController.h; sourceTree = "<group>"; };
 		3686704ED36FD320EBF3D805 /* BookInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookInfoRequest.m; sourceTree = "<group>"; };
 		36867072EC28B20D203006AE /* BookStatusChangeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStatusChangeRequest.h; sourceTree = "<group>"; };
 		3686707EE9F554C1EC808559 /* wish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wish@2x.png"; sourceTree = "<group>"; };
 		36867099C0B313F5215F3B37 /* BookListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListRequest.m; sourceTree = "<group>"; };
 		368670E729FC8694D13CB082 /* BookStatusChangeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStatusChangeRequest.m; sourceTree = "<group>"; };
-		36867107FB91F14574AF9E74 /* WishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishViewController.h; sourceTree = "<group>"; };
 		368671170BABB427B01F237D /* star_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_none.png; sourceTree = "<group>"; };
 		36867165331FBBEA5740EEEA /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		368671B3AB1C35EDD8D0929F /* DOUBookRatingStarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookRatingStarTest.m; sourceTree = "<group>"; };
-		368671D88644C0AE12FDD506 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		368671E8227FFAC87599EAB3 /* BookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailView.m; sourceTree = "<group>"; };
 		3686720D1B6020D59C786011 /* BookMediumImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequest.h; sourceTree = "<group>"; };
 		3686720E4AC61DD2C5C30DD1 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderView.m; sourceTree = "<group>"; };
 		368672361E033DE447F057AB /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3686724B10510037F6C02A0F /* WishBookActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishBookActionSheet.h; sourceTree = "<group>"; };
 		3686728B5EE67A0FD06830BB /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
-		368672AAA2BDED70CA3EA456 /* WishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishViewController.m; sourceTree = "<group>"; };
 		368672EA308EC216C614E672 /* BookMediumImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMediumImageRequest.m; sourceTree = "<group>"; };
 		368672F628DE414EF03F00E0 /* DOUBookOfSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookOfSearchResult.m; sourceTree = "<group>"; };
 		36867312A5CFA9A7B2C026F2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -287,11 +281,11 @@
 		368676451043FD378CAE34FB /* DOUBookOfSearchResultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookOfSearchResultTest.m; sourceTree = "<group>"; };
 		368676655C8D45999613912D /* ReadingBookActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingBookActionSheet.m; sourceTree = "<group>"; };
 		36867670A014FA01D37D768B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
-		368676D66017E79A01E1F0CF /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
 		3686773FF579E8D9749AF2B8 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 		368677567F96E9C005F149A3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		36867783D5934605DD3BE870 /* reading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reading@2x.png"; sourceTree = "<group>"; };
 		3686778D854DAB84AA83EEB6 /* StarUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarUtil.m; sourceTree = "<group>"; };
+		36867792DB16EC3A21466A8B /* StatusUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusUtil.m; sourceTree = "<group>"; };
 		368677F8EF85CC0C463A0E7B /* RefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooterView.h; sourceTree = "<group>"; };
 		3686787DFB9AE41A91037A15 /* read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = read.png; sourceTree = "<group>"; };
 		3686787EB3B7A2D1EDF1D10E /* BookMediumImageRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMediumImageRequestDelegate.h; sourceTree = "<group>"; };
@@ -322,7 +316,6 @@
 		36867B31D453AF36AEAB3AFE /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		36867BB367DB6FEAFB475B8B /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		36867CD2E877AE51FD1B55F5 /* ShowLoadingInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLoadingInfoCommand.m; sourceTree = "<group>"; };
-		36867CEE3B3A15938D814184 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		36867D080076CBD58E00EDBD /* WishBookActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishBookActionSheet.m; sourceTree = "<group>"; };
 		36867D61A453A3C65F0681D8 /* DOUBookMyRatingStarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOUBookMyRatingStarTest.m; sourceTree = "<group>"; };
 		36867D685B444BA300B0A706 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -331,6 +324,7 @@
 		36867E05F13E686B82436DF6 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		36867E0DF3216A5D1E5387FC /* NotAddedBookActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotAddedBookActionSheet.h; sourceTree = "<group>"; };
 		36867E38717D30DFC353E7A6 /* ShowNormalInfoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowNormalInfoCommand.m; sourceTree = "<group>"; };
+		36867E4328593DA16531F527 /* StatusUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusUtil.h; sourceTree = "<group>"; };
 		36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		36867EC9CA2FA9524F840D4F /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		36867EEED234B7E303D8BD14 /* ReadingBookActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingBookActionSheet.h; sourceTree = "<group>"; };
@@ -778,12 +772,6 @@
 				368672361E033DE447F057AB /* MainController.h */,
 				3686700443EAEF1C97A73988 /* WebViewController.m */,
 				36867312A5CFA9A7B2C026F2 /* WebViewController.h */,
-				368672AAA2BDED70CA3EA456 /* WishViewController.m */,
-				36867107FB91F14574AF9E74 /* WishViewController.h */,
-				368676D66017E79A01E1F0CF /* ReadingViewController.m */,
-				36867045B9A6AC7432C01FBB /* ReadingViewController.h */,
-				368671D88644C0AE12FDD506 /* ReadViewController.m */,
-				36867CEE3B3A15938D814184 /* ReadViewController.h */,
 				36867E78AB61CD83CC5F0029 /* BookDetailViewController.m */,
 				3686728B5EE67A0FD06830BB /* BookDetailViewController.h */,
 				3686793FF3DC7A68FE8B1089 /* SearchViewController.m */,
@@ -1510,6 +1498,8 @@
 				368679608C1961C2527EB711 /* NSString+ParseCategory.h */,
 				36867F17D95789D06EE05854 /* Model */,
 				3686724F8285F73624045E9E /* View */,
+				36867792DB16EC3A21466A8B /* StatusUtil.m */,
+				36867E4328593DA16531F527 /* StatusUtil.h */,
 			);
 			path = doubanread;
 			sourceTree = "<group>";
@@ -1834,9 +1824,6 @@
 				49D26C0F16B16BED00FDA186 /* DOUService.m in Sources */,
 				49D26C1016B16BED00FDA186 /* DOUOAuthService.m in Sources */,
 				49D26C1116B16BED00FDA186 /* DOUOAuthStore.m in Sources */,
-				3686728421C9D89ABC431BE4 /* WishViewController.m in Sources */,
-				36867D713884767460320FEF /* ReadingViewController.m in Sources */,
-				3686773DCEAF2466EDF8F0F7 /* ReadViewController.m in Sources */,
 				36867A0A3383A5D799E28A56 /* BookCell.m in Sources */,
 				368677AD80EDB01E9C75F26F /* BookSmallImageRequest.m in Sources */,
 				3686791B14CCD4FCEF7DB1DA /* BookListRequest.m in Sources */,
@@ -1866,6 +1853,7 @@
 				3686783D873EFE1BA8B88A6B /* NotAddedBookActionSheet.m in Sources */,
 				36867A88F8B5799B76E841C7 /* BookDetailView.m in Sources */,
 				36867757D106844C6341D3A7 /* StarUtil.m in Sources */,
+				36867B7C9F71A69B5F77E3C0 /* StatusUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
