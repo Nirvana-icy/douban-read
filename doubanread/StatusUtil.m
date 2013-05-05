@@ -34,4 +34,20 @@
     }
 }
 
+
++ (NSString *)statusToTip:(BookStatus)status {
+    switch (status) {
+        case WISH:
+            return @"我想读这本书";
+        case READ:
+            return @"我读过这本书";
+        case READING:
+            return @"我正在读这本书";
+        case NOTADDED:
+            return @"我尚未添加过这本书";
+        default:
+            return @"我尚未添加过这本书";
+    }
+}
+
 @end

@@ -6,4 +6,6 @@
 + (NSString *)statusToTitle:(BookStatus) status;
 
 + (NSString *)statusToString:(BookStatus)status;
+
++ (NSString *)statusToTip:(BookStatus)status;
 @end
