@@ -7,6 +7,7 @@
 
 @implementation CommentViewController {
     UIBarButtonItem *sendCommentButton;
+    UIBarButtonItem *finishCommentButton;
     SEL theAction;
     BookDetailViewController *target;
     DOUBook *book;
@@ -27,11 +28,16 @@
     _commentTextArea.layer.borderWidth = 1.0f;
     _commentTextArea.layer.borderColor = [[UIColor grayColor] CGColor];
 
-    sendCommentButton = [[UIBarButtonItem alloc]
-            initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:theAction];
+    sendCommentButton = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:theAction];
+    finishCommentButton = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(finishComment)];
     self.navigationItem.rightBarButtonItem = sendCommentButton;
     [sendCommentButton setEnabled:_commentTextArea.text.length != 0];
     [_starView setBook:book];
+}
+
+- (void)finishComment {
+    [_commentTextArea resignFirstResponder];
+    self.navigationItem.rightBarButtonItem = sendCommentButton;
 }
 
 - (void)finishReading {
@@ -63,6 +69,10 @@
     [sendCommentButton setEnabled:length != 0];
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    self.navigationItem.rightBarButtonItem = finishCommentButton;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [_commentTextArea resignFirstResponder];
 }
@@ -85,7 +95,7 @@
     theAction = action;
 }
 
-- (void)setBook:(DOUBook *)theBook{
+- (void)setBook:(DOUBook *)theBook {
     book = theBook;
 }
 
