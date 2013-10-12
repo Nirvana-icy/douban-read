@@ -26,7 +26,12 @@
         [searchNavigationController.tabBarItem setTitle:@"搜索"];
         [searchNavigationController.tabBarItem setImage:[UIImage imageNamed:@"search"]];
 
-        [self setViewControllers:@[[self getControllerWithStatus:READING], [self getControllerWithStatus:WISH], [self getControllerWithStatus:READ], searchNavigationController]];
+        [self setViewControllers:@[
+                [self getControllerWithStatus:READING],
+                [self getControllerWithStatus:WISH],
+                [self getControllerWithStatus:READ],
+                searchNavigationController]
+        ];
     }
     return self;
 }

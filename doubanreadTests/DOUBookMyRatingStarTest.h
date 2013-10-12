@@ -1,4 +1,4 @@
 #import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
-@interface DOUBookMyRatingStarTest : SenTestCase
+#import <XCTest/XCTest.h>
+@interface DOUBookMyRatingStarTest : XCTestCase
 @end
