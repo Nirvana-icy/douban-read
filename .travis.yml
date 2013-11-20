@@ -1,1 +1,4 @@
 language: objective-c
+
+xcode_project: doubanread.xcodeproj
+xcode_scheme: doubanreadTests
